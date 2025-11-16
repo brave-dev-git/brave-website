@@ -1,11 +1,203 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const year = new Date().getFullYear();
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <title>Brave Security – ny webbplats på väg</title>
+    <meta
+      name="description"
+      content="Snart lanseras Brave Security – ett svenskt konsultbolag inom cybersäkerhet och riskhantering. Vi hjälper verksamheter att förstå, prioritera och hantera sina risker."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+
+  <body>
+    <main class="page">
+      <div class="card">
+        <!-- Logotyp -->
+        <div class="logo-wrap">
+          <img
+            src="/logo-brave-security.png"
+            alt="Brave Security – logotyp"
+            width="220"
+            height="220"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Text -->
+		<h1 class="title">Snart lanseras Brave Security - en ny säkerhetspartner.</h1>
+
+		<p class="lead">
+  		  Brave Security är ett svenskt konsultbolag inom cybersäkerhet, riskhantering
+  		  och säkra AI-lösningar. Vi hjälper verksamheter att förstå, prioritera och
+  		  hantera sina risker.
+		</p>
+
+		<p class="text">
+  		  Under tiden är du varmt välkommen att höra av dig om du vill resonera kring säkerhet, risk
+  		  eller kommande behov.
+</p>
+      
+        <!-- Kontakt -->
+        <div class="actions">
+          <a
+            class="btn-primary"
+            href="mailto:kontakt@bravesecurity.se?subject=Kontakt%20-%20Brave%20Security"
+          >
+            Maila oss
+          </a>
+
+          <span class="tagline">No Risk No Reward.</span>
+
+          <a
+            class="link"
+            href="https://www.linkedin.com/company/bravesecurity/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Följ oss på LinkedIn
+          </a>
+        </div>
+
+        <!-- Liten footer -->
+        <div class="footer">
+          © {year} Brave Security AB
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  :global(body) {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+      "Segoe UI", sans-serif;
+    background: #020617;
+    color: #e5e7eb;
+  }
+
+  .page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .card {
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    padding: 2.75rem 2.25rem;
+    border-radius: 1.5rem;
+     /* NY bakgrund: lila upptill → mörkblå nedtill */
+  	background: linear-gradient(
+      180deg,
+      #4c1d95 0%,   /* lila vid toppen */
+      #4338ca 35%,  /* mellanläge */
+      #0a142f 100%  /* Brave-mörkblå i botten */
+  	);
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+  }
+
+  .logo-wrap {
+    margin-bottom: 1.9rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 2.2vw + 1rem, 2.4rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #e5e7eb;
+    margin-bottom: 0.75rem;
+  }
+
+  .text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #cbd5f5;
+    margin-bottom: 1.9rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    align-items: center;
+    margin-bottom: 1.7rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 2.1rem;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #e5e7eb;
+    background: transparent;
+    transition: background 0.15s ease, transform 0.15s ease,
+      box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+
+  .btn-primary:hover {
+    background: rgba(2, 6, 23, 0.95);
+    transform: translateY(-1px);
+    border-color: #e76f51;
+    box-shadow: 0 0 0 1px #4c1d95, 0 16px 40px rgba(15, 23, 42, 0.9);
+  }
+
+  .btn-primary:focus-visible,
+  .link:focus-visible {
+    outline: 2px solid #e76f51;
+    outline-offset: 3px;
+  }
+
+  .tagline {
+    margin-top: 0.15rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e76f51;
+  }
+
+  .link {
+    font-size: 0.82rem;
+    color: #cbd5f5;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .link:hover {
+    color: #e76f51;
+  }
+
+  .footer {
+    margin-top: 0.75rem;
+    font-size: 0.7rem;
+    color: #94a3b8;
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      padding: 2.2rem 1.7rem;
+    }
+  }
+</style>
