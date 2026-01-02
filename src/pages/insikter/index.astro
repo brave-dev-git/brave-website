@@ -15,35 +15,40 @@ const posts = (await getCollection("insikter"))
 <Layout title={title} description={description} lang="sv">
   <Header />
 
-  <main class="container">
-    <header class="hero">
-      <h1 class="h1">Insikter</h1>
-      <p class="lead">
-        Korta perspektiv och konkreta lärdomar inom cybersäkerhet, risk och AI – skrivna för ledning och IT.
-      </p>
-    </header>
+<main class="container">
+  <section class="section" aria-label="Insikter">
+    <div class="section-surface">
+      <header class="section-head">
+        <h1 class="section-title">Insikter</h1>
+        <p class="section-desc">
+          Korta perspektiv och konkreta lärdomar inom cybersäkerhet, risk och AI – skrivna för ledning och IT.
+        </p>
+      </header>
 
-    <section class="grid3" aria-label="Artiklar">
-      {posts.map((post) => (
-        <a class="card post" href={`/insikter/${post.slug}/`}>
-          <div class="meta">
-            <time datetime={post.data.date.toISOString()}>
-              {post.data.date.toLocaleDateString("sv-SE")}
-            </time>
-            {post.data.tags?.length ? <span class="dot">•</span> : null}
-            {post.data.tags?.slice(0, 2).map((t) => (
-              <span class="tag">{t}</span>
-            ))}
-          </div>
-          <h2 class="h2">{post.data.title}</h2>
-          <p class="p">{post.data.description}</p>
-          <div class="more">Läs →</div>
-        </a>
-      ))}
-    </section>
+      <section class="grid3" aria-label="Artiklar">
+        {posts.map((post) => (
+          <a class="card post" href={`/insikter/${post.slug}/`}>
+            <div class="meta">
+              <time datetime={post.data.date.toISOString()}>
+                {post.data.date.toLocaleDateString("sv-SE")}
+              </time>
+              {post.data.tags?.length ? <span class="dot">•</span> : null}
+              {post.data.tags?.slice(0, 2).map((t) => (
+                <span class="tag">{t}</span>
+              ))}
+            </div>
+            <h2 class="h2">{post.data.title}</h2>
+            <p class="p">{post.data.description}</p>
+            <div class="more">Läs →</div>
+          </a>
+        ))}
+      </section>
+    </div>
+  </section>
 
-    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
-  </main>
+  <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+</main>
+
 </Layout>
 
 <style>
