@@ -1,72 +1,40 @@
 ---
-title: "AI och cybersäkerhet: från hype till beslut som minskar risk"
-description: "AI skapar nya möjligheter – och nya risker. Så tar du en pragmatisk väg som både stödjer innovation och behåller kontroll."
+title: "AI som möjliggörare – men på vems villkor? Att bygga utan att koda"
+description: "AI gör det möjligt att gå från idé till prototyp på timmar. Men det som känns gratis och friktionsfritt idag kan bli dyrt, låst och riskfyllt imorgon."
 date: 2026-01-24
-tags: ["AI & säkerhet", "Styrning", "Cybersäkerhet", "Riskhantering"]
+tags: ["AI", "innovation", "styrning", "informationssäkerhet"]
 draft: false
 ---
 
-# AI och cybersäkerhet: från hype till beslut som minskar risk
+AI förändrar hur vi skapar.
 
-AI-frågan hamnar ofta i två lägen:
-- “Vi måste göra något nu”
-- eller “Vi vågar inte göra något alls”
+För mig som gammal datavetare känns det ibland nästan magiskt: att kunna bygga något användbart utan att skriva mer än några rader kod – ibland utan att skriva någon kod alls. Att gå från idé till prototyp på en eftermiddag hade varit science fiction för bara några år sedan.
 
-Båda lägena skapar risk. Det första kan skapa okontrollerad dataexponering. Det andra skapar skugg-IT och okända AI-flöden.
+Jag började experimentera med det här genom att bygga ett litet verktyg som analyserar träningsprogram och ger personliga rekommendationer. En banal idé – men perfekt som testbädd: data, logik, gränssnitt, iteration.
 
-Här är en väg som brukar fungera för ledning och IT tillsammans: **tillåt – men med kontroll**.
+Och det var här jag fastnade vid en större fråga:
 
-## Tre beslut som avgör om AI blir en tillgång eller en risk
+**AI är en enorm möjliggörare. Men på vems villkor bygger vi när vi bygger så här?**
 
-### 1) Vilken data får AI arbeta med?
-Börja med en enkel klassning:
-- Offentlig
-- Intern
-- Känslig (kund, personal, affärskritisk)
+## “Bygga utan att koda” är en superkraft – och en risk
 
-Regel: **Känslig data kräver tydligt syfte, spårbarhet och kontroller.**
+När friktionen för att skapa sjunker, händer två saker samtidigt:
 
-### 2) Var kör vi AI – och med vilka villkor?
-Skillnad på:
-- “publika” tjänster
-- företagsavtal (enterprise)
-- egen drift / privat modell
+1) Innovation exploderar (bra).
+2) Kontroll och eftertanke riskerar att försvinna (mindre bra).
 
-Det viktiga är inte varumärket – utan:
-- loggning,
-- databehandling,
-- åtkomst,
-- och avtalsvillkor.
+Det här är inte en moralisk poäng. Det är bara mekanik.
 
-### 3) Vad får AI göra – på riktigt?
-AI som bara skriver text är en sak.  
-AI som kan:
-- skicka mail,
-- skapa tickets,
-- ändra konfiguration,
-- hämta filer,
-- prata med API:er  
-…är en helt annan riskprofil.
+När det blir lätt att koppla:
+- AI-modell → datakälla → integration → action  
+…så blir det också lätt att råka skapa:
+- dataflöden man inte kan förklara,
+- beroenden man inte kan bryta,
+- och risker man inte kan mäta.
 
-Regel: **Actions kräver styrning, rollmodeller och spärrar.**
+## Tre insikter jag tar med mig
 
-## En enkel “AI-policy” som går att leva med
-En policy ska inte vara 12 sidor. Den ska vara användbar. Exempel på rubriker:
+När jag testade olika upplägg (både kommersiella modeller och mer öppna alternativ) landade jag i tre insikter som känns värda att ha med sig även i företagssammanhang.
 
-- Tillåtna användningsfall (3–5)
-- Förbjudna användningsfall (3–5)
-- Dataregler (klassning + exempel)
-- Godkända verktyg
-- Ansvar (vem äger vad)
-- Incident: vad gör vi om något går fel?
-
-## Hur kopplar vi AI till cybersäkerhet utan att bromsa?
-Sätt upp en lättviktig loop:
-- **Riskbedömning** för nya use cases (30–60 min)
-- **Tekniska bas-kontroller** (SSO, MFA, loggning, DLP där relevant)
-- **Uppföljning** (vad används, av vem, med vilken data)
-
-## Nästa steg
-Vill du ha en pragmatisk start som funkar i verkligheten?  
-Börja med [Riskhantering](/tjanster) (prioritering) och läs [AI & säkerhet](/ai-sakerhet).  
-Eller [kontakta oss](/kontakt) så tar vi ett kort samtal.
+### 1) Det som är “gratis” idag kommer sannolikt inte vara det imorgon
+Många AI
