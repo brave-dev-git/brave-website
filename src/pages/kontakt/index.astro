@@ -1,0 +1,197 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { site } from "../../config/site";
+
+const title = "Kontakt | Brave Security";
+const description =
+  "Kontakta Brave Security för att diskutera riskhantering, cybersäkerhet, säkerhetskultur eller säkra AI-lösningar.";
+---
+
+<Layout title={title} description={description} lang="sv">
+  <main class="page">
+    <div class="card">
+      <a class="back" href="/">← Till startsidan</a>
+
+      <h1 class="h1">Kontakta oss</h1>
+      <p class="lead">
+        Hör av dig så tar vi ett kort, förutsättningslöst samtal. Beskriv gärna din roll och vad du vill få klarhet i.
+      </p>
+
+      <div class="grid">
+        <div class="panel">
+          <h2 class="h2">E-post</h2>
+          <p class="p">
+            <a class="link" href={`mailto:${site.email}?subject=Kontakt%20-%20Brave%20Security`}>
+              {site.email}
+            </a>
+          </p>
+          <a class="btn" href={`mailto:${site.email}?subject=Kontakt%20-%20Brave%20Security`}>
+            Skicka mail
+          </a>
+        </div>
+
+        <div class="panel">
+          <h2 class="h2">Telefon</h2>
+          <p class="p">
+            <a class="link" href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+          </p>
+          <a class="btn" href={`tel:${site.phoneTel}`}>Ring</a>
+          <p class="hint">Vi har inget växelnummer ännu – du når oss direkt.</p>
+        </div>
+
+        <div class="panel">
+          <h2 class="h2">LinkedIn</h2>
+          <p class="p">
+            <a class="link" href={site.linkedinCompany} target="_blank" rel="noopener noreferrer">
+              Brave Security
+            </a>
+            <br />
+            <a class="link" href={site.linkedinJonas} target="_blank" rel="noopener noreferrer">
+              Jonas Stewen
+            </a>
+          </p>
+          <a class="btn" href={site.linkedinCompany} target="_blank" rel="noopener noreferrer">
+            Följ oss
+          </a>
+        </div>
+      </div>
+
+      <div class="cta">
+        <p class="p">
+          Vill du att vi förbereder ett samtal? Skicka ett par rader om nuläge, mål och vad som skaver.
+        </p>
+        <a class="btn-primary" href={`mailto:${site.email}?subject=Inför%20samtal%20-%20Brave%20Security`}>
+          Maila med bakgrund
+        </a>
+      </div>
+
+      <div class="footer">© {new Date().getFullYear()} {site.legalName}</div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .card {
+    max-width: 960px;
+    width: 100%;
+    padding: 2.5rem 2.25rem;
+    border-radius: 1.5rem;
+    background: linear-gradient(180deg, #4c1d95 0%, #4338ca 35%, #0a142f 100%);
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+  }
+
+  .back {
+    display: inline-block;
+    color: #cbd5f5;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  .back:hover { color: #e76f51; }
+
+  .h1 {
+    margin: 0 0 0.75rem 0;
+    font-size: clamp(1.8rem, 2.2vw + 1rem, 2.4rem);
+    font-weight: 650;
+  }
+  .lead {
+    margin: 0 0 1.75rem 0;
+    line-height: 1.7;
+    color: #e5e7eb;
+    max-width: 70ch;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0 0 1.75rem 0;
+  }
+
+  .panel {
+    background: rgba(2, 6, 23, 0.35);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 1rem;
+    padding: 1.25rem;
+  }
+
+  .h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 650;
+    color: #e5e7eb;
+  }
+  .p {
+    margin: 0 0 0.9rem 0;
+    color: #cbd5f5;
+    line-height: 1.6;
+    font-size: 0.92rem;
+  }
+  .hint {
+    margin: 0.6rem 0 0 0;
+    font-size: 0.78rem;
+    color: rgba(203, 213, 245, 0.85);
+    line-height: 1.4;
+  }
+
+  .link {
+    color: #e5e7eb;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .link:hover { color: #e76f51; }
+
+  .btn,
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    font-size: 0.88rem;
+    font-weight: 550;
+    text-decoration: none;
+    color: #e5e7eb;
+    background: transparent;
+    transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  }
+  .btn:hover,
+  .btn-primary:hover {
+    background: rgba(2, 6, 23, 0.95);
+    transform: translateY(-1px);
+    border-color: #e76f51;
+  }
+
+  .cta {
+    margin-top: 0.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.35);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    margin-top: 1.75rem;
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; }
+    .card { padding: 2.1rem 1.6rem; }
+  }
+</style>
