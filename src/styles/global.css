@@ -84,5 +84,93 @@ a {
   outline-offset: 3px;
 }
 
+/* Layout helpers */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2.2rem 1.2rem 3rem;
+}
+
+.crumbs {
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Card */
+.card {
+  background: rgba(2, 6, 23, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+/* Grids */
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Lists & text */
+.bullets {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.bullets li { margin: 0.2rem 0; }
+
+.lead {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* CTA row */
+.cta-row {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Secondary button (keep btn-primary where you have it) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(229, 231, 235, 0.55);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(2, 6, 23, 0.25);
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  background: rgba(2, 6, 23, 0.4);
+}
+
+/* Footer */
+.foot {
+  margin-top: 1.8rem;
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .grid2, .grid3 { grid-template-columns: 1fr; }
+}
 
 

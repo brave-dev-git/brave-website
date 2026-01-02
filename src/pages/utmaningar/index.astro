@@ -1,205 +1,122 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { site } from "../../config/site";
+import Header from "../../components/Header.astro";
 
-const title = "Era utmaningar inom risk & cybersäkerhet | Brave Security";
+const title = "Era utmaningar | Brave Security";
 const description =
-  "Vanliga frågor vi hjälper ledning, CISO och IT att besvara inom riskhantering, cybersäkerhet, säkerhetskultur och säkra AI-lösningar – kopplade till tydliga nästa steg.";
+  "Vanliga frågor vi möter inom cybersäkerhet, risk och AI – och hur vi hjälper er att översätta frågorna till beslut och åtgärder.";
 ---
 
 <Layout title={title} description={description} lang="sv">
-  <main class="page">
-    <div class="card">
-      <a class="back" href="/">← Till startsidan</a>
+  <Header />
 
+  <main class="container">
+    <nav class="crumbs" aria-label="Brödsmulor">
+      <a class="link" href="/#utmaningar">← Till startsidan</a>
+    </nav>
+
+    <header class="hero">
       <h1 class="h1">Era utmaningar</h1>
       <p class="lead">
-        Säkerhet börjar sällan med en produkt – den börjar med en obekväm fråga.
-        Här är några av de vanligaste frågorna vi möter. Känner du igen dig hjälper vi dig att
-        översätta frågan till konkreta beslut och åtgärder.
+        Säkerhet börjar sällan med en produkt – den börjar med en obekväm fråga. Här är några av de vanligaste
+        frågorna vi möter. Känner du igen dig hjälper vi dig att översätta frågan till konkreta beslut och åtgärder.
       </p>
 
-      <div class="list">
-        <article class="item">
-          <h2 class="h2">Upptäckt & lägesbild</h2>
-          <ul>
-            <li>Kommer vi märka om någon tar sig in i våra system?</li>
-            <li>Har vi en realistisk bild av våra mest kritiska tillgångar och risker?</li>
-          </ul>
-        </article>
-
-        <article class="item">
-          <h2 class="h2">Prioritering & säkerhetsarkitektur</h2>
-          <ul>
-            <li>Har vi kritiska luckor i vår säkerhetsarkitektur?</li>
-            <li>Vilka åtgärder ger faktisk riskreduktion – och vad kan vänta?</li>
-          </ul>
-        </article>
-
-        <article class="item">
-          <h2 class="h2">Styrning, mätning & mognad</h2>
-          <ul>
-            <li>Hur mäter vi säkerhet och hur vet vi att vi faktiskt blir bättre över tid?</li>
-            <li>Hur kan vi jämföra vår säkerhetsnivå med andra i vår bransch?</li>
-          </ul>
-        </article>
-
-        <article class="item">
-          <h2 class="h2">Riskarbete som håller i vardagen</h2>
-          <ul>
-            <li>Vilka är de viktigaste riskerna för oss – och hur gör vi riskarbete strukturerat?</li>
-            <li>Hur hanterar vi tredjeparts- och leverantörsrisker utan att bli byråkratiska?</li>
-          </ul>
-        </article>
-
-        <article class="item">
-          <h2 class="h2">Incidentberedskap & lärande</h2>
-          <ul>
-            <li>Hur provar vi att vi är redo för en incident och att vi lär oss av den?</li>
-            <li>Vem gör vad när det verkligen gäller?</li>
-          </ul>
-        </article>
-
-        <article class="item">
-          <h2 class="h2">AI & nya risker</h2>
-          <ul>
-            <li>Hur använder vi AI utan att tappa kontroll på data, integritet och beslut?</li>
-            <li>Vilka risker ska ledning och IT äga – och vilka ska leverantören bära?</li>
-          </ul>
-        </article>
+      <div class="cta-row">
+        <a class="btn-primary" href="/#kontakt">Boka ett förutsättningslöst möte</a>
+        <a class="btn-secondary" href="/tjanster">Se tjänster</a>
       </div>
+    </header>
 
-      <div class="cta">
-        <div>
-          <h2 class="h2">Nästa steg</h2>
-          <p class="p">
-            Hittar du inte exakt din fråga här? Låt oss ta den i ett samtal.
-          </p>
-        </div>
-        <a class="btn-primary" href="/kontakt">Boka ett förutsättningslöst möte</a>
+    <section class="grid2" aria-label="Utmaningar">
+      <article class="card">
+        <h2 class="h2">Upptäckt & lägesbild</h2>
+        <ul class="bullets">
+          <li>Kommer vi märka om någon tar sig in i våra system?</li>
+          <li>Har vi en realistisk bild av våra mest kritiska tillgångar och risker?</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="h2">Prioritering & säkerhetsarkitektur</h2>
+        <ul class="bullets">
+          <li>Har vi kritiska luckor i vår säkerhetsarkitektur?</li>
+          <li>Vilka åtgärder ger faktisk riskreduktion – och vad kan vänta?</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="h2">Styrning, mätning & mognad</h2>
+        <ul class="bullets">
+          <li>Hur mäter vi säkerhet och vet att vi blir bättre över tid?</li>
+          <li>Hur kan vi jämföra vår säkerhetsnivå med andra i vår bransch?</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="h2">Riskarbete som håller i vardagen</h2>
+        <ul class="bullets">
+          <li>Vilka är de viktigaste riskerna för oss – och hur gör vi riskarbete strukturerat?</li>
+          <li>Hur hanterar vi tredjeparts- och leverantörsrisker utan att bli byråkratiska?</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="h2">Incidentberedskap & lärande</h2>
+        <ul class="bullets">
+          <li>Hur provar vi att vi är redo för en incident och att vi lär oss av den?</li>
+          <li>Vem gör vad när det verkligen gäller?</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="h2">AI & nya risker</h2>
+        <ul class="bullets">
+          <li>Hur använder vi AI utan att tappa kontroll på data, integritet och beslut?</li>
+          <li>Vilka risker ska ledning och IT äga – och vilka ska leverantören bära?</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card next">
+      <h2 class="h2">Nästa steg</h2>
+      <p class="p">
+        Hittar du inte exakt din fråga här? Låt oss ta den i ett samtal. Vi hjälper dig att ringa in vad som är viktigast,
+        vad som kan vänta – och vad som faktiskt minskar risk.
+      </p>
+      <div class="cta-row">
+        <a class="btn-primary" href="/#kontakt">Boka ett förutsättningslöst möte</a>
+        <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
       </div>
+    </section>
 
-      <div class="footer">© {new Date().getFullYear()} {site.legalName}</div>
-    </div>
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
   </main>
 </Layout>
 
 <style>
-  .page {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+  .hero {
+    max-width: 90ch;
+    margin-bottom: 1.4rem;
   }
-
-  .card {
-    max-width: 960px;
-    width: 100%;
-    padding: 2.5rem 2.25rem;
-    border-radius: 1.5rem;
-    background: linear-gradient(180deg, #4c1d95 0%, #4338ca 35%, #0a142f 100%);
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
-  }
-
-  .back {
-    display: inline-block;
-    color: #cbd5f5;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-  }
-  .back:hover { color: #e76f51; }
 
   .h1 {
-    margin: 0 0 0.75rem 0;
-    font-size: clamp(1.8rem, 2.2vw + 1rem, 2.4rem);
-    font-weight: 650;
-  }
-  .lead {
-    margin: 0 0 1.75rem 0;
-    line-height: 1.7;
-    color: #e5e7eb;
-    max-width: 80ch;
-  }
-
-  .list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.75rem;
-  }
-
-  .item {
-    background: rgba(2, 6, 23, 0.35);
-    border: 1px solid rgba(148, 163, 184, 0.35);
-    border-radius: 1rem;
-    padding: 1.25rem 1.25rem 1.1rem 1.25rem;
+    font-size: clamp(2rem, 2.2vw + 1rem, 2.7rem);
+    margin: 0 0 0.6rem 0;
   }
 
   .h2 {
     margin: 0 0 0.6rem 0;
-    font-size: 1rem;
-    font-weight: 650;
-    color: #e5e7eb;
-  }
-
-  ul {
-    margin: 0;
-    padding-left: 1.1rem;
-    color: #cbd5f5;
-    line-height: 1.6;
-    font-size: 0.92rem;
-  }
-
-  .cta {
-    padding-top: 1.25rem;
-    border-top: 1px solid rgba(148, 163, 184, 0.35);
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    font-size: 1.05rem;
   }
 
   .p {
     margin: 0;
-    color: #cbd5f5;
-    line-height: 1.6;
-    font-size: 0.92rem;
-    max-width: 60ch;
+    color: var(--muted);
+    line-height: 1.7;
   }
 
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.7rem 1.4rem;
-    border-radius: 999px;
-    border: 1px solid #e5e7eb;
-    font-size: 0.9rem;
-    font-weight: 550;
-    text-decoration: none;
-    color: #e5e7eb;
-    background: transparent;
-    transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
-  }
-  .btn-primary:hover {
-    background: rgba(2, 6, 23, 0.95);
-    transform: translateY(-1px);
-    border-color: #e76f51;
-  }
-
-  .footer {
-    margin-top: 1.75rem;
-    font-size: 0.75rem;
-    color: #94a3b8;
-  }
-
-  @media (max-width: 900px) {
-    .list { grid-template-columns: 1fr; }
-    .card { padding: 2.1rem 1.6rem; }
+  .next {
+    margin-top: 1rem;
   }
 </style>
