@@ -1,0 +1,82 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("insikter");
+  return posts
+    .filter((p) => !p.data.draft)
+    .map((p) => ({ params: { slug: p.slug }, props: { post: p } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const title = `${post.data.title} | Brave Security`;
+const description = post.data.description;
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+
+  <main class="container">
+    <nav class="crumbs" aria-label="Brödsmulor">
+      <a class="link" href="/insikter">← Till Insikter</a>
+    </nav>
+
+    <article class="article">
+      <header class="head">
+        <h1 class="h1">{post.data.title}</h1>
+        <div class="meta">
+          <time datetime={post.data.date.toISOString()}>
+            {post.data.date.toLocaleDateString("sv-SE")}
+          </time>
+          {post.data.tags?.length ? <span class="dot">•</span> : null}
+          {post.data.tags?.map((t) => <span class="tag">{t}</span>)}
+        </div>
+        <p class="lead">{post.data.description}</p>
+      </header>
+
+      <div class="content">
+        <Content />
+      </div>
+
+      <section class="card cta">
+        <h2 class="h2">Vill du bolla detta i er kontext?</h2>
+        <p class="p">Hör av dig så tar vi ett kort, förutsättningslöst samtal.</p>
+        <div class="cta-row">
+          <a class="btn-primary" href="/kontakt">Kontakt</a>
+          <a class="btn-secondary" href="/tjanster">Se tjänster</a>
+        </div>
+      </section>
+    </article>
+
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+  </main>
+</Layout>
+
+<style>
+  .article { max-width: 80ch; }
+  .head { margin-bottom: 1rem; }
+  .h1 { font-size: clamp(2rem, 2.2vw + 1rem, 2.7rem); margin: 0 0 0.6rem 0; }
+  .h2 { margin: 0 0 0.5rem 0; font-size: 1.05rem; }
+  .p { margin: 0; color: var(--muted); line-height: 1.7; }
+
+  .meta { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; color: rgba(229,231,235,0.75); font-size: 0.85rem; }
+  .dot { opacity: 0.6; }
+  .tag {
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148,163,184,0.25);
+    background: rgba(2,6,23,0.22);
+  }
+
+  /* enkel typografi för markdown */
+  .content :global(h2) { margin-top: 1.4rem; }
+  .content :global(p) { line-height: 1.8; color: rgba(229,231,235,0.9); }
+  .content :global(a) { color: rgba(203,213,245,1); text-underline-offset: 4px; }
+  .content :global(ul) { line-height: 1.8; }
+
+  .cta { margin-top: 1.4rem; }
+</style>
