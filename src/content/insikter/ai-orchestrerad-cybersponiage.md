@@ -1,7 +1,7 @@
 ---
 title: "När AI leder attacken: vad Anthropics rapport betyder för din säkerhet"
 description: "AI används inte bara som verktyg – utan som motor i angrepp. Lärdomar och konkreta skydd för organisationer som inför AI-agenter."
-Date: 2026-01-17
+date: 2026-01-17
 tags: ["AI & säkerhet", "Cybersäkerhet", "Riskhantering", "Incidentberedskap"]
 ---
 

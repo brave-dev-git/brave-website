@@ -1,8 +1,9 @@
 ---
 title: "AI och cybersäkerhet: från hype till beslut som minskar risk"
 description: "AI skapar nya möjligheter – och nya risker. Så tar du en pragmatisk väg som både stödjer innovation och behåller kontroll."
-Date: 2026-01-24
+date: 2026-01-24
 tags: ["AI & säkerhet", "Styrning", "Cybersäkerhet", "Riskhantering"]
+draft: false
 ---
 
 # AI och cybersäkerhet: från hype till beslut som minskar risk

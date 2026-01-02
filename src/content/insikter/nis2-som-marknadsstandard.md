@@ -1,7 +1,7 @@
 ---
 title: "NIS2 som marknadsstandard: därför påverkar den även dig som ”inte omfattas”"
 description: "NIS2 blir snabbt en praktisk lägstanivå i upphandlingar och leverantörsled. Så förbereder du dig utan att starta ett jätteprojekt."
-Date: 2026-01-10
+date: 2026-01-10
 tags: ["Riskhantering", "NIS2", "Styrning", "Tredjepart"]
 ---
 
