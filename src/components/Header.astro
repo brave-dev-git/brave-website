@@ -12,10 +12,19 @@ const { variant = "overlay" } = Astro.props;
 ---
 
 <header class={`header ${variant === "overlay" ? "overlay" : ""}`}>
-  <a class="brand" href="/#top" aria-label="Brave Security – startsidan">
-    <span class="brand-mark" aria-hidden="true"></span>
+  <a class="brand" href="/" aria-label="Brave Security">
+    <span class="brand-badge" aria-hidden="true">
+        <img
+        src="/logo-mark-white.png"
+        alt=""
+        width="28"
+        height="28"
+        decoding="async"
+        />
+    </span>
     <span class="brand-name">Brave Security</span>
-  </a>
+    </a>
+
 
   <nav class="nav" aria-label="Huvudnavigation">
     {nav.map((item) => (
@@ -48,9 +57,27 @@ const { variant = "overlay" } = Astro.props;
   .brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 0.6rem;
     text-decoration: none;
   }
+
+  .brand-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: #ffffff; /* vit bakgrund */
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    display: grid;
+    place-items: center;
+    overflow: hidden; /* gör att rundningen klipper bilden snyggt */
+  }
+
+  .brand-badge img{
+    display:block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* eftersom din bild redan är “vit bakgrund” */
+    }
 
   .brand-mark {
     width: 28px;
@@ -62,7 +89,7 @@ const { variant = "overlay" } = Astro.props;
 
   .brand-name {
     font-family: var(--font-heading);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.01em;
   }
 
