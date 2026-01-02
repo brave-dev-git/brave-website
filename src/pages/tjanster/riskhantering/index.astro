@@ -1,0 +1,135 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+
+const title = "Riskhantering | Brave Security";
+const description =
+  "Riskhantering som går att använda i beslut: nuläge, prioritering, åtgärdsplan och uppföljning. Praktiskt stöd för ledning, CISO och IT.";
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+  <main class="container">
+    <nav class="crumbs" aria-label="Brödsmulor">
+      <a class="link" href="/tjanster">Tjänster</a>
+      <span class="sep">/</span>
+      <span>Riskhantering</span>
+    </nav>
+
+    <header class="hero">
+      <h1 class="h1">Riskhantering</h1>
+      <p class="lead">
+        Riskarbete ska göra det enklare att fatta beslut — inte bli ett parallellt administrativt spår.
+        Vi hjälper er att få struktur, prioritering och en plan som faktiskt går att driva.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+        <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
+      </div>
+    </header>
+
+    <section class="grid2">
+      <div class="card">
+        <h2 class="h2">När passar det?</h2>
+        <ul class="bullets">
+          <li>Ni behöver en tydlig riskbild och en prioriterad åtgärdslista.</li>
+          <li>Riskarbete finns, men leder inte till konkreta beslut.</li>
+          <li>Ni behöver hantera tredjeparts- och leverantörsrisker mer strukturerat.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">Vad vi gör</h2>
+        <ul class="bullets">
+          <li>Definierar riskramverk som passar er vardag (inte mallar för mallarnas skull).</li>
+          <li>Kartlägger tillgångar, hot, sårbarheter och konsekvens.</li>
+          <li>Prioriterar åtgärder utifrån riskreduktion och genomförbarhet.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="h2">Typiska leverabler</h2>
+      <ul class="bullets">
+        <li>Riskregister med tydliga ägare och riskacceptans.</li>
+        <li>Prioriterad åtgärdsplan (30/60/90 dagar).</li>
+        <li>Ledningsunderlag: vad som är kritiskt, varför och vad det kostar att åtgärda.</li>
+        <li>Upplägg för uppföljning: mätpunkter, rytm och ansvar.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="h2">Så startar vi</h2>
+      <p class="p">
+        Vi börjar med ett kort samtal och ett avgränsat första steg: en workshop eller en snabb nulägesbild.
+        Målet är att ni ska kunna ta beslut snabbt — och veta vad nästa steg är.
+      </p>
+      <div class="cta-row">
+        <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+        <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
+      </div>
+    </section>
+
+    <section class="related">
+      <h2 class="h2">Relaterat</h2>
+      <div class="grid2">
+        <a class="card link-card" href="/tjanster/cybersakerhet">
+          <h3 class="h3">Cybersäkerhet & informationssäkerhet</h3>
+          <p class="p">Kontroller, arkitektur och genomförande som minskar risk i praktiken.</p>
+        </a>
+        <a class="card link-card" href="/tjanster/sakerhetskultur-och-ovning">
+          <h3 class="h3">Säkerhetskultur & övning</h3>
+          <p class="p">Öva besluten och rollerna innan ni behöver dem.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .container { max-width: 1120px; margin: 0 auto; padding: 2.2rem 1.2rem 3rem; }
+
+  .crumbs { display: flex; gap: 0.5rem; align-items: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 1.2rem; }
+  .sep { opacity: 0.6; }
+
+  .hero { max-width: 85ch; margin-bottom: 1.4rem; }
+  .h1 { font-size: clamp(2rem, 2.2vw + 1rem, 2.6rem); margin: 0 0 0.6rem 0; }
+  .lead { margin: 0 0 1rem 0; color: var(--muted); line-height: 1.7; }
+
+  .cta-row { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.2rem; }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.7rem 1.3rem; border-radius: 999px;
+    border: 1px solid rgba(229, 231, 235, 0.55);
+    text-decoration: none; font-size: 0.9rem; font-weight: 600;
+    color: var(--text); background: rgba(2, 6, 23, 0.25);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  .btn-secondary:hover { transform: translateY(-1px); border-color: var(--accent); background: rgba(2, 6, 23, 0.4); }
+
+  .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+
+  .card {
+    background: rgba(2, 6, 23, 0.35);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 1rem;
+    padding: 1.25rem;
+  }
+
+  .h2 { margin: 0 0 0.6rem 0; font-size: 1.05rem; }
+  .h3 { margin: 0 0 0.4rem 0; font-size: 1.02rem; }
+
+  .p { margin: 0; color: var(--muted); line-height: 1.7; }
+  .bullets { margin: 0; padding-left: 1.1rem; color: var(--muted); line-height: 1.7; }
+  .bullets li { margin: 0.2rem 0; }
+
+  .related { margin-top: 1.4rem; }
+  .link-card { text-decoration: none; display: block; transition: transform 0.15s ease, border-color 0.15s ease; }
+  .link-card:hover { transform: translateY(-2px); border-color: rgba(231, 111, 81, 0.55); }
+
+  @media (max-width: 980px) {
+    .grid2 { grid-template-columns: 1fr; }
+  }
+</style>

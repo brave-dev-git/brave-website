@@ -1,0 +1,129 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+
+const title = "Säkerhetskultur & övning | Brave Security";
+const description =
+  "Övningar och upplägg som tränar beslut, roller och kommunikation vid incidenter. Bygg kultur och beredskap som fungerar när det gäller.";
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+  <main class="container">
+    <nav class="crumbs" aria-label="Brödsmulor">
+      <a class="link" href="/tjanster">Tjänster</a>
+      <span class="sep">/</span>
+      <span>Säkerhetskultur & övning</span>
+    </nav>
+
+    <header class="hero">
+      <h1 class="h1">Säkerhetskultur & övning</h1>
+      <p class="lead">
+        Förmåga sitter inte i en policy — den sitter i beteenden och beslut.
+        Vi hjälper er öva det som är svårt: ansvar, kommunikation och prioriteringar när läget är pressat.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+        <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
+      </div>
+    </header>
+
+    <section class="grid2">
+      <div class="card">
+        <h2 class="h2">När passar det?</h2>
+        <ul class="bullets">
+          <li>Ni vill testa incidentberedskap innan ni måste använda den.</li>
+          <li>Roller och ansvar är otydliga i skarpt läge.</li>
+          <li>Ni behöver skapa gemensamt språk mellan IT, säkerhet och ledning.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">Vad vi gör</h2>
+        <ul class="bullets">
+          <li>Tabletop-övningar för ledning och nyckelroller.</li>
+          <li>Scenarier baserade på er verklighet (inte generiska hotbilder).</li>
+          <li>After-action review: vad som fungerade, vad som brast, vad som behöver ändras.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="h2">Typiska leverabler</h2>
+      <ul class="bullets">
+        <li>Övningsupplägg och scenarier (inkl. injects och beslutspunkter).</li>
+        <li>Rollkort och kommunikationsstöd.</li>
+        <li>Förbättringsplan: konkreta ändringar i process, teknik eller ansvar.</li>
+        <li>Rekommenderad övningsrytm och mognadsstege.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="h2">Så startar vi</h2>
+      <p class="p">
+        Vi designar en första övning (60–120 min) med ett tydligt mål: testa en kritisk del av er förmåga.
+        Efteråt får ni en förbättringslista som går att omsätta direkt.
+      </p>
+      <div class="cta-row">
+        <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+        <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
+      </div>
+    </section>
+
+    <section class="related">
+      <h2 class="h2">Relaterat</h2>
+      <div class="grid2">
+        <a class="card link-card" href="/tjanster/riskhantering">
+          <h3 class="h3">Riskhantering</h3>
+          <p class="p">Sätt prioritering och ägarskap så övningarna tränar rätt saker.</p>
+        </a>
+        <a class="card link-card" href="/tjanster/cybersakerhet">
+          <h3 class="h3">Cybersäkerhet & informationssäkerhet</h3>
+          <p class="p">Kontroller och teknik måste hänga ihop med människor och beslut.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .container { max-width: 1120px; margin: 0 auto; padding: 2.2rem 1.2rem 3rem; }
+  .crumbs { display: flex; gap: 0.5rem; align-items: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 1.2rem; }
+  .sep { opacity: 0.6; }
+  .hero { max-width: 85ch; margin-bottom: 1.4rem; }
+  .h1 { font-size: clamp(2rem, 2.2vw + 1rem, 2.6rem); margin: 0 0 0.6rem 0; }
+  .lead { margin: 0 0 1rem 0; color: var(--muted); line-height: 1.7; }
+
+  .cta-row { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.2rem; }
+  .btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.7rem 1.3rem; border-radius: 999px;
+    border: 1px solid rgba(229, 231, 235, 0.55);
+    text-decoration: none; font-size: 0.9rem; font-weight: 600;
+    color: var(--text); background: rgba(2, 6, 23, 0.25);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  .btn-secondary:hover { transform: translateY(-1px); border-color: var(--accent); background: rgba(2, 6, 23, 0.4); }
+
+  .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .card {
+    background: rgba(2, 6, 23, 0.35);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 1rem;
+    padding: 1.25rem;
+  }
+  .h2 { margin: 0 0 0.6rem 0; font-size: 1.05rem; }
+  .h3 { margin: 0 0 0.4rem 0; font-size: 1.02rem; }
+  .p { margin: 0; color: var(--muted); line-height: 1.7; }
+  .bullets { margin: 0; padding-left: 1.1rem; color: var(--muted); line-height: 1.7; }
+  .bullets li { margin: 0.2rem 0; }
+
+  .related { margin-top: 1.4rem; }
+  .link-card { text-decoration: none; display: block; transition: transform 0.15s ease, border-color 0.15s ease; }
+  .link-card:hover { transform: translateY(-2px); border-color: rgba(231, 111, 81, 0.55); }
+
+  @media (max-width: 980px) {
+    .grid2 { grid-template-columns: 1fr; }
+  }
+</style>
