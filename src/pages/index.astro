@@ -148,12 +148,12 @@ const latestPosts = (await getCollection("insikter"))
           </ul>
         </article>
       </div>
-      </div>
+      
       <div class="section-cta">
         <a class="btn-secondary" href="/utmaningar">Alla utmaningar</a>
         <a class="btn-primary" href="/#kontakt">Boka samtal</a>
       </div>
-
+      </div>
     </section>
 
     <!-- AI -->
@@ -552,70 +552,6 @@ const latestPosts = (await getCollection("insikter"))
     .contact { grid-template-columns: 1fr; }
   }
 
-  /* ========== Sections / rhythm ========== */
 
-:root {
-  /* Lila som accent (orange behåller du i hover/linjer där den redan används) */
-  --accent: #6d4dff;
-
-  /* Om du redan har dessa, behåll dina och ta bort dubletter */
-  --border: rgba(148, 163, 184, 0.18);
-  --panel: rgba(2, 6, 23, 0.42);
-  --panel-strong: rgba(2, 6, 23, 0.55);
-  --radius-lg: 18px;
-  --shadow-lg: 0 24px 60px rgba(2, 6, 23, 0.75);
-}
-
-/* För ankarlänkar när headern är fixed */
-section[id] {
-  scroll-margin-top: 92px;
-}
-
-/* Base section spacing */
-.section {
-  padding: clamp(32px, 5vw, 72px) 0;
-}
-
-/* Visuell separation mellan sektioner */
-.section + .section {
-  border-top: 1px solid var(--border);
-}
-
-/* En “yta” per sektion så man ser var det börjar/slutar */
-.section-surface {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: clamp(18px, 2.6vw, 30px);
-}
-
-/* Enhetlig container om du vill använda den (du har redan max-width i hero-card) */
-.container {
-  width: min(1120px, calc(100% - 2.4rem));
-  margin-inline: auto;
-}
-
-/* Section headers: lila accentlinje (subtil) */
-.section-head {
-  max-width: 70ch;
-  margin-bottom: 1.2rem;
-}
-
-.section-head::before {
-  content: "";
-  display: block;
-  width: 64px;
-  height: 2px;
-  border-radius: 999px;
-  background: var(--accent);
-  opacity: 0.85;
-  margin-bottom: 0.8rem;
-}
-
-/* Små justeringar för luftigare kort */
-.card {
-  will-change: transform;
-}
 
 </style>
