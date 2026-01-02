@@ -37,4 +37,49 @@ När det blir lätt att koppla:
 När jag testade olika upplägg (både kommersiella modeller och mer öppna alternativ) landade jag i tre insikter som känns värda att ha med sig även i företagssammanhang.
 
 ### 1) Det som är “gratis” idag kommer sannolikt inte vara det imorgon
-Många AI
+Många AI-tjänster är just nu billiga eller subventionerade.
+Men affärsmodeller stabiliseras, priser justeras och “en funktion” blir plötsligt en kritisk del av ett arbetssätt.
+
+Frågan är inte om priset går upp, utan:
+**vad händer när ni har byggt in en central process i något ni inte längre styr över?**
+
+Det här är klassisk leverantörsrisk, bara snabbare.
+
+### 2) Din data är din – om du håller fast vid den
+AI är kraftfullt, men bara så länge du har kontroll på:
+- vilka data som används,
+- vad som loggas,
+- vem som får tillgång,
+- och var informationen hamnar.
+
+Det gäller särskilt när AI kopplas på interna källor (dokument, tickets, kod, e-post). “Det blev så smidigt” är en dålig riskmotivering när du senare behöver förklara hur data exponerades.
+
+### 3) Bygg på dina egna villkor (när det betyder något)
+Det går att designa AI-användning på en skala:
+
+- **Prototyp:** snabbt, billigt, lärande.
+- **Intern användning:** tydligare kontroller, spårbarhet, åtkomst.
+- **Kund/produkt:** tydlig styrning, avtal, säker arkitektur.
+
+Det intressanta är att du kan välja mer kontroll när det är motiverat.
+
+Ett exempel är att använda öppnare modeller där du kan styra driftmiljö och datahantering.
+Mistral släppte t.ex. Mistral 7B under Apache 2.0-licens, vilket gjorde den lättare att experimentera med i kontrollerade miljöer. :contentReference[oaicite:7]{index=7}
+
+Poängen är inte att “open alltid är bäst”.
+Poängen är att du *kan* designa bort en del beroenden och skapa valfrihet.
+
+## Trygg innovation är en ledningsfråga, inte en AI-fråga
+
+Det jag tar med mig är egentligen enkelt:
+
+AI är en möjliggörare – men också ett ekosystem där ansvar, struktur och kontroll blir viktigare än någonsin.
+
+Om vi vill bygga värde av vår data måste vi också se till att värdet (och kontrollen) stannar hos oss.
+
+Det handlar inte om att säga nej.
+Det handlar om att våga säga ja, på rätt sätt.
+
+Och kanske är den viktigaste frågan den här:
+
+**Riskerar vi att bygga fast oss?**
