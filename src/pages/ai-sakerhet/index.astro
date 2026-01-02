@@ -1,0 +1,155 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const title = "AI & säkerhet | Brave Security";
+const description =
+  "Praktisk AI-säkerhet: styrning, riskhantering och skydd av data och beslut. Vi hjälper er införa AI utan att tappa kontroll.";
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+
+  <main class="container">
+    <nav class="crumbs" aria-label="Brödsmulor">
+      <a class="link" href="/#ai">← Till startsidan</a>
+    </nav>
+
+    <header class="hero">
+      <h1 class="h1">AI & säkerhet</h1>
+      <p class="lead">
+        AI införs ofta snabbare än styrning och kontroll. Vi hjälper er att få effekt snabbt — utan att tappa kontroll på data,
+        integritet, beslut och ansvar.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn-primary" href="/kontakt">Boka ett förutsättningslöst möte</a>
+        <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
+      </div>
+    </header>
+
+    <section class="grid2" aria-label="Vanliga riskområden">
+      <article class="card">
+        <h2 class="h2">Vanliga risker vi ser</h2>
+        <ul class="bullets">
+          <li>Otydligt ägarskap: vem ansvarar för data, modell och beslut?</li>
+          <li>Dataexponering via prompts, loggar, plugins och integrationer.</li>
+          <li>Otillräcklig åtkomststyrning och brist på spårbarhet.</li>
+          <li>Leverantörsrisk: avtal, underleverantörer, lagring, utbildningsdata.</li>
+          <li>Modellbeteende: hallucinationer, bias, prompt injection och data poisoning.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="h2">Målet</h2>
+        <p class="p">
+          Att ni kan använda AI på ett sätt som håller för ledning, IT och regelefterlevnad — med tydliga kontroller,
+          mätbar riskreduktion och beslut som går att försvara.
+        </p>
+        <div class="mini">
+          <div class="pill">Styrning</div>
+          <div class="pill">Kontroller</div>
+          <div class="pill">Leverantörskrav</div>
+          <div class="pill">Incidentberedskap</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card section">
+      <h2 class="h2">Så hjälper vi</h2>
+      <div class="grid2">
+        <div>
+          <h3 class="h3">Risk- och nulägesbild</h3>
+          <ul class="bullets">
+            <li>Inventering: use cases, dataflöden, integrationer och roller.</li>
+            <li>Riskbedömning och prioritering: vad ska göras nu vs senare.</li>
+            <li>Rekommendationer som går att driva i verkligheten.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="h3">Styrning och skydd (guardrails)</h3>
+          <ul class="bullets">
+            <li>Policy och minimikrav: data, användning, loggning, retention.</li>
+            <li>Åtkomst, segmentering och spårbarhet.</li>
+            <li>Leverantörskrav/avtalskrav och tredjepartsrisk.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-top: 1rem;">
+        <div>
+          <h3 class="h3">Säkra arbetssätt</h3>
+          <ul class="bullets">
+            <li>Utvecklings- och förändringsflöden (inkl. prompthantering).</li>
+            <li>Testning och kvalitet: vad litar vi på och när?</li>
+            <li>Rutiner för avvikelser och förbättring över tid.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="h3">Beredskap och övning</h3>
+          <ul class="bullets">
+            <li>Scenarion: dataexponering, felaktiga beslut, leverantörshändelser.</li>
+            <li>Roller, kommunikation och beslutsvägar.</li>
+            <li>Övningar som tränar ledning och IT tillsammans.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2 class="h2">Snabbstart (2–4 veckor)</h2>
+      <p class="p">
+        En pragmatisk start som ger kontroll utan att stoppa initiativen.
+      </p>
+      <div class="grid3">
+        <div class="mini-card">
+          <div class="k">1. Kartläggning</div>
+          <div class="p">Use cases, data, integrationer, roller.</div>
+        </div>
+        <div class="mini-card">
+          <div class="k">2. Risk & prioritering</div>
+          <div class="p">Topprisker + konkreta åtgärder.</div>
+        </div>
+        <div class="mini-card">
+          <div class="k">3. Guardrails</div>
+          <div class="p">Minimikrav, kontroller och beslutspaket.</div>
+        </div>
+      </div>
+
+      <div class="cta-row" style="margin-top: 1rem;">
+        <a class="btn-primary" href="/kontakt">Boka samtal</a>
+        <a class="btn-secondary" href="/tjanster">Se tjänster</a>
+      </div>
+    </section>
+
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+  </main>
+</Layout>
+
+<style>
+  .hero { max-width: 95ch; margin-bottom: 1.4rem; }
+  .h1 { font-size: clamp(2rem, 2.2vw + 1rem, 2.7rem); margin: 0 0 0.6rem 0; }
+  .h2 { margin: 0 0 0.6rem 0; font-size: 1.05rem; }
+  .h3 { margin: 0.2rem 0 0.5rem 0; font-size: 1rem; }
+  .p { margin: 0; color: var(--muted); line-height: 1.7; }
+
+  .section { margin-top: 1rem; }
+
+  .mini { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+  .pill {
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background: rgba(2, 6, 23, 0.25);
+    font-size: 0.85rem;
+    color: rgba(229, 231, 235, 0.85);
+  }
+
+  .mini-card {
+    border-radius: 0.9rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: rgba(2, 6, 23, 0.22);
+    padding: 1rem;
+  }
+  .k { color: rgba(229, 231, 235, 0.9); font-weight: 700; margin-bottom: 0.35rem; }
+</style>

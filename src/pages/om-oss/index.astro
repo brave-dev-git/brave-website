@@ -1,0 +1,108 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const title = "Om oss | Brave Security";
+const description =
+  "Brave Security hjälper ledning och IT fatta beslut i cybersäkerhet, risk och AI – med struktur, prioritering och praktiskt genomförande.";
+
+const linkedinCompany = "https://www.linkedin.com/company/bravesecurity/";
+const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+
+  <main class="container">
+    <nav class="crumbs" aria-label="Brödsmulor">
+      <a class="link" href="/">← Till startsidan</a>
+    </nav>
+
+    <header class="hero">
+      <h1 class="h1">Om Brave Security</h1>
+      <p class="lead">
+        Brave Security är ett svenskt konsultbolag inom cybersäkerhet, riskhantering och säkra AI-lösningar.
+        Vi hjälper ledning och IT att förstå läget, prioritera rätt och genomföra åtgärder som faktiskt minskar risk.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn-primary" href="/kontakt">Boka ett förutsättningslöst möte</a>
+        <a class="btn-secondary" href="/tjanster">Se tjänster</a>
+      </div>
+    </header>
+
+    <section class="grid2" aria-label="Hur vi jobbar">
+      <article class="card">
+        <h2 class="h2">Så jobbar vi</h2>
+        <ul class="bullets">
+          <li>Rakt och strukturerat: tydlig bild, tydliga val.</li>
+          <li>Beslutsunderlag som ledning och IT kan använda direkt.</li>
+          <li>Praktiska åtgärder som går att driva i vardagen.</li>
+          <li>Transparens: vad ger effekt nu – och vad kan vänta?</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="h2">När vi ofta kommer in</h2>
+        <ul class="bullets">
+          <li>Otydlig lägesbild och svårt att prioritera.</li>
+          <li>Stora initiativ men liten riskreduktion.</li>
+          <li>Risk- och säkerhetsarbete som blir för tungt.</li>
+          <li>AI införs snabbare än styrning och kontroll.</li>
+        </ul>
+        <div class="cta-row" style="margin-top: 0.9rem;">
+          <a class="btn-secondary" href="/utmaningar">Se utmaningar</a>
+          <a class="btn-secondary" href="/ai-sakerhet">AI & säkerhet</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="card section">
+      <h2 class="h2">Vad du kan förvänta dig</h2>
+      <div class="grid3">
+        <div class="mini-card">
+          <div class="k">Klarhet</div>
+          <div class="p">En gemensam bild av risker, beroenden och vad som är viktigast.</div>
+        </div>
+        <div class="mini-card">
+          <div class="k">Prioritering</div>
+          <div class="p">En plan som går att genomföra – med ägarskap och nästa steg.</div>
+        </div>
+        <div class="mini-card">
+          <div class="k">Genomförande</div>
+          <div class="p">Stöd i att få saker gjorda, inte bara skriva dokument.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2 class="h2">LinkedIn</h2>
+      <p class="p">
+        Vi delar löpande korta perspektiv och konkreta lärdomar.
+      </p>
+      <div class="cta-row" style="margin-top: 0.9rem;">
+        <a class="btn-secondary" href={linkedinCompany} target="_blank" rel="noopener noreferrer">Brave Security</a>
+        <a class="btn-secondary" href={linkedinPerson} target="_blank" rel="noopener noreferrer">Jonas Stewen</a>
+      </div>
+    </section>
+
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+  </main>
+</Layout>
+
+<style>
+  .hero { max-width: 95ch; margin-bottom: 1.4rem; }
+  .h1 { font-size: clamp(2rem, 2.2vw + 1rem, 2.7rem); margin: 0 0 0.6rem 0; }
+  .h2 { margin: 0 0 0.6rem 0; font-size: 1.05rem; }
+  .p { margin: 0; color: var(--muted); line-height: 1.7; }
+
+  .section { margin-top: 1rem; }
+
+  .mini-card {
+    border-radius: 0.9rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: rgba(2, 6, 23, 0.22);
+    padding: 1rem;
+  }
+  .k { color: rgba(229, 231, 235, 0.9); font-weight: 700; margin-bottom: 0.35rem; }
+</style>

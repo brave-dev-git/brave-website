@@ -173,4 +173,13 @@ a {
   .grid2, .grid3 { grid-template-columns: 1fr; }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* så att rubriken inte hamnar under headern när man hoppar till en sektion */
+section[id] {
+  scroll-margin-top: 96px;
+}
+
 
