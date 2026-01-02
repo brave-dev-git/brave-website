@@ -13,13 +13,15 @@ const description =
   <main class="page">
     <div class="card">
       <div class="logo-wrap">
-        <img
-          src="/logo-brave-security-square-transparent.png"
-          alt="Brave Security – logotyp"
-          width="220"
-          height="220"
-          loading="lazy"
-        />
+        <div class="logo-badge">
+          <img
+            src="/logo-brave-security-square-transparent.png"
+            alt="Brave Security – logotyp"
+            width="220"
+            height="220"
+            loading="lazy"
+           />
+        </div>
       </div>
 
       <h1 class="title">Snart lanseras Brave Security – en ny säkerhetspartner.</h1>
@@ -177,7 +179,13 @@ const description =
   justify-content: center;
   margin-top: 0.35rem;
   }
-  
+
+  .logo-badge {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 1rem;
+  padding: 1.1rem;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.35);
+  }
   .footer {
     margin-top: 0.75rem;
     font-size: 0.7rem;
