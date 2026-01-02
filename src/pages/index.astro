@@ -218,13 +218,23 @@ const description =
     padding: 2.2rem 1.2rem 1.4rem;
   }
 
+  .hero-card::before {
+    content: "";
+    display: block;
+    height: 3px;
+    border-radius: 999px;
+    background: rgba(231, 111, 81, 0.85); /* accent */
+    margin-bottom: 1.2rem;
+}
+
   .hero-card {
     max-width: 1120px;
     margin: 0 auto;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 24px 60px rgba(2, 6, 23, 0.75);
     box-shadow: var(--shadow-lg);
-    background: linear-gradient(180deg, rgba(76, 29, 149, 1) 0%, rgba(67, 56, 202, 1) 35%, rgba(10, 20, 47, 1) 100%);
+    background: rgba(2, 6, 23, 0.55);
+    backdrop-filter: blur(10px);
     padding: 2.2rem;
   }
 
@@ -300,8 +310,8 @@ const description =
   }
 
   .side-card {
-    background: rgba(2, 6, 23, 0.30);
-    border: 1px solid rgba(148, 163, 184, 0.30);
+    background: rgba(2, 6, 23, 0.40);
+    border: 1px solid rgba(148, 163, 184, 0.25);
     border-radius: 1rem;
     padding: 1.1rem;
   }
