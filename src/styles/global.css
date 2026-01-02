@@ -1,5 +1,7 @@
 :root {
-  /* Fonts */
+    /* Justera vid behov så den matchar din headerhöjd */
+  --header-h: clamp(56px, 6vw, 72px);
+    /* Fonts */
   --font-body: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-heading: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
@@ -30,6 +32,7 @@ html, body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 16px);
 }
 
 body {
@@ -223,7 +226,7 @@ html {
 
 /* så att rubriken inte hamnar under headern när man hoppar till en sektion */
 section[id] {
-  scroll-margin-top: 96px;
+  scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
 
