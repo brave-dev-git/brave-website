@@ -1,200 +1,424 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const year = new Date().getFullYear();
+import Header from "../components/Header.astro";
+import { site } from "../config/site";
 
 const title =
   "Brave Security – cybersäkerhet, riskhantering och säkra AI-lösningar";
 const description =
-  "Brave Security är ett svenskt konsultbolag inom cybersäkerhet, riskhantering och säkra AI-lösningar. Vi hjälper verksamheter att förstå, prioritera och hantera sina risker.";
+  "Brave Security hjälper ledning och IT att förstå, prioritera och hantera risker – från cybersäkerhet och informationssäkerhet till säkerhetskultur och säkra AI-lösningar.";
 ---
 
 <Layout title={title} description={description} lang="sv">
-  <main class="page">
-    <div class="card">
-      <div class="logo-wrap">
-        <div class="logo-badge">
-          <img
-            src="/logo-brave-security-square-transparent.png"
-            alt="Brave Security – logotyp"
-            width="220"
-            height="220"
-            loading="lazy"
-           />
+  <div id="top"></div>
+  <Header variant="overlay" />
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div>
+            <div class="logo-wrap">
+              <div class="logo-badge">
+                <img
+                  src="/logo-brave-security-square-transparent.png"
+                  alt="Brave Security – logotyp"
+                  width="170"
+                  height="170"
+                  loading="eager"
+                />
+              </div>
+            </div>
+
+            <h1 class="h1">
+              Cybersäkerhet och risk som går att fatta beslut på.
+            </h1>
+
+            <p class="lead">
+              Brave Security är ett svenskt konsultbolag inom cybersäkerhet, riskhantering och
+              säkra AI-lösningar. Vi hjälper verksamheter att förstå läget, prioritera rätt och
+              genomföra åtgärder som faktiskt minskar risk.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+              <a class="btn-secondary" href="/#tjanster">Se tjänster</a>
+            </div>
+
+            <p class="micro">
+              Snabbt första steg: maila eller ring – du når oss direkt.
+            </p>
+          </div>
+
+          <div class="hero-side">
+            <div class="side-card">
+              <h2 class="h2">Vanligt läge</h2>
+              <ul class="bullets">
+                <li>Otydlig lägesbild och svårt att prioritera</li>
+                <li>Stora initiativ, men liten riskreduktion</li>
+                <li>AI införs snabbare än styrning och kontroll</li>
+              </ul>
+              <a class="link" href="/utmaningar">Se fler utmaningar →</a>
+            </div>
+
+            <div class="side-card">
+              <h2 class="h2">Så jobbar vi</h2>
+              <ul class="bullets">
+                <li>Rakt, strukturerat och utan fluff</li>
+                <li>Beslutsunderlag för ledning och IT</li>
+                <li>Praktiska åtgärder som går att driva</li>
+              </ul>
+              <a class="link" href="/kontakt">Kontakta oss →</a>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <h1 class="title">Snart lanseras Brave Security – en ny säkerhetspartner.</h1>
-
-      <p class="lead">
-        Brave Security är ett svenskt konsultbolag inom cybersäkerhet, riskhantering
-        och säkra AI-lösningar. Vi hjälper verksamheter att förstå, prioritera och
-        hantera sina risker.
-      </p>
-
-      <p class="text">
-        Under tiden är du välkommen att höra av dig om du vill resonera kring säkerhet, risk
-        eller kommande behov.
-      </p>
-
-      <div class="actions">
-         <a
-            class="btn-primary"
-            href="mailto:kontakt@bravesecurity.se?subject=Kontakt%20-%20Brave%20Security"
-          >
-            Maila oss
-          </a>
-
-        <span class="tagline">No Risk No Reward.</span>
-
-         <nav class="mini-nav" aria-label="Snabblänkar">
-          <a class="link" href="/utmaningar">Era utmaningar</a>
-          <a class="link" href="/kontakt">Kontakt</a>
-          <a
-            class="link"
-            href="https://www.linkedin.com/company/bravesecurity/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Följ oss på LinkedIn
-          </a>
-         </nav>
-
-        <div class="footer">© {year} Brave Security AB</div>
+    <!-- TJÄNSTER -->
+    <section id="tjanster" class="section">
+      <div class="section-head">
+        <h2 class="h2xl">Tjänster</h2>
+        <p class="muted">
+          Tre områden där vi oftast skapar effekt snabbt – och där AI-frågan ofta hänger ihop med helheten.
+        </p>
       </div>
 
+      <div class="cards">
+        <article class="card">
+          <h3 class="h3">Riskhantering</h3>
+          <p class="p">
+            Struktur för att identifiera, värdera och prioritera risker – med tydliga åtgärder och ansvar.
+          </p>
+          <a class="link" href="/#kontakt">Prata risk →</a>
+        </article>
 
-      
-    </div>
+        <article class="card">
+          <h3 class="h3">Cybersäkerhet & informationssäkerhet</h3>
+          <p class="p">
+            Från nuläge och gap till säkerhetsarkitektur, kontroll och genomförande – anpassat till din verklighet.
+          </p>
+          <a class="link" href="/#kontakt">Stäm av läget →</a>
+        </article>
+
+        <article class="card">
+          <h3 class="h3">Säkerhetskultur & övning</h3>
+          <p class="p">
+            Beteenden, förmåga och beredskap: övningar som tränar beslut, roller och kommunikation när det gäller.
+          </p>
+          <a class="link" href="/#kontakt">Planera övning →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- UTMANINGAR -->
+    <section id="utmaningar" class="section">
+      <div class="section-head">
+        <h2 class="h2xl">Era utmaningar</h2>
+        <p class="muted">
+          Säkerhet börjar sällan med en produkt – den börjar med en fråga. Här är några vi ofta får.
+        </p>
+      </div>
+
+      <div class="cards two">
+        <article class="card">
+          <h3 class="h3">Upptäckt & lägesbild</h3>
+          <ul class="bullets">
+            <li>Kommer vi märka om någon tar sig in?</li>
+            <li>Har vi koll på våra mest kritiska tillgångar?</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="h3">Prioritering</h3>
+          <ul class="bullets">
+            <li>Vilka åtgärder ger faktisk riskreduktion?</li>
+            <li>Vad kan vänta utan att vi tar dum risk?</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="section-cta">
+        <a class="btn-secondary" href="/utmaningar">Alla utmaningar</a>
+        <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+      </div>
+    </section>
+
+    <!-- AI -->
+    <section id="ai" class="section">
+      <div class="section-head">
+        <h2 class="h2xl">AI & säkerhet</h2>
+        <p class="muted">
+          AI förändrar riskbilden. Vi hjälper dig få kontroll på data, beslut och ansvar – utan att bromsa affären.
+        </p>
+      </div>
+
+      <div class="cards two">
+        <article class="card">
+          <h3 class="h3">Säkra AI-lösningar</h3>
+          <p class="p">
+            Praktiska principer för hur AI kan användas utan att tappa styrning över data, access och beslut.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="h3">Styrning & risk</h3>
+          <p class="p">
+            Tydlighet kring roller, leverantörer, riskacceptans och kontroller – så ni vet vad ni faktiskt står för.
+          </p>
+        </article>
+      </div>
+
+      <div class="section-cta">
+        <a class="btn-primary" href="/#kontakt">Diskutera AI-risk</a>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="section">
+      <div class="section-head">
+        <h2 class="h2xl">Kontakt</h2>
+        <p class="muted">Välj det som passar. Du når oss direkt.</p>
+      </div>
+
+      <div class="contact">
+        <a class="contact-card" href={`mailto:${site.email}?subject=Kontakt%20-%20Brave%20Security`}>
+          <div class="k">E-post</div>
+          <div class="v">{site.email}</div>
+          <div class="hint">Maila oss →</div>
+        </a>
+
+        <a class="contact-card" href={`tel:${site.phoneTel}`}>
+          <div class="k">Telefon</div>
+          <div class="v">{site.phoneDisplay}</div>
+          <div class="hint">Ring →</div>
+        </a>
+
+        <a class="contact-card" href={site.linkedinCompany} target="_blank" rel="noopener noreferrer">
+          <div class="k">LinkedIn</div>
+          <div class="v">Brave Security</div>
+          <div class="hint">Följ oss →</div>
+        </a>
+      </div>
+
+      <div class="foot">
+        © {new Date().getFullYear()} {site.legalName}
+      </div>
+    </section>
   </main>
 </Layout>
 
 <style>
-
-  .page {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+  .wrap {
+    padding-top: 74px; /* space for fixed header */
   }
 
-  .card {
-    max-width: 520px;
-    width: 100%;
-    text-align: center;
-    padding: 2.75rem 2.25rem;
-    border-radius: 1.5rem;
-    background: linear-gradient(180deg, #4c1d95 0%, #4338ca 35%, #0a142f 100%);
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+  .hero {
+    padding: 2.2rem 1.2rem 1.4rem;
+  }
+
+  .hero-card {
+    max-width: 1120px;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(180deg, rgba(76, 29, 149, 1) 0%, rgba(67, 56, 202, 1) 35%, rgba(10, 20, 47, 1) 100%);
+    padding: 2.2rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 1.4rem;
+    align-items: start;
   }
 
   .logo-wrap {
-    margin-bottom: 1.9rem;
     display: flex;
-    justify-content: center;
-  }
-
-  .title {
-    font-size: clamp(1.8rem, 2.2vw + 1rem, 2.4rem);
-    font-weight: 600;
+    justify-content: flex-start;
     margin-bottom: 1rem;
   }
 
+  .logo-badge {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 12px 30px rgba(2, 6, 23, 0.35);
+  }
+
+  .h1 {
+    font-size: clamp(2rem, 2.8vw + 1rem, 3rem);
+    line-height: 1.12;
+    margin: 0 0 0.9rem 0;
+  }
+
   .lead {
-    font-size: 0.98rem;
+    margin: 0 0 1.1rem 0;
+    color: var(--text);
     line-height: 1.7;
-    color: #e5e7eb;
-    margin-bottom: 0.75rem;
+    max-width: 70ch;
   }
 
-  .text {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #cbd5f5;
-    margin-bottom: 1.9rem;
-  }
-
-  .actions {
+  .hero-actions {
     display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-    align-items: center;
-    margin-bottom: 1.7rem;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.8rem;
   }
 
-  .btn-primary {
+  .btn-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.7rem 2.1rem;
+    padding: 0.7rem 1.3rem;
     border-radius: 999px;
-    border: 1px solid #e5e7eb;
-    font-size: 0.9rem;
-    font-weight: 500;
+    border: 1px solid rgba(229, 231, 235, 0.55);
     text-decoration: none;
-    color: #e5e7eb;
-    background: transparent;
-    transition: background 0.15s ease, transform 0.15s ease,
-      box-shadow 0.15s ease, border-color 0.15s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    background: rgba(2, 6, 23, 0.25);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
   }
-
-  .btn-primary:hover {
-    background: rgba(2, 6, 23, 0.95);
+  .btn-secondary:hover {
     transform: translateY(-1px);
-    border-color: #e76f51;
-    box-shadow: 0 0 0 1px #4c1d95, 0 16px 40px rgba(15, 23, 42, 0.9);
+    border-color: var(--accent);
+    background: rgba(2, 6, 23, 0.4);
   }
 
-  .btn-primary:focus-visible,
-  .link:focus-visible {
-    outline: 2px solid #e76f51;
-    outline-offset: 3px;
+  .micro {
+    margin: 0;
+    color: rgba(229, 231, 235, 0.85);
+    font-size: 0.9rem;
   }
 
-  .tagline {
-    margin-top: 0.15rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #e76f51;
+  .hero-side {
+    display: grid;
+    gap: 1rem;
   }
 
-  .link {
-    font-size: 0.82rem;
-    color: #cbd5f5;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+  .side-card {
+    background: rgba(2, 6, 23, 0.30);
+    border: 1px solid rgba(148, 163, 184, 0.30);
+    border-radius: 1rem;
+    padding: 1.1rem;
   }
 
-  .link:hover {
-    color: #e76f51;
+  .h2, .h3 {
+    margin: 0 0 0.6rem 0;
   }
-  
-  .mini-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem 1rem;
-  justify-content: center;
-  margin-top: 0.35rem;
+  .h2 { font-size: 1.05rem; }
+  .h3 { font-size: 1.05rem; }
+
+  .bullets {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: rgba(229, 231, 235, 0.9);
+    line-height: 1.6;
+    font-size: 0.95rem;
   }
 
-  .logo-badge {
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 1rem;
-  padding: 1.1rem;
-  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.35);
+  .section {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2.2rem 1.2rem;
   }
-  .footer {
-    margin-top: 0.75rem;
-    font-size: 0.7rem;
+
+  .section-head {
+    margin-bottom: 1.2rem;
+    max-width: 70ch;
+  }
+
+  .h2xl {
+    font-size: 1.7rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .muted {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .cards.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    background: rgba(2, 6, 23, 0.35);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 1rem;
+    padding: 1.25rem;
+  }
+
+  .p {
+    margin: 0 0 0.8rem 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .section-cta {
+    margin-top: 1.2rem;
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .contact {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .contact-card {
+    display: block;
+    text-decoration: none;
+    background: rgba(2, 6, 23, 0.35);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 1rem;
+    padding: 1.25rem;
+  }
+  .contact-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .k {
+    color: rgba(229, 231, 235, 0.85);
+    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+  }
+  .v {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+  }
+  .hint {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .foot {
+    margin-top: 1.8rem;
     color: #94a3b8;
+    font-size: 0.8rem;
   }
 
-  @media (max-width: 480px) {
-    .card {
-      padding: 2.2rem 1.7rem;
-    }
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-card { padding: 1.6rem; }
+    .cards { grid-template-columns: 1fr; }
+    .cards.two { grid-template-columns: 1fr; }
+    .contact { grid-template-columns: 1fr; }
   }
 </style>
