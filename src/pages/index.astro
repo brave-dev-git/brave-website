@@ -85,12 +85,13 @@ const latestPosts = (await getCollection("insikter"))
 
     <!-- TJÄNSTER -->
     <section id="tjanster" class="section">
-      <div class="section-head">
-        <h2 class="h2xl">Tjänster</h2>
-        <p class="muted">
-          Tre områden där vi oftast skapar effekt snabbt – och där AI-frågan ofta hänger ihop med helheten.
-        </p>
-      </div>
+      <div class="section-surface">
+        <div class="section-head">
+          <h2 class="h2xl">Tjänster</h2>
+          <p class="muted">
+            Tre områden där vi oftast skapar effekt snabbt – och där AI-frågan ofta hänger ihop med helheten.
+          </p>
+        </div>
 
       <div class="cards">
         <article class="card">
@@ -117,16 +118,18 @@ const latestPosts = (await getCollection("insikter"))
           <a class="link" href="/tjanster/sakerhetskultur-och-ovning">Planera övning →</a>
         </article>
       </div>
+      </div>
     </section>
 
     <!-- UTMANINGAR -->
     <section id="utmaningar" class="section">
-      <div class="section-head">
-        <h2 class="h2xl">Era utmaningar</h2>
-        <p class="muted">
-          Säkerhet börjar sällan med en produkt – den börjar med en fråga. Här är några vi ofta får.
-        </p>
-      </div>
+      <div class="section-surface">
+        <div class="section-head">
+          <h2 class="h2xl">Era utmaningar</h2>
+          <p class="muted">
+            Säkerhet börjar sällan med en produkt – den börjar med en fråga. Här är några vi ofta får.
+          </p>
+        </div>
 
       <div class="cards two">
         <article class="card">
@@ -145,16 +148,18 @@ const latestPosts = (await getCollection("insikter"))
           </ul>
         </article>
       </div>
-
+      </div>
       <div class="section-cta">
         <a class="btn-secondary" href="/utmaningar">Alla utmaningar</a>
         <a class="btn-primary" href="/#kontakt">Boka samtal</a>
       </div>
+
     </section>
 
     <!-- AI -->
     <section id="ai" class="section" aria-label="AI och säkerhet">
-    <header class="section-head">
+     <div class="section-surface">
+      <header class="section-head">
       <h2 class="section-title">AI &amp; säkerhet</h2>
       <p class="section-desc">
         AI införs ofta snabbare än styrning och kontroll. Vi hjälper er få effekt snabbt — utan att tappa kontroll på data,
@@ -187,11 +192,13 @@ const latestPosts = (await getCollection("insikter"))
         </div>
       </article>
     </div>
+    </div>
   </section>
 
   <!-- OM OSS -->
 
   <section id="om-oss" class="section" aria-label="Om Brave Security">
+    <div class="section-surface">
     <header class="section-head">
       <h2 class="section-title">Om oss</h2>
       <p class="section-desc">
@@ -227,10 +234,12 @@ const latestPosts = (await getCollection("insikter"))
         </div>
       </article>
     </div>
+      </div>
   </section>
 
     <!-- INSIKTER -->
     <section id="insikter" class="section" aria-label="Insikter">
+      <div class="section-surface">
       <header class="section-head">
         <h2 class="section-title">Insikter</h2>
         <p class="section-desc">
@@ -258,10 +267,12 @@ const latestPosts = (await getCollection("insikter"))
       <div class="cta-row" style="margin-top: 1rem;">
         <a class="btn-secondary" href="/insikter">Läs alla insikter</a>
       </div>
+      </div>
     </section>
 
     <!-- KONTAKT -->
     <section id="kontakt" class="section">
+       <div class="section-surface">
       <div class="section-head">
         <h2 class="h2xl">Kontakt</h2>
         <p class="muted">Välj det som passar. Du når oss direkt.</p>
@@ -289,6 +300,7 @@ const latestPosts = (await getCollection("insikter"))
 
       <div class="foot">
         © {new Date().getFullYear()} {site.legalName}
+      </div>
       </div>
     </section>
   </main>
@@ -539,4 +551,71 @@ const latestPosts = (await getCollection("insikter"))
     .cards.two { grid-template-columns: 1fr; }
     .contact { grid-template-columns: 1fr; }
   }
+
+  /* ========== Sections / rhythm ========== */
+
+:root {
+  /* Lila som accent (orange behåller du i hover/linjer där den redan används) */
+  --accent: #6d4dff;
+
+  /* Om du redan har dessa, behåll dina och ta bort dubletter */
+  --border: rgba(148, 163, 184, 0.18);
+  --panel: rgba(2, 6, 23, 0.42);
+  --panel-strong: rgba(2, 6, 23, 0.55);
+  --radius-lg: 18px;
+  --shadow-lg: 0 24px 60px rgba(2, 6, 23, 0.75);
+}
+
+/* För ankarlänkar när headern är fixed */
+section[id] {
+  scroll-margin-top: 92px;
+}
+
+/* Base section spacing */
+.section {
+  padding: clamp(32px, 5vw, 72px) 0;
+}
+
+/* Visuell separation mellan sektioner */
+.section + .section {
+  border-top: 1px solid var(--border);
+}
+
+/* En “yta” per sektion så man ser var det börjar/slutar */
+.section-surface {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(18px, 2.6vw, 30px);
+}
+
+/* Enhetlig container om du vill använda den (du har redan max-width i hero-card) */
+.container {
+  width: min(1120px, calc(100% - 2.4rem));
+  margin-inline: auto;
+}
+
+/* Section headers: lila accentlinje (subtil) */
+.section-head {
+  max-width: 70ch;
+  margin-bottom: 1.2rem;
+}
+
+.section-head::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+  opacity: 0.85;
+  margin-bottom: 0.8rem;
+}
+
+/* Små justeringar för luftigare kort */
+.card {
+  will-change: transform;
+}
+
 </style>
