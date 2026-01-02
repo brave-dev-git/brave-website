@@ -10,55 +10,81 @@ const description =
 <Layout title={title} description={description} lang="sv">
   <Header />
 
-  <main class="container">
-    <nav class="crumbs" aria-label="Brödsmulor">
-      <a class="link" href="/#ai">← Till startsidan</a>
-    </nav>
+<main class="container">
+  <nav class="crumbs" aria-label="Brödsmulor">
+    <a class="link" href="/#ai">← Till startsidan</a>
+  </nav>
 
-    <header class="hero">
-      <h1 class="h1">AI & säkerhet</h1>
-      <p class="lead">
-        AI införs ofta snabbare än styrning och kontroll. Vi hjälper er att få effekt snabbt — utan att tappa kontroll på data,
-        integritet, beslut och ansvar.
-      </p>
+  <!-- Intro / hero -->
+  <section class="section">
+    <div class="section-surface">
+      <header class="section-head">
+        <h1 class="h1">AI & säkerhet</h1>
+        <p class="lead">
+          AI införs ofta snabbare än styrning och kontroll. Vi hjälper er att få effekt snabbt — utan att tappa kontroll på data,
+          integritet, beslut och ansvar.
+        </p>
+      </header>
 
       <div class="cta-row">
         <a class="btn-primary" href="/kontakt">Boka ett förutsättningslöst möte</a>
         <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <section class="grid2" aria-label="Vanliga riskområden">
-      <article class="card">
-        <h2 class="h2">Vanliga risker vi ser</h2>
-        <ul class="bullets">
-          <li>Otydligt ägarskap: vem ansvarar för data, modell och beslut?</li>
-          <li>Dataexponering via prompts, loggar, plugins och integrationer.</li>
-          <li>Otillräcklig åtkomststyrning och brist på spårbarhet.</li>
-          <li>Leverantörsrisk: avtal, underleverantörer, lagring, utbildningsdata.</li>
-          <li>Modellbeteende: hallucinationer, bias, prompt injection och data poisoning.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2 class="h2">Målet</h2>
-        <p class="p">
-          Att ni kan använda AI på ett sätt som håller för ledning, IT och regelefterlevnad — med tydliga kontroller,
-          mätbar riskreduktion och beslut som går att försvara.
+  <!-- Risker & mål -->
+  <section class="section" aria-label="Vanliga riskområden">
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">Riskbild och mål</h2>
+        <p class="muted">
+          AI skapar värde snabbt – men kräver tydligare styrning när data, integrationer och beslut kopplas ihop.
         </p>
-        <div class="mini">
-          <div class="pill">Styrning</div>
-          <div class="pill">Kontroller</div>
-          <div class="pill">Leverantörskrav</div>
-          <div class="pill">Incidentberedskap</div>
-        </div>
-      </article>
-    </section>
+      </header>
 
-    <section class="card section">
-      <h2 class="h2">Så hjälper vi</h2>
       <div class="grid2">
-        <div>
+        <article class="card">
+          <h3 class="h2">Vanliga risker vi ser</h3>
+          <ul class="bullets">
+            <li>Otydligt ägarskap: vem ansvarar för data, modell och beslut?</li>
+            <li>Dataexponering via prompts, loggar, plugins och integrationer.</li>
+            <li>Otillräcklig åtkomststyrning och brist på spårbarhet.</li>
+            <li>Leverantörsrisk: avtal, underleverantörer, lagring, utbildningsdata.</li>
+            <li>Modellbeteende: hallucinationer, bias, prompt injection och data poisoning.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="h2">Målet</h3>
+          <p class="p">
+            Att ni kan använda AI på ett sätt som håller för ledning, IT och regelefterlevnad — med tydliga kontroller,
+            mätbar riskreduktion och beslut som går att försvara.
+          </p>
+
+          <div class="mini">
+            <div class="pill">Styrning</div>
+            <div class="pill">Kontroller</div>
+            <div class="pill">Leverantörskrav</div>
+            <div class="pill">Incidentberedskap</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Så hjälper vi -->
+  <section class="section">
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">Så hjälper vi</h2>
+        <p class="muted">
+          Ett pragmatiskt upplägg som skapar kontroll utan att stoppa initiativen.
+        </p>
+      </header>
+
+      <div class="grid2">
+        <div class="card">
           <h3 class="h3">Risk- och nulägesbild</h3>
           <ul class="bullets">
             <li>Inventering: use cases, dataflöden, integrationer och roller.</li>
@@ -66,7 +92,8 @@ const description =
             <li>Rekommendationer som går att driva i verkligheten.</li>
           </ul>
         </div>
-        <div>
+
+        <div class="card">
           <h3 class="h3">Styrning och skydd (guardrails)</h3>
           <ul class="bullets">
             <li>Policy och minimikrav: data, användning, loggning, retention.</li>
@@ -77,7 +104,7 @@ const description =
       </div>
 
       <div class="grid2" style="margin-top: 1rem;">
-        <div>
+        <div class="card">
           <h3 class="h3">Säkra arbetssätt</h3>
           <ul class="bullets">
             <li>Utvecklings- och förändringsflöden (inkl. prompthantering).</li>
@@ -85,7 +112,8 @@ const description =
             <li>Rutiner för avvikelser och förbättring över tid.</li>
           </ul>
         </div>
-        <div>
+
+        <div class="card">
           <h3 class="h3">Beredskap och övning</h3>
           <ul class="bullets">
             <li>Scenarion: dataexponering, felaktiga beslut, leverantörshändelser.</li>
@@ -94,13 +122,19 @@ const description =
           </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="card section">
-      <h2 class="h2">Snabbstart (2–4 veckor)</h2>
-      <p class="p">
-        En pragmatisk start som ger kontroll utan att stoppa initiativen.
-      </p>
+  <!-- Snabbstart -->
+  <section class="section">
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">Snabbstart (2–4 veckor)</h2>
+        <p class="p">
+          En pragmatisk start som ger kontroll utan att stoppa initiativen.
+        </p>
+      </header>
+
       <div class="grid3">
         <div class="mini-card">
           <div class="k">1. Kartläggning</div>
@@ -120,10 +154,12 @@ const description =
         <a class="btn-primary" href="/kontakt">Boka samtal</a>
         <a class="btn-secondary" href="/tjanster">Se tjänster</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
-  </main>
+  <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+</main>
+
 </Layout>
 
 <style>

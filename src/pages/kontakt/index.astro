@@ -16,48 +16,76 @@ const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
 <Layout title={title} description={description} lang="sv">
   <Header />
 
-  <main class="container">
-    <nav class="crumbs" aria-label="Brödsmulor">
-      <a class="link" href="/#kontakt">← Till startsidan</a>
-    </nav>
+<main class="container">
+  <!-- Brödsmula -->
+  <nav class="crumbs" aria-label="Brödsmulor">
+    <a class="link" href="/#kontakt">← Till startsidan</a>
+  </nav>
 
-    <header class="hero">
-      <h1 class="h1">Kontakt</h1>
-      <p class="lead">
-        Hör av dig så tar vi ett kort, förutsättningslöst samtal. Beskriv gärna din roll och vad du vill få klarhet i.
-      </p>
-    </header>
+  <!-- Intro / hero -->
+  <section class="section">
+    <div class="section-surface">
+      <header class="section-head">
+        <h1 class="h1">Kontakt</h1>
+        <p class="lead">
+          Hör av dig så tar vi ett kort, förutsättningslöst samtal. Beskriv gärna din roll och vad du vill få klarhet i.
+        </p>
+      </header>
 
-    <section class="grid3" aria-label="Kontaktvägar">
-      <a class="card link-card" href={`mailto:${email}?subject=Kontakt%20-%20Brave%20Security`}>
-        <div class="k">E-post</div>
-        <div class="v">{email}</div>
-        <div class="hint">Skicka mail →</div>
-      </a>
-
-      <a class="card link-card" href={`tel:${phoneTel}`}>
-        <div class="k">Telefon</div>
-        <div class="v">{phoneDisplay}</div>
-        <div class="hint">Ring →</div>
-        <div class="note">Vi har inget växelnummer ännu – du når oss direkt.</div>
-      </a>
-
-      <div class="card">
-        <div class="k">LinkedIn</div>
-        <div class="v">
-          <a class="link" href={linkedinCompany} target="_blank" rel="noopener noreferrer">Brave Security</a>
-          <span class="sep">•</span>
-          <a class="link" href={linkedinPerson} target="_blank" rel="noopener noreferrer">Jonas Stewen</a>
-        </div>
-        <div class="hint">Följ / connecta →</div>
+      <div class="cta-row">
+        <a class="btn-primary" href={`mailto:${email}?subject=Kontakt%20-%20Brave%20Security`}>Maila oss</a>
+        <a class="btn-secondary" href="/tjanster">Se tjänster</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="card next">
-      <h2 class="h2">Vill du att vi förbereder ett samtal?</h2>
-      <p class="p">
-        Skicka ett par rader om nuläge, mål och vad som skaver — så kan vi ta samtalet mer effektivt.
-      </p>
+  <!-- Kontaktvägar -->
+  <section class="section" aria-label="Kontaktvägar">
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">Kontaktvägar</h2>
+        <p class="muted">
+          Välj det som passar bäst. Du når oss direkt.
+        </p>
+      </header>
+
+      <div class="grid3">
+        <a class="card link-card" href={`mailto:${email}?subject=Kontakt%20-%20Brave%20Security`}>
+          <div class="k">E-post</div>
+          <div class="v">{email}</div>
+          <div class="hint">Skicka mail →</div>
+        </a>
+
+        <a class="card link-card" href={`tel:${phoneTel}`}>
+          <div class="k">Telefon</div>
+          <div class="v">{phoneDisplay}</div>
+          <div class="hint">Ring →</div>
+          <div class="note">Vi har inget växelnummer ännu – du når oss direkt.</div>
+        </a>
+
+        <div class="card">
+          <div class="k">LinkedIn</div>
+          <div class="v">
+            <a class="link" href={linkedinCompany} target="_blank" rel="noopener noreferrer">Brave Security</a>
+            <span class="sep">•</span>
+            <a class="link" href={linkedinPerson} target="_blank" rel="noopener noreferrer">Jonas Stewen</a>
+          </div>
+          <div class="hint">Följ / connecta →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Förbered samtal -->
+  <section class="section">
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">Vill du att vi förbereder ett samtal?</h2>
+        <p class="p">
+          Skicka ett par rader om nuläge, mål och vad som skaver — så kan vi ta samtalet mer effektivt.
+        </p>
+      </header>
+
       <div class="cta-row">
         <a
           class="btn-primary"
@@ -67,10 +95,12 @@ const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
         </a>
         <a class="btn-secondary" href="/tjanster">Se tjänster</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
-  </main>
+  <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+</main>
+
 </Layout>
 
 <style>

@@ -10,88 +10,113 @@ const description =
 <Layout title={title} description={description} lang="sv">
   <Header />
 
-  <main class="container">
-    <nav class="crumbs" aria-label="Brödsmulor">
-      <a class="link" href="/#utmaningar">← Till startsidan</a>
-    </nav>
+<main class="container">
+  <!-- Brödsmula -->
+  <nav class="crumbs" aria-label="Brödsmulor">
+    <a class="link" href="/#utmaningar">← Till startsidan</a>
+  </nav>
 
-    <header class="hero">
-      <h1 class="h1">Era utmaningar</h1>
-      <p class="lead">
-        Säkerhet börjar sällan med en produkt – den börjar med en obekväm fråga. Här är några av de vanligaste
-        frågorna vi möter. Känner du igen dig hjälper vi dig att översätta frågan till konkreta beslut och åtgärder.
-      </p>
+  <!-- Intro / hero -->
+  <section class="section">
+    <div class="section-surface">
+      <header class="section-head">
+        <h1 class="h1">Era utmaningar</h1>
+        <p class="lead">
+          Säkerhet börjar sällan med en produkt – den börjar med en obekväm fråga. Här är några av de vanligaste
+          frågorna vi möter. Känner du igen dig hjälper vi dig att översätta frågan till konkreta beslut och åtgärder.
+        </p>
+      </header>
 
       <div class="cta-row">
         <a class="btn-primary" href="/#kontakt">Boka ett förutsättningslöst möte</a>
         <a class="btn-secondary" href="/tjanster">Se tjänster</a>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <section class="grid2" aria-label="Utmaningar">
-      <article class="card">
-        <h2 class="h2">Upptäckt & lägesbild</h2>
-        <ul class="bullets">
-          <li>Kommer vi märka om någon tar sig in i våra system?</li>
-          <li>Har vi en realistisk bild av våra mest kritiska tillgångar och risker?</li>
-        </ul>
-      </article>
+  <!-- Kort / teman -->
+  <section class="section" aria-label="Utmaningar">
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">Vanliga frågor vi möter</h2>
+        <p class="muted">
+          Här är sex områden där vi ofta hjälper till att skapa lägesbild, prioritera rätt och få saker att hända.
+        </p>
+      </header>
 
-      <article class="card">
-        <h2 class="h2">Prioritering & säkerhetsarkitektur</h2>
-        <ul class="bullets">
-          <li>Har vi kritiska luckor i vår säkerhetsarkitektur?</li>
-          <li>Vilka åtgärder ger faktisk riskreduktion – och vad kan vänta?</li>
-        </ul>
-      </article>
+      <div class="grid2">
+        <article class="card">
+          <h3 class="h2">Upptäckt & lägesbild</h3>
+          <ul class="bullets">
+            <li>Kommer vi märka om någon tar sig in i våra system?</li>
+            <li>Har vi en realistisk bild av våra mest kritiska tillgångar och risker?</li>
+          </ul>
+        </article>
 
-      <article class="card">
-        <h2 class="h2">Styrning, mätning & mognad</h2>
-        <ul class="bullets">
-          <li>Hur mäter vi säkerhet och vet att vi blir bättre över tid?</li>
-          <li>Hur kan vi jämföra vår säkerhetsnivå med andra i vår bransch?</li>
-        </ul>
-      </article>
+        <article class="card">
+          <h3 class="h2">Prioritering & säkerhetsarkitektur</h3>
+          <ul class="bullets">
+            <li>Har vi kritiska luckor i vår säkerhetsarkitektur?</li>
+            <li>Vilka åtgärder ger faktisk riskreduktion – och vad kan vänta?</li>
+          </ul>
+        </article>
 
-      <article class="card">
-        <h2 class="h2">Riskarbete som håller i vardagen</h2>
-        <ul class="bullets">
-          <li>Vilka är de viktigaste riskerna för oss – och hur gör vi riskarbete strukturerat?</li>
-          <li>Hur hanterar vi tredjeparts- och leverantörsrisker utan att bli byråkratiska?</li>
-        </ul>
-      </article>
+        <article class="card">
+          <h3 class="h2">Styrning, mätning & mognad</h3>
+          <ul class="bullets">
+            <li>Hur mäter vi säkerhet och vet att vi blir bättre över tid?</li>
+            <li>Hur kan vi jämföra vår säkerhetsnivå med andra i vår bransch?</li>
+          </ul>
+        </article>
 
-      <article class="card">
-        <h2 class="h2">Incidentberedskap & lärande</h2>
-        <ul class="bullets">
-          <li>Hur provar vi att vi är redo för en incident och att vi lär oss av den?</li>
-          <li>Vem gör vad när det verkligen gäller?</li>
-        </ul>
-      </article>
+        <article class="card">
+          <h3 class="h2">Riskarbete som håller i vardagen</h3>
+          <ul class="bullets">
+            <li>Vilka är de viktigaste riskerna för oss – och hur gör vi riskarbete strukturerat?</li>
+            <li>Hur hanterar vi tredjeparts- och leverantörsrisker utan att bli byråkratiska?</li>
+          </ul>
+        </article>
 
-      <article class="card">
-        <h2 class="h2">AI & nya risker</h2>
-        <ul class="bullets">
-          <li>Hur använder vi AI utan att tappa kontroll på data, integritet och beslut?</li>
-          <li>Vilka risker ska ledning och IT äga – och vilka ska leverantören bära?</li>
-        </ul>
-      </article>
-    </section>
+        <article class="card">
+          <h3 class="h2">Incidentberedskap & lärande</h3>
+          <ul class="bullets">
+            <li>Hur provar vi att vi är redo för en incident och att vi lär oss av den?</li>
+            <li>Vem gör vad när det verkligen gäller?</li>
+          </ul>
+        </article>
 
-    <section class="card next">
-      <h2 class="h2">Nästa steg</h2>
-      <p class="p">
-        Hittar du inte exakt din fråga här? Låt oss ta den i ett samtal. Vi hjälper dig att ringa in vad som är viktigast,
-        vad som kan vänta – och vad som faktiskt minskar risk.
-      </p>
+        <article class="card">
+          <h3 class="h2">AI & nya risker</h3>
+          <ul class="bullets">
+            <li>Hur använder vi AI utan att tappa kontroll på data, integritet och beslut?</li>
+            <li>Vilka risker ska ledning och IT äga – och vilka ska leverantören bära?</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nästa steg -->
+  <section class="section">
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">Nästa steg</h2>
+        <p class="p">
+          Hittar du inte exakt din fråga här? Låt oss ta den i ett samtal. Vi hjälper dig att ringa in vad som är viktigast,
+          vad som kan vänta – och vad som faktiskt minskar risk.
+        </p>
+      </header>
+
       <div class="cta-row">
         <a class="btn-primary" href="/#kontakt">Boka ett förutsättningslöst möte</a>
         <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
-  </main>
+  <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+</main>
+
 </Layout>
 
 <style>

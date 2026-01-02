@@ -18,6 +18,7 @@
   --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.9);
 
   --accent: #e76f51;
+  --accent-purple: #6d4dff;
 }
 
 /* Reset-ish */
@@ -90,6 +91,49 @@ a {
   margin: 0 auto;
   padding: 2.2rem 1.2rem 3rem;
 }
+
+/* ========== Sections / rhythm (global) ========== */
+
+.section {
+  padding: clamp(28px, 4.5vw, 64px) 0;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+/* En “yta” per sektion så man ser var det börjar/slutar */
+.section-surface {
+  background: var(--card-bg);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(18px, 2.6vw, 30px);
+}
+
+/* Rubrikblock med lila accentlinje */
+.section-head {
+  max-width: 72ch;
+  margin-bottom: 1.2rem;
+}
+
+.section-head::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent-purple);
+  opacity: 0.85;
+  margin-bottom: 0.8rem;
+}
+
+/* Lite mer luft runt card-listor */
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
 
 .crumbs {
   margin-bottom: 1.2rem;

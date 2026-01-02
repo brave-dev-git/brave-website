@@ -9,45 +9,64 @@ const description =
 
 <Layout title={title} description={description} lang="sv">
   <Header />
-  <main class="container">
-    <div class="hero">
-      <h1 class="h1">Tjänster</h1>
-      <p class="lead">
-        Tre områden där vi oftast skapar effekt snabbt. Vi hjälper ledning och IT att förstå läget,
-        prioritera rätt och genomföra åtgärder som minskar risk.
-      </p>
+<main class="container">
+  <!-- Intro / Hero -->
+  <section class="section">
+    <div class="section-surface">
+      <header class="section-head">
+        <h1 class="h1">Tjänster</h1>
+        <p class="lead">
+          Tre områden där vi oftast skapar effekt snabbt. Vi hjälper ledning och IT att förstå läget,
+          prioritera rätt och genomföra åtgärder som minskar risk.
+        </p>
+      </header>
+
       <div class="cta-row">
         <a class="btn-primary" href="/#kontakt">Boka samtal</a>
         <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
       </div>
     </div>
+  </section>
 
-    <div class="grid3">
-      <article class="card">
-        <h2 class="h2">Riskhantering</h2>
-        <p class="p">
-          Struktur för att identifiera, värdera och prioritera risker – med tydliga beslut, ansvar och åtgärder.
+  <!-- Tjänstekort -->
+  <section class="section">
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">Tre områden</h2>
+        <p class="muted">
+          Vi tar oss från nuläge till prioriterade åtgärder – med fokus på tydliga beslut och faktisk riskreduktion.
         </p>
-        <a class="link" href="/tjanster/riskhantering">Läs mer →</a>
-      </article>
+      </header>
 
-      <article class="card">
-        <h2 class="h2">Cybersäkerhet & informationssäkerhet</h2>
-        <p class="p">
-          Från nuläge och gap till arkitektur, kontroller och genomförande – anpassat till din verklighet.
-        </p>
-        <a class="link" href="/tjanster/cybersakerhet">Läs mer →</a>
-      </article>
+      <div class="grid3">
+        <article class="card">
+          <h3 class="h2">Riskhantering</h3>
+          <p class="p">
+            Struktur för att identifiera, värdera och prioritera risker – med tydliga beslut, ansvar och åtgärder.
+          </p>
+          <a class="link" href="/tjanster/riskhantering">Läs mer →</a>
+        </article>
 
-      <article class="card">
-        <h2 class="h2">Säkerhetskultur & övning</h2>
-        <p class="p">
-          Övningar och upplägg som tränar beslut, roller och kommunikation när det verkligen gäller.
-        </p>
-        <a class="link" href="/tjanster/sakerhetskultur-och-ovning">Läs mer →</a>
-      </article>
+        <article class="card">
+          <h3 class="h2">Cybersäkerhet & informationssäkerhet</h3>
+          <p class="p">
+            Från nuläge och gap till arkitektur, kontroller och genomförande – anpassat till din verklighet.
+          </p>
+          <a class="link" href="/tjanster/cybersakerhet">Läs mer →</a>
+        </article>
+
+        <article class="card">
+          <h3 class="h2">Säkerhetskultur & övning</h3>
+          <p class="p">
+            Övningar och upplägg som tränar beslut, roller och kommunikation när det verkligen gäller.
+          </p>
+          <a class="link" href="/tjanster/sakerhetskultur-och-ovning">Läs mer →</a>
+        </article>
+      </div>
     </div>
-  </main>
+  </section>
+</main>
+
 </Layout>
 
 <style>
