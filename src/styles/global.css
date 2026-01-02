@@ -1,0 +1,81 @@
+:root {
+  /* Fonts */
+  --font-body: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Bas */
+  --bg: #020617;
+  --text: #e5e7eb;
+  --muted: #cbd5f5;
+
+  /* UI */
+  --border: rgba(148, 163, 184, 0.35);
+  --card-bg: rgba(2, 6, 23, 0.35);
+
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+
+  --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.9);
+
+  --accent: #e76f51;
+}
+
+/* Reset-ish */
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Typografi */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 600; /* Montserrat Semibold */
+  margin: 0;
+}
+
+/* Länkar/knappar gemensamt */
+a {
+  color: inherit;
+}
+
+.link {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.link:hover { color: var(--accent); }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+  background: transparent;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.btn-primary:hover {
+  background: rgba(2, 6, 23, 0.95);
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(76, 29, 149, 1), 0 16px 40px rgba(15, 23, 42, 0.9);
+}
+
+.btn-primary:focus-visible,
+.link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}

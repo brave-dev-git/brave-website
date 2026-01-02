@@ -14,7 +14,7 @@ const description =
     <div class="card">
       <div class="logo-wrap">
         <img
-          src="/logo-brave-security.png"
+          src="/logo-brave-security-square-transparent.png"
           alt="Brave Security – logotyp"
           width="220"
           height="220"
@@ -42,7 +42,7 @@ const description =
         >
           Maila oss
         </a>
-        <div class="mini-nav" aria-label="Snabblänkar"></div>
+        <nav class="mini-nav" aria-label="Snabblänkar"></div>
           <span class="tagline">No Risk No Reward.</span>
           <a class="link" href="/utmaningar">Era utmaningar</a>
           <a class="link" href="/kontakt">Kontakt</a>
@@ -54,23 +54,16 @@ const description =
           >
           Följ oss på LinkedIn
           </a>
-        </div>
-
+        </nav>
+        <div class="footer">© {year} Brave Security AB</div>
       </div>
 
-      <div class="footer">© {year} Brave Security AB</div>
+      
     </div>
   </main>
 </Layout>
 
 <style>
-  :global(body) {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-      "Segoe UI", sans-serif;
-    background: #020617;
-    color: #e5e7eb;
-  }
 
   .page {
     min-height: 100vh;
