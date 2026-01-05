@@ -1,15 +1,25 @@
 ---
-type NavItem = { label: string; href: string };
+type NavItem =
+  | { label: string; page: string }
+  | { label: string; section: string };
 
 const nav: NavItem[] = [
-  { label: "Tjänster", href: "/tjanster" },
-  { label: "Utmaningar", href: "/utmaningar" },
-  { label: "AI & säkerhet", href: "/ai-sakerhet" },
-  { label: "Insikter", href: "/insikter" },
-  { label: "Om oss", href: "/om-oss" },
+  { label: "Tjänster", page: "/tjanster" },
+  { label: "Utmaningar", section: "utmaningar" },
+  { label: "AI & säkerhet", section: "ai" },
+  { label: "Insikter", section: "insikter" },
+  { label: "Om oss", section: "om-oss" },
 ];
 
 const { variant = "overlay" } = Astro.props;
+
+const pathname = Astro.url?.pathname ?? "/";
+const isHome = pathname === "/" || pathname === "";
+
+const hrefFor = (item: NavItem) => {
+  if ("page" in item) return item.page;
+  return isHome ? `#${item.section}` : `/#${item.section}`;
+};
 ---
 
 <header class={`header ${variant === "overlay" ? "overlay" : ""}`}>
@@ -28,7 +38,7 @@ const { variant = "overlay" } = Astro.props;
 
   <nav class="nav" aria-label="Huvudnavigation">
     {nav.map((item) => (
-      <a class="nav-link" href={item.href}>{item.label}</a>
+      <a class="nav-link" href={hrefFor(item)}>{item.label}</a>
     ))}
     <a class="nav-cta" href="/kontakt">Boka samtal</a>
   </nav>
@@ -61,7 +71,6 @@ const { variant = "overlay" } = Astro.props;
     text-decoration: none;
   }
 
-  /* Större badge + lite mer “presence” */
   .brand-badge {
     width: 44px;
     height: 44px;
@@ -74,8 +83,8 @@ const { variant = "overlay" } = Astro.props;
     box-shadow: 0 10px 26px rgba(2, 6, 23, 0.25);
   }
 
-  .brand-badge img {
-    display: block;
+  .brand-badge img{
+    display:block;
     width: 100%;
     height: 100%;
     object-fit: cover;
