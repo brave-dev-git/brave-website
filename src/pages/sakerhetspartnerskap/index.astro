@@ -1,0 +1,130 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const title = "Säkerhetspartnerskap | Brave Security";
+const description =
+  "Löpande stöd för ledning och IT inom riskhantering, cybersäkerhet och säkerhetskultur – anpassat efter behov och mognad.";
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+
+  <main class="container">
+    <nav class="crumbs" aria-label="Brödsmulor">
+      <a class="link" href="/">Startsida</a>
+      <span class="sep">/</span>
+      <span>Säkerhetspartnerskap</span>
+    </nav>
+
+    <section class="section">
+      <div class="section-surface">
+        <header class="section-head">
+          <h1 class="h1">Säkerhetspartnerskap</h1>
+          <p class="lead">
+            Ett flexibelt upplägg för ledning och beslutsfattare som vill utveckla risk- och säkerhetsarbetet över tid – strategiskt och operativt.
+            Ni väljer delar utifrån behov och mognad.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/kontakt">Boka ett förutsättningslöst möte</a>
+          <a class="btn-secondary" href="/tjanster">Se tjänster</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Vad det är</h2>
+          <p class="p">
+            Säkerhetspartnerskapet är löpande stöd där Brave Security bidrar med senior expertis, struktur och framdrift.
+            Målet är att ni får tydliga beslut, prioriteringar och åtgärder som minskar risk – utan att bygga en tung modell.
+          </p>
+        </header>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Delar i partnerskapet">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Vad som kan ingå</h2>
+          <p class="muted">Delarna anpassas i samråd med kunden och kan kombineras.</p>
+        </header>
+
+        <div class="grid3">
+          <article class="card">
+            <h3 class="h2">Riskhantering</h3>
+            <ul class="bullets">
+              <li>Riskstrategi, riskramverk och riskrapportering</li>
+              <li>Riskanalys & riskbedömning (informations- och cybersäkerhet)</li>
+              <li>Hot-, sårbarhets- och scenariobedömningar</li>
+              <li>Leverantörs- & tredjepartsrisker</li>
+              <li>Kontinuitetsplanering & krisberedskap</li>
+              <li>Regulatorisk risk & compliance</li>
+            </ul>
+            <a class="link" href="/tjanster/riskhantering">Läs mer om riskhantering →</a>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Cybersäkerhet & informationssäkerhet</h3>
+            <ul class="bullets">
+              <li>Säkerhetsstrategi & säkerhetsarkitektur</li>
+              <li>Governance, regelverk & compliance</li>
+              <li>Incidentberedskap & incidenthantering</li>
+              <li>Tekniska säkerhetsgranskningar & penetrationstestning</li>
+              <li>Hotunderrättelser och hotscenarier</li>
+              <li>CISOaaS & säkerhetsledning som tjänst</li>
+            </ul>
+            <a class="link" href="/tjanster/cybersakerhet">Läs mer om cybersäkerhet →</a>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Säkerhetskultur & övning</h3>
+            <ul class="bullets">
+              <li>Styrelse- & ledningsutbildning</li>
+              <li>Utbildning för chefer, nyckelpersoner och medarbetare</li>
+              <li>Regelverksutbildningar (NIS2, ISO27001 m.fl.)</li>
+              <li>Incidentövningar & tabletop-scenarier</li>
+            </ul>
+            <a class="link" href="/tjanster/sakerhetskultur-och-ovning">Läs mer om kultur & övning →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Så fungerar samarbetet</h2>
+        </header>
+        <div class="grid2">
+          <article class="card">
+            <h3 class="h3">Start</h3>
+            <ul class="bullets">
+              <li>Kort nulägesbild och prioritering</li>
+              <li>Avgränsning: vad ger effekt nu vs senare</li>
+              <li>Tydliga nästa steg</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="h3">Rytm</h3>
+            <ul class="bullets">
+              <li>Mål, ansvar och uppföljning</li>
+              <li>Beslutsunderlag + stöd i genomförande</li>
+              <li>Kontinuerlig förbättring över tid</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="cta-row" style="margin-top: 1rem;">
+          <a class="btn-primary" href="/kontakt">Boka ett förutsättningslöst möte</a>
+          <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+  </main>
+</Layout>
