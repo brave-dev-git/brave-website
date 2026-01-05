@@ -230,3 +230,55 @@ section[id] {
 }
 
 
+/* ------------------------------
+   Legacy support: tjänstesidor
+   Gör att äldre markup får samma "surface/section"-känsla
+-------------------------------- */
+
+/* Kort: hover även på vanliga <article class="card"> */
+.card {
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(124, 58, 237, 0.55); /* lila accent på hover */
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* Sektioner som är skrivna som: <section class="card section"> ... */
+.card.section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accentlinjen högst upp (orange -> lila) */
+.card.section::before {
+  content: "";
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  top: 0.95rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #e76f51 0%,
+    rgba(124, 58, 237, 0.95) 55%,
+    rgba(124, 58, 237, 0) 100%
+  );
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+/* Lite extra topp-padding så linjen inte “krockar” med rubrik */
+.card.section > :first-child {
+  margin-top: 0.25rem;
+}
+
+/* Om du har klickbara kort (a.card / .link-card) kan de få lite tydligare hover */
+a.card:hover,
+.card.link-card:hover {
+  border-color: rgba(231, 111, 81, 0.65); /* behåll din orangea känsla här */
+}
