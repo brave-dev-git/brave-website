@@ -334,3 +334,36 @@ a.card:hover,
     );
   pointer-events: none;
 }
+
+/* Hero-bild i section-surface (kant-i-kant) */
+.hero-surface{
+  padding: 0;
+  overflow: hidden; /* gör att rounding “klipper” bilden korrekt */
+}
+
+.hero-surface .hero-media{
+  /* ärver section-surface rounding */
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+
+  /* en diskret avdelare mellan bild och text */
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(2, 6, 23, 0.35);
+}
+
+.hero-surface .hero-media img{
+  display: block;
+  width: 100%;
+  height: clamp(200px, 26vw, 320px); /* gör den mindre hög */
+  object-fit: cover;
+  object-position: 50% 45%;
+  opacity: 0.95;
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.hero-surface .hero-body{
+  padding: var(--pad, 1.25rem); /* använder ditt befintliga pad om du har det */
+}

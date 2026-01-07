@@ -17,8 +17,7 @@ const description =
     </nav>
 
     <section class="section">
-      <div class="section-surface">
-        <!-- HERO-BILD: klistra in här -->
+      <div class="section-surface hero-surface">
         <div class="hero-media" aria-hidden="true">
           <img
             src="/hero-cybersakerhet.png"
@@ -29,22 +28,25 @@ const description =
             decoding="async"
           />
         </div>
-        <header class="section-head">
-          <h1 class="h1">Cybersäkerhet & informationssäkerhet</h1>
-          <p class="lead">
-            Vi hjälper er stänga verkliga riskgap: vad ni behöver se, kontrollera och kunna svara på — och hur ni tar er dit
-            utan att bygga en jätteplan som aldrig blir klar.
-          </p>
-        </header>
 
-        
+        <div class="hero-body">
+          <header class="section-head">
+            <h1 class="h1">Cybersäkerhet & informationssäkerhet</h1>
+            <p class="lead">
+              Vi hjälper er stänga verkliga riskgap: vad ni behöver se, kontrollera och kunna svara på — och hur ni tar er dit
+              utan att bygga en jätteplan som aldrig blir klar.
+            </p>
+          </header>
 
-        <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
-          <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
+          <div class="cta-row">
+            <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+            <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
+          </div>
         </div>
       </div>
     </section>
+
+
 
     <section class="section">
       <div class="section-surface">
@@ -113,3 +115,32 @@ const description =
     </section>
   </main>
 </Layout>
+
+<style>
+ /* HERO: kant-i-kant mot section-surface-ramen */
+.section-surface--hero {
+  padding: 0;
+  overflow: hidden;               /* gör att bildens kanter klipps mot ramen */
+}
+
+.section-surface--hero .section-pad {
+  padding: clamp(18px, 2.6vw, 30px); /* exakt samma som .section-surface i global.css */
+}
+
+/* Bilden */
+.hero-media {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18); /* matchar var(--border) */
+  background: rgba(2, 6, 23, 0.35);
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 22vw, 300px); /* gör den mindre hög och responsiv */
+  object-fit: cover;
+  object-position: 50% 35%;
+  opacity: 0.92;
+  filter: saturate(1.05) contrast(1.03);
+}
+
+</style>
