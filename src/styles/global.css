@@ -367,3 +367,12 @@ a.card:hover,
 .hero-surface .hero-body{
   padding: var(--pad, 1.25rem); /* använder ditt befintliga pad om du har det */
 }
+
+/* När hero-media ligger i hero-surface: ta bort extra inre ram/shadow */
+.hero-surface .hero-media {
+  border: 0;
+  box-shadow: none;
+  margin: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0; /* låt section-surface styra rundningen */
+}

@@ -4,7 +4,7 @@ import Header from "../../../components/Header.astro";
 
 const title = "Säkerhetskultur & övning | Brave Security";
 const description =
-  "Övningar och upplägg som tränar beslut, roller och kommunikation vid incidenter. Bygg kultur och beredskap som fungerar när det gäller.";
+  "Övningar och upplägg som tränar beslut, roller och kommunikation när det verkligen gäller. Säkerhetskultur som håller i vardagen.";
 ---
 
 <Layout title={title} description={description} lang="sv">
@@ -16,19 +16,33 @@ const description =
       <span>Säkerhetskultur & övning</span>
     </nav>
 
+    <!-- HERO -->
     <section class="section">
-      <div class="section-surface">
-        <header class="section-head">
-          <h1 class="h1">Säkerhetskultur & övning</h1>
-          <p class="lead">
-            Förmåga sitter inte i en policy — den sitter i beteenden och beslut.
-            Vi hjälper er öva det som är svårt: ansvar, kommunikation och prioriteringar när läget är pressat.
-          </p>
-        </header>
+      <div class="section-surface section-surface--hero">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="/hero-sakerhetskultur.png"
+            alt=""
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
 
-        <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
-          <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
+        <div class="section-pad">
+          <header class="section-head">
+            <h1 class="h1">Säkerhetskultur & övning</h1>
+            <p class="lead">
+              Säkerhet handlar inte bara om kontroller — utan om beteenden, beslut och samspel.
+              Vi hjälper er träna det som behöver fungera när det smäller, och få vardagsarbetet att hålla över tid.
+            </p>
+          </header>
+
+          <div class="cta-row">
+            <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+            <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
+          </div>
         </div>
       </div>
     </section>
@@ -39,18 +53,18 @@ const description =
           <article class="card">
             <h2 class="h2">När passar det?</h2>
             <ul class="bullets">
-              <li>Ni vill testa incidentberedskap innan ni måste använda den.</li>
-              <li>Roller och ansvar är otydliga i skarpt läge.</li>
-              <li>Ni behöver skapa gemensamt språk mellan IT, säkerhet och ledning.</li>
+              <li>Ni har kontroller men de används inte konsekvent i vardagen.</li>
+              <li>Roller och ansvar vid incidenter är otydliga.</li>
+              <li>Ni vill öva ledning och IT tillsammans — utan att det blir “teater”.</li>
             </ul>
           </article>
 
           <article class="card">
             <h2 class="h2">Vad vi gör</h2>
             <ul class="bullets">
-              <li>Tabletop-övningar för ledning och nyckelroller.</li>
-              <li>Scenarier baserade på er verklighet (inte generiska hotbilder).</li>
-              <li>After-action review: vad som fungerade, vad som brast, vad som behöver ändras.</li>
+              <li>Tabletop-övningar: realistiska scenarier, beslut och kommunikation.</li>
+              <li>Utbildning för styrelse/ledning och nyckelroller.</li>
+              <li>Upplägg som gör att ni kan öva och förbättra er kontinuerligt.</li>
             </ul>
           </article>
         </div>
@@ -61,10 +75,10 @@ const description =
       <div class="section-surface">
         <h2 class="h2">Typiska leverabler</h2>
         <ul class="bullets">
-          <li>Övningsupplägg och scenarier (inkl. injects och beslutspunkter).</li>
-          <li>Rollkort och kommunikationsstöd.</li>
-          <li>Förbättringsplan: konkreta ändringar i process, teknik eller ansvar.</li>
-          <li>Rekommenderad övningsrytm och mognadsstege.</li>
+          <li>Övningsupplägg och scenarier (inkl. roller, kommunikation och beslutslogik).</li>
+          <li>After-action review: vad som fungerade, vad som brast och nästa steg.</li>
+          <li>Policy- och arbetssättsförslag som går att omsätta direkt.</li>
+          <li>Utbildningsmaterial för olika målgrupper (ledning, chefer, medarbetare).</li>
         </ul>
       </div>
     </section>
@@ -73,8 +87,8 @@ const description =
       <div class="section-surface">
         <h2 class="h2">Så startar vi</h2>
         <p class="p">
-          Vi designar en första övning (60–120 min) med ett tydligt mål: testa en kritisk del av er förmåga.
-          Efteråt får ni en förbättringslista som går att omsätta direkt.
+          Vi börjar ofta med en kort nulägesbild och en första tabletop-övning med ett scenario som är relevant för er.
+          Resultatet blir en tydlig lista på förbättringar och ett upplägg för att fortsätta öva och stärka förmågan över tid.
         </p>
         <div class="cta-row">
           <a class="btn-primary" href="/#kontakt">Boka samtal</a>
@@ -89,14 +103,45 @@ const description =
         <div class="grid2">
           <a class="card link-card" href="/tjanster/riskhantering">
             <h3 class="h3">Riskhantering</h3>
-            <p class="p">Sätt prioritering och ägarskap så övningarna tränar rätt saker.</p>
+            <p class="p">Riskbild och prioritering som gör tekniska beslut enklare.</p>
           </a>
           <a class="card link-card" href="/tjanster/cybersakerhet">
             <h3 class="h3">Cybersäkerhet & informationssäkerhet</h3>
-            <p class="p">Kontroller och teknik måste hänga ihop med människor och beslut.</p>
+            <p class="p">Kontroller och genomförande som stänger verkliga gap.</p>
           </a>
         </div>
       </div>
     </section>
   </main>
 </Layout>
+
+<style>
+  /* Samma hero-stil som cyber-sidan (flush i section-surface) */
+  .section-surface--hero {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .section-pad {
+    padding: clamp(1.25rem, 2vw + 0.8rem, 2rem);
+  }
+
+  .section-surface--hero .hero-media {
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    background: rgba(2, 6, 23, 0.2);
+    overflow: hidden;
+  }
+
+  .section-surface--hero .hero-media img {
+    display: block;
+    width: 100%;
+    height: clamp(200px, 24vw, 320px);
+    object-fit: cover;
+    object-position: 50% 45%;
+    opacity: 0.92;
+    filter: saturate(1.05) contrast(1.03);
+  }
+</style>

@@ -117,30 +117,9 @@ const description =
 </Layout>
 
 <style>
- /* HERO: kant-i-kant mot section-surface-ramen */
-.section-surface--hero {
-  padding: 0;
-  overflow: hidden;               /* gör att bildens kanter klipps mot ramen */
-}
 
-.section-surface--hero .section-pad {
-  padding: clamp(18px, 2.6vw, 30px); /* exakt samma som .section-surface i global.css */
-}
-
-/* Bilden */
-.hero-media {
-  border-bottom: 1px solid rgba(148, 163, 184, 0.18); /* matchar var(--border) */
-  background: rgba(2, 6, 23, 0.35);
-}
-
-.hero-media img {
-  display: block;
-  width: 100%;
-  height: clamp(180px, 22vw, 300px); /* gör den mindre hög och responsiv */
-  object-fit: cover;
-  object-position: 50% 35%;
-  opacity: 0.92;
-  filter: saturate(1.05) contrast(1.03);
-}
-
+ 
+.hero-surface .hero-body {
+    padding: clamp(18px, 2.6vw, 30px);
+  }
 </style>
