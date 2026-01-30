@@ -24,7 +24,7 @@ const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
 
   <!-- Intro / hero -->
     <section class="section">
-      <div class="section-surface hero-surface">
+      <div class="section-surface">
         <div class="hero-media" aria-hidden="true">
           <img
             src="/hero-ai-sakerhet.png"
@@ -35,20 +35,16 @@ const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
             decoding="async"
           />
         </div>
-
-        <div class="hero-body">
-          <header class="section-head">
-            <h1 class="h1">AI & säkerhet</h1>
+        <header class="section-head">
+            <h1 class="h1">Kontakt</h1>
             <p class="lead">
-              AI införs ofta snabbare än styrning och kontroll. Vi hjälper er att få effekt snabbt — utan att tappa kontroll på data,
-              integritet, beslut och ansvar.
+                Hör av dig så tar vi ett kort, förutsättningslöst samtal. Beskriv gärna din roll och vad du vill få klarhet i.
             </p>
           </header>
 
-          <div class="cta-row">
-            <a class="btn-primary" href="/kontakt">Boka ett förutsättningslöst möte</a>
-            <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
-          </div>
+        <div class="cta-row">
+          <a class="btn-primary" href={`mailto:${email}?subject=Kontakt%20-%20Brave%20Security`}>Maila oss</a>
+          <a class="btn-secondary" href="/tjanster">Se tjänster</a>
         </div>
       </div>
     </section>
