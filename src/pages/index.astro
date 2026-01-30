@@ -24,66 +24,50 @@ const latestPosts = (await getCollection("insikter"))
     <!-- HERO -->
     <section class="hero">
       <div class="hero-card">
-          <img
+        <!-- Ambient bakgrund kvar -->
+        <img
           class="hero-bg"
           src="/starting-page.png"
           alt=""
           aria-hidden="true"
           decoding="async"
           loading="eager"
-          />
-        <div class="hero-grid">
-          <div>
-            
-            <div class="hero-media">
-              <img
-                src="/starting-page.png"
-                alt="Abstrakt ljusvirvel i lila/blå toner"
-                class="hero-image"
-                loading="eager"
-                decoding="async"
-                width="auto"
-                height="200"
-              />
-            </div>
+        />
 
+       <div class="hero-grid">
+          <!-- FULLBREDDS-BILD -->
+          <div class="hero-media hero-media--wide" aria-hidden="true">
+            <img
+              src="/starting-page.png"
+              alt="Abstrakt ljusvirvel i lila/blå toner"
+              loading="eager"
+              decoding="async"
+              width="1600"
+              height="900"
+            />
+          </div>
 
-
-            <!--<div class="logo-wrap"> -->
-            <!--  <div class="logo-badge"> -->
-            <!--    <img -->
-            <!--      src="/logo-brave-security-square-transparent.png" -->
-            <!--      alt="Brave Security – logotyp" -->
-            <!--      width="170" -->
-            <!--      height="170" -->
-            <!--      loading="eager" -->
-            <!--    /> -->
-            <!--  </div>-->
-           <!-- </div>-->
-
-            <h1 class="h1">
-              Cybersäkerhet och risk som går att fatta beslut på.
-            </h1>
+          <!-- VÄNSTER: TEXT -->
+          <div class="hero-content">
+            <h1 class="h1">Cybersäkerhet och risk som går att fatta beslut på.</h1>
 
             <p class="lead">
-              Brave Security är ett svenskt konsultbolag inom cybersäkerhet, riskhantering och 
-              säkerhetskultur samt innovativa AI-lösningar inom säkerhet.  Vi hjälper verksamheter 
-              att förstå läget, prioritera rätt och genomföra åtgärder som faktiskt minskar risk 
+              Brave Security är ett svenskt konsultbolag inom cybersäkerhet, riskhantering och
+              säkerhetskultur samt innovativa AI-lösningar inom säkerhet. Vi hjälper verksamheter
+              att förstå läget, prioritera rätt och genomföra åtgärder som faktiskt minskar risk
               och bygger säkerhetsförmåga på riktigt.
             </p>
-
-            
 
             <div class="hero-actions">
               <a class="btn-primary" href="/#kontakt">Boka samtal</a>
               <a class="btn-secondary" href="/#tjanster">Se tjänster</a>
             </div>
 
-            <p class="micro">
-              Snabbt första steg: maila eller ring – du når oss direkt.
-            </p>
+            <p class="micro">Snabbt första steg: maila eller ring – du når oss direkt.</p>
           </div>
 
+
+          <!-- Höger: kort -->
           <div class="hero-side">
             <div class="side-card">
               <h2 class="h2">Vanligt läge</h2>
@@ -109,11 +93,11 @@ const latestPosts = (await getCollection("insikter"))
 
               <a class="link" href="/sakerhetspartnerskap">Säkerhetspartnerskap →</a>
             </div>
-
           </div>
         </div>
       </div>
     </section>
+
 
     <!-- TJÄNSTER -->
     <section id="tjanster" class="section">
@@ -610,6 +594,25 @@ const latestPosts = (await getCollection("insikter"))
     .contact { grid-template-columns: 1fr; }
   }
 
+/* GRID-AREAS så att bilden ligger överst och spänner båda kolumner */
+.hero-grid{
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-areas:
+    "media media"
+    "content side";
+}
 
+.hero-media--wide{ grid-area: media; }
+.hero-content{ grid-area: content; }
+.hero-side{ grid-area: side; }
+
+/* Ta bort global "margin-top" på hero-media i just heron */
+.hero-grid > .hero-media--wide{
+  margin-top: 0;
+  margin-bottom: 1.4rem;
+  /* Lite mindre hög hero på desktop */
+  aspect-ratio: 16 / 6;
+  max-height: 320px;
+}
 
 </style>
