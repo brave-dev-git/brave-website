@@ -8,7 +8,7 @@ const title =
   "Brave Security – cybersäkerhet, riskhantering och säkra AI-lösningar";
 const description =
   "Brave Security hjälper ledning och IT att förstå, prioritera och hantera risker – från cybersäkerhet och informationssäkerhet till säkerhetskultur och säkra AI-lösningar.";
-
+  
 const latestPosts = (await getCollection("insikter"))
   .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -66,10 +66,13 @@ const latestPosts = (await getCollection("insikter"))
             </h1>
 
             <p class="lead">
-              Brave Security är ett svenskt konsultbolag inom cybersäkerhet, riskhantering och
-              säkra AI-lösningar. Vi hjälper verksamheter att förstå läget, prioritera rätt och
-              genomföra åtgärder som faktiskt minskar risk.
+              Brave Security är ett svenskt konsultbolag inom cybersäkerhet, riskhantering och 
+              säkerhetskultur samt innovativa AI-lösningar inom säkerhet.  Vi hjälper verksamheter 
+              att förstå läget, prioritera rätt och genomföra åtgärder som faktiskt minskar risk 
+              och bygger säkerhetsförmåga på riktigt.
             </p>
+
+            
 
             <div class="hero-actions">
               <a class="btn-primary" href="/#kontakt">Boka samtal</a>
@@ -96,8 +99,8 @@ const latestPosts = (await getCollection("insikter"))
               <h2 class="h2">Så jobbar vi</h2>
               <ul class="bullets">
                 <li>Rakt, strukturerat och utan fluff</li>
-                <li>Beslutsunderlag för ledning och IT</li>
-                <li>Praktiska åtgärder som går att driva</li>
+                <li>Beslutsunderlag för ledning och styrelse</li>
+                <li>Praktiska åtgärder som går att driva över tid</li>
               </ul>
 
               <p class="micro" style="margin-top: 0.6rem;">
@@ -172,8 +175,8 @@ const latestPosts = (await getCollection("insikter"))
         <article class="card">
           <h3 class="h3">Prioritering</h3>
           <ul class="bullets">
-            <li>Vilka åtgärder ger faktisk riskreduktion?</li>
-            <li>Vad kan vänta utan att vi tar dum risk?</li>
+            <li>Vilka åtgärder ger faktisk riskreduktion och stödjer vår affär?</li>
+            <li>Vad kan vänta med utan att vi tar onödig risk?</li>
           </ul>
         </article>
       </div>
