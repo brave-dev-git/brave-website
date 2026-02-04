@@ -389,3 +389,24 @@ a.card:hover,
 
 .p { margin: 0; color: var(--muted); line-height: 1.7; }
 .muted { color: var(--muted); line-height: 1.7; margin: 0; }
+
+/* spacing helpers */
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+
+/* max text width */
+.prose { max-width: 72ch; }
+
+/* small card (om du vill återanvända mini-card på fler ställen) */
+.mini-card {
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(2, 6, 23, 0.22);
+  padding: 1rem;
+}
+.mini-card .k {
+  color: rgba(229, 231, 235, 0.9);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
