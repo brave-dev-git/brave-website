@@ -1,96 +1,60 @@
 ---
-title: "NIS2 som marknadsstandard: varför den påverkar även dig som “inte omfattas”"
-description: "NIS2 blir snabbt en praktisk lägstanivå i upphandlingar och leverantörsled. Det viktiga är inte paragraferna – utan hur kraven rör sig i marknaden."
+title: "Är NIS2 på väg att bli den nya lägstanivån för cybersäkerhet?"
+description: "Även organisationer som inte formellt omfattas av NIS2 kan snart behöva förhålla sig till kraven. Min spaning är att direktivet blir en praktisk marknadsstandard."
 date: 2026-01-10
-tags: ["NIS2", "riskhantering", "styrning", "cybersäkerhet"]
+tags: ["NIS2", "cybersäkerhet", "informationssäkerhet", "riskhantering", "resiliens", "ledarskap"]
 draft: false
 ---
 
-Det finns en fråga jag får oftare och oftare:
+Är NIS2 på väg att bli den nya lägstanivån för cybersäkerhet – även för organisationer som inte formellt omfattas av den kommande cybersäkerhetslagen?
 
-**“Vi omfattas väl inte av NIS2 – behöver vi bry oss?”**
+## Bakgrund
 
-Den formella juridiken spelar förstås roll, men den praktiska verkligheten kommer ofta före. Och min spaning är densamma som jag skrev om på LinkedIn: **NIS2 är på väg att bli en marknadsstandard** – ett sätt att definiera vad “tillräckligt bra” cybersäkerhet är, även för organisationer som inte är direkt reglerade.
+Under flera år har vi försökt höja lägstanivån för cybersäkerhet i svenska organisationer – inte bara för att skydda enskilda verksamheter, utan för att stärka samhällets motståndskraft.
 
-I Sverige implementeras NIS2 via en ny cybersäkerhetslag som enligt plan träder i kraft **15 januari 2026**. :contentReference[oaicite:1]{index=1}
+När det inte skedde tillräckligt mycket på frivillig väg tog EU fram NIS2-direktivet. I Sverige ska det nu genomföras genom en ny cybersäkerhetslag som enligt nuvarande plan börjar gälla den 15 januari 2026.
 
-Det betyder inte att alla blir “compliance-projekt”. Men det betyder att **krav kommer att röra sig** på ett nytt sätt.
+## NIS2 som praktisk marknadsstandard
 
-## Varför NIS2 sprider sig utanför lagen
+Jag tror att NIS2 ganska snart blir en praktisk marknadsstandard därför att:
 
-Det finns tre drivkrafter som gör att sådana här ramverk får effekt långt utanför sin målgrupp.
+- branschen redan använder den som kompass för kravställning  
+- kunder och upphandlande organisationer skickar kraven vidare i leverantörskedjorna  
+- aktörer som ligger tydligt under nivån blir allt svagare partners  
 
-### 1) Köpare behöver en kompass
-Upphandlare och beställare har länge haft ett problem: de behöver kunna säga “vi kräver rimlig cybersäkerhet” utan att skriva ett eget ramverk från noll.
+Resultatet? Även organisationer som egentligen inte omfattas direkt av lagen kommer att behöva förhålla sig till kraven.
 
-När EU sätter en miniminivå blir det lockande att använda den som referenspunkt – även när det inte är strikt nödvändigt juridiskt. Det förenklar dialogen, jämförelser och kravställning.
+## Lärdomar från Storbritannien: Cyber Essentials
 
-### 2) Krav vandrar i leverantörskedjor
-Det här är den underskattade effekten.
+Vi kan ta Storbritannien och Cyber Essentials som exempel och föregångare – och fundera på hur en liknande utveckling skulle kunna ske kring NIS2.
 
-Stora aktörer *måste* höja sin lägstanivå. De kommer att ställa frågor till sina leverantörer. Leverantörer ställer frågor vidare. Till slut sitter en mindre aktör där och märker att:
+Cyber Essentials, en statligt stödd certifieringsmodell, beskriver en grundnivå av tekniska säkerhetskontroller.
 
-**“Vi är inte in scope – men vi måste kunna svara.”**
+Idag används den ofta som:
 
-Det är så en marknadsstandard föds: inte genom paragrafer, utan genom inköpsprocesser.
+- “minimum baseline” i offentliga upphandlingar  
+- underlag för leverantörskrav  
+- en praktisk startpunkt för organisationer som vill “göra något konkret” åt sin säkerhet  
 
-### 3) Ansvar flyttas uppåt (och blir mätbart)
-NIS2 handlar i grunden om att få säkerhet från att vara “något IT gör” till att vara **styrning, uppföljning och ansvar**.
+Innehållet är förstås annorlunda, men logiken är liknande: en definierad grundnivå blir praktisk marknadsstandard. Jag tror att NIS2 kan få en liknande roll inom EU och Sverige.
 
-När ansvar formaliseras blir det också svårare att gömma sig bakom “vi har gjort lite här och där”. Man behöver kunna visa:
-- att man förstår riskerna,
-- att man har valt prioriteringar,
-- och att man kan hantera incidenter.
+## NIS2 – inga konstigheter
 
-Det behöver inte vara perfekt. Men det behöver vara verkligt.
+Tittar man på vad NIS2 faktiskt kräver är det, enligt min mening, inga konstigheter. Det handlar om att:
 
-## “NIS2 – inga konstigheter”… men stor skillnad i praktiken
+- förstå sina risker och arbeta systematiskt  
+- ha styrning och uppföljning kring informations- och cybersäkerhet  
+- säkra teknik, drift och leverantörer  
+- kunna upptäcka, hantera och rapportera incidenter  
 
-Tittar man på vad NIS2 faktiskt driver, är det sällan exotiska krav. Det handlar om sådant som många redan *vet* att man borde göra:
+För dem som redan jobbat med IT- och informationssäkerhet är det här framför allt ett sätt att strukturera arbetet – och ett stöd i att tydliggöra att förankringen måste komma från ledningen.
 
-- arbeta systematiskt med risk
-- ha styrning och uppföljning
-- säkra drift, teknik och leverantörer
-- kunna upptäcka, hantera och rapportera incidenter
+För andra blir det mer jobb – men här tycker jag sunt förnuft bör råda. Börja där ni står och kör igång med delar av innehållet om det är för tungt att ta allt samtidigt.
 
-Men skillnaden är att NIS2 gör det svårare att leva på “intentioner” och lättare att kräva **resultat**. :contentReference[oaicite:2]{index=2}
+## Min spaning
 
-Det kan kännas som ett nödvändigt ont. Jag ser det mer som en chans att höja en baslinje som varit för låg för länge.
+Jag tror att vi om några år ser tillbaka på 2026 som året då NIS2 etablerades som de facto-standard – och blev den naturliga referenspunkten för “tillräckligt bra” cybersäkerhet i Sverige och EU.
 
-## En parallell: Cyber Essentials i Storbritannien
+Är jag lite väl hoppfull – eller håller du med?
 
-Om du vill förstå hur en “grundnivå” kan bli marknadsstandard, titta på Storbritanniens **Cyber Essentials**. Det är en statligt stödd modell som beskriver basala tekniska kontroller och som används som referens i bland annat upphandlingar och leverantörskrav. :contentReference[oaicite:3]{index=3}
-
-Poängen här är inte att NIS2 och Cyber Essentials är samma sak. Poängen är **mekaniken**: när en baslinje är tydlig och enkel nog att använda, blir den praktisk.
-
-## Vad betyder det här för en organisation som vill ligga före?
-
-Det är här jag tycker många gör ett misstag: man tror att det finns två lägen.
-
-1) “Vi gör ingenting förrän vi måste.”
-2) “Vi drar igång ett stort program.”
-
-Det finns ett tredje läge som ofta fungerar bäst: **börja där ni står, men gör det på ett sätt som går att försvara**.
-
-### Ett pragmatiskt startpaket (som inte blir ett jätteprojekt)
-
-Börja med att skapa ett svar på tre frågor:
-
-**1) Vet vi vad som är viktigast att skydda?**  
-Inte allt. Inte “IT”. Utan de verkligt kritiska beroendena.
-
-**2) Har vi en prioriterad plan för riskreduktion?**  
-Inte en önskelista. Utan val.
-
-**3) Kan vi hantera en incident utan att improvisera?**  
-Vem beslutar? Vem kommunicerar? Hur får vi lägesbild?
-
-Om ni kan svara på de tre frågorna (ärligt), har ni gjort mer än många.
-
-## Min spaning: 2026 som vändpunkt
-
-Jag tror att vi om några år kommer att se tillbaka på 2026 som året då NIS2 etablerades som de facto-standard i Sverige och EU – och blev referenspunkten för vad som är “tillräckligt bra”.
-
-Frågan är inte om alla kommer att älska det. Frågan är om vi tar chansen att använda det som en gemensam baslinje, istället för ännu ett compliance-spår.
-
-Vill du läsa mer om vanliga utmaningar i praktiken? Se [Era utmaningar](/utmaningar).
+Hur ser du på NIS2: nödvändigt ont eller en chans att sätta en ny säkerhetsbaslinje i din organisation?

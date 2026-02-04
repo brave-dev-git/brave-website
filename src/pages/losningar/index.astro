@@ -1,0 +1,158 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const title = "Lösningar | Brave Security";
+const description =
+  "Egenutvecklade verktyg och ramverk som hjälper dig fatta modiga, säkra beslut.";
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+<main class="container">
+  <!-- Intro / Hero -->
+  <section class="section">
+    <div class="section-surface">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="/hero-losningar.png"
+            alt=""
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+      <header class="section-head">
+        <h1 class="h1">Lösningar</h1>
+        <p class="lead">
+            Våra lösningar kombinerar teknisk precision med affärsförståelse.
+            Utvecklade av experter – testade i verkligheten.
+        </p>
+      </header>
+
+      <div class="cta-row">
+        <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+        <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tjänstekort -->
+  <section class="section">
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">Braves lösningar</h2>
+        <p class="muted">
+          Våra lösningar kombinerar teknisk precision med affärsförståelse.
+        </p>
+      </header>
+
+      <div class="grid3">
+        <article class="card">
+          <h3 class="h2">brvMaturityPlatform</h3>
+          <p class="p">
+            Ett strukturerat verktyg för att mäta, prioritera och förbättra organisationens säkerhetsmognad – utan onödig komplexitet.
+          </p>
+          <a class="link" href="/losningar/">Läs mer →</a>
+        </article>
+
+        <article class="card">
+          <h3 class="h2">brvIncidentHandler</h3>
+          <p class="p">
+            Från nuläge och gap till arkitektur, kontroller och genomförande – anpassat till din verklighet.
+          </p>
+          <a class="link" href="/tjanster/cybersakerhet">Läs mer →</a>
+        </article>
+
+        
+      </div>
+    </div>
+  </section>
+</main>
+
+</Layout>
+
+<style>
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2.2rem 1.2rem 3rem;
+  }
+
+  .hero {
+    margin-bottom: 1.4rem;
+    max-width: 80ch;
+  }
+
+  .h1 {
+    font-size: clamp(2rem, 2.2vw + 1rem, 2.6rem);
+    margin: 0 0 0.6rem 0;
+  }
+
+  .lead {
+    margin: 0 0 1rem 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.3rem;
+    border-radius: 999px;
+    border: 1px solid rgba(229, 231, 235, 0.55);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    background: rgba(2, 6, 23, 0.25);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  .btn-secondary:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent);
+    background: rgba(2, 6, 23, 0.4);
+  }
+
+  .grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    background: rgba(2, 6, 23, 0.35);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(231, 111, 81, 0.55);
+  }
+
+  .h2 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1.05rem;
+  }
+
+  .p {
+    margin: 0 0 0.8rem 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 980px) {
+    .grid3 { grid-template-columns: 1fr; }
+  }
+</style>
