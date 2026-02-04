@@ -10,14 +10,9 @@ const description =
 <Layout title={title} description={description} lang="sv">
   <Header />
   <main class="container">
-    <nav class="crumbs" aria-label="Brödsmulor">
-      <a class="link" href="/tjanster">Tjänster</a>
-      <span class="sep">/</span>
-      <span>Cybersäkerhet</span>
-    </nav>
-
+    
     <section class="section">
-      <div class="section-surface hero-surface">
+      <div class="section-surface section-surface-hero">
         <div class="hero-media" aria-hidden="true">
           <img
             src="/hero-cybersakerhet.png"
@@ -29,7 +24,7 @@ const description =
           />
         </div>
 
-        <div class="hero-body">
+        <div class="section-pad">
           <header class="section-head">
             <h1 class="h1">Cybersäkerhet & informationssäkerhet</h1>
             <p class="lead">
@@ -121,10 +116,3 @@ const description =
   </main>
 </Layout>
 
-<style>
-
- 
-.hero-surface .hero-body {
-    padding: clamp(18px, 2.6vw, 30px);
-  }
-</style>

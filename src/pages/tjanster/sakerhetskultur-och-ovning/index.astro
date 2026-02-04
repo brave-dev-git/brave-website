@@ -10,15 +10,10 @@ const description =
 <Layout title={title} description={description} lang="sv">
   <Header />
   <main class="container">
-    <nav class="crumbs" aria-label="Brödsmulor">
-      <a class="link" href="/tjanster">Tjänster</a>
-      <span class="sep">/</span>
-      <span>Säkerhetskultur & övning</span>
-    </nav>
-
+   
     <!-- HERO -->
     <section class="section">
-      <div class="section-surface section-surface--hero">
+      <div class="section-surface section-surface-hero">
         <div class="hero-media" aria-hidden="true">
           <img
             src="/hero-sakerhetskultur.png"
@@ -118,33 +113,4 @@ const description =
   </main>
 </Layout>
 
-<style>
-  /* Samma hero-stil som cyber-sidan (flush i section-surface) */
-  .section-surface--hero {
-    padding: 0;
-    overflow: hidden;
-  }
 
-  .section-pad {
-    padding: clamp(1.25rem, 2vw + 0.8rem, 2rem);
-  }
-
-  .section-surface--hero .hero-media {
-    margin: 0;
-    border: 0;
-    box-shadow: none;
-    border-radius: 0;
-    background: rgba(2, 6, 23, 0.2);
-    overflow: hidden;
-  }
-
-  .section-surface--hero .hero-media img {
-    display: block;
-    width: 100%;
-    height: clamp(200px, 24vw, 320px);
-    object-fit: cover;
-    object-position: 50% 45%;
-    opacity: 0.92;
-    filter: saturate(1.05) contrast(1.03);
-  }
-</style>
