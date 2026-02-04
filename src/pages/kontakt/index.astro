@@ -58,26 +58,25 @@ const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
 
       <div class="grid3">
         <a class="card link-card" href={`mailto:${email}?subject=Kontakt%20-%20Brave%20Security`}>
-          <div class="k">E-post</div>
-          <div class="v">{email}</div>
-          <div class="hint">Skicka mail →</div>
+          <div class="contact-k">E-post</div>
+          <div class="contact-v">{email}</div>
+          <div class="contact-hint">Skicka mail →</div>
         </a>
 
         <a class="card link-card" href={`tel:${phoneTel}`}>
-          <div class="k">Telefon</div>
-          <div class="v">{phoneDisplay}</div>
-          <div class="hint">Ring →</div>
-          <div class="note">Vi har inget växelnummer ännu – du når oss direkt.</div>
-        </a>
+          <div class="contact-k">Telefon</div>
+          <div class="contact-v">{phoneDisplay}</div>
+          <div class="contact-hint">Ring →</div>
+         </a>
 
         <div class="card">
-          <div class="k">LinkedIn</div>
-          <div class="v">
+          <div class="contact-k">LinkedIn</div>
+          <div class="contact-v">
             <a class="link" href={linkedinCompany} target="_blank" rel="noopener noreferrer">Brave Security</a>
-            <span class="sep">•</span>
+            <span class="contact-sep">•</span>
             <a class="link" href={linkedinPerson} target="_blank" rel="noopener noreferrer">Jonas Stewen</a>
           </div>
-          <div class="hint">Följ / connecta →</div>
+          <div class="contact-hint">Följ / connecta →</div>
         </div>
       </div>
     </div>

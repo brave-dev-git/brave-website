@@ -455,3 +455,38 @@ a.insights-post.card:hover {
   color: rgba(229, 231, 235, 0.85);
   font-weight: 600;
 }
+
+/* Klickbara kort */
+a.link-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+a.link-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Kontaktkort – texthierarki */
+.contact-k {
+  font-weight: 700;
+  color: rgba(229, 231, 235, 0.92);
+  margin-bottom: 0.35rem;
+}
+
+.contact-v {
+  color: rgba(229, 231, 235, 0.92);
+  line-height: 1.6;
+}
+
+.contact-hint {
+  margin-top: 0.8rem;
+  color: rgba(229, 231, 235, 0.85);
+  font-weight: 600;
+}
+
+.contact-sep {
+  opacity: 0.6;
+  margin: 0 0.4rem;
+}
