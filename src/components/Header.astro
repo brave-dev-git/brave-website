@@ -5,10 +5,10 @@ type NavItem =
 
 const nav: NavItem[] = [
   { label: "Tjänster", page: "/tjanster" },
-  { label: "Utmaningar", section: "utmaningar" },
+  { label: "Utmaningar", page: "/utmaningar" },
   { label: "AI & säkerhet", section: "ai" },
-  { label: "Insikter", section: "insikter" },
-  { label: "Om oss", section: "om-oss" },
+  { label: "Insikter", page: "/insikter" },
+  { label: "Om oss", page: "/om-oss" },
 ];
 
 const { variant = "overlay" } = Astro.props;
