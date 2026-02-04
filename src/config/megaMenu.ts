@@ -10,7 +10,7 @@ export const servicesMegaMenu: { label: string; overviewHref: string; groups: Me
       overviewHref: "/tjanster/riskhantering",
       description: "Beslut, prioritering och uppföljning över tid.",
       links: [
-        { label: "Riskworkshop", href: "/tjanster/riskworkshop", soon: true },
+        { label: "Riskworkshop", href: "/tjanster/riskworkshop", soon: false },
         { label: "Leverantörsrisk", href: "/tjanster/leverantorsrisk", soon: true },
         { label: "Kontinuitet & kris", href: "/tjanster/leverantorsrisk", soon: true },
       ],
@@ -25,7 +25,7 @@ export const servicesMegaMenu: { label: string; overviewHref: string; groups: Me
         { label: "Detektions- och motståndstest", href: "/tjanster/assume-breach", soon: false },
         { label: "Extern exponeringsanalys", href: "/tjanster/attackvektor", soon: true },
         { label: "Incidentberedskap", href: "/tjanster/incidentberedskap", soon: true },
-        { label: "CISOaaS", href: "/tjanster/CISO", soon: true },
+        { label: "CISOaaS / Executive Advisor ", href: "/tjanster/cisoaas-executive-advisor", soon: false },
       ],
     },
     {

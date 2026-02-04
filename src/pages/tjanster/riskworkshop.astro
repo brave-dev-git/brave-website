@@ -1,0 +1,113 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const title = "Riskworkshop | Brave Security";
+const description =
+  "Riskworkshop som skapar gemensam riskbild och tydliga prioriteringar. Första gången, löpande stöd eller årlig workshop – ofta startpunkten för en fungerande riskprocess.";
+
+const heroImage = "/hero-riskworkshop.png"; // byt vid behov
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="section">
+      <div class="section-surface">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src={heroImage}
+            alt=""
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <header class="section-head">
+          <h1 class="h1">Riskworkshop</h1>
+          <p class="lead">
+            En praktisk workshop som tar er från “vi borde” till “det här gör vi nu”. Vi hjälper er skapa en gemensam
+            riskbild, prioritera åtgärder och – om ni vill – lägga grunden till en riskprocess som går att driva över tid.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-secondary" href="/tjanster/riskhantering">Tillbaka till Riskhantering</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NÄR PASSAR DET -->
+    <section class="section" aria-label="När passar det?">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">När passar det?</h2>
+          <p class="muted">
+            Första gången ni gör riskarbete, som återkommande upplägg eller som en årlig “risk-check” för att hålla riktning.
+          </p>
+        </header>
+
+        <div class="grid3">
+          <article class="card">
+            <h3 class="h2">Första gången</h3>
+            <p class="p">
+              Ni behöver en start som är enkel, konkret och som skapar samsyn snabbt.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Löpande stöd</h3>
+            <p class="p">
+              Riskarbetet finns, men behöver bli mer beslutsdrivet och lättare att följa upp.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Årlig workshop</h3>
+            <p class="p">
+              Uppdatera riskbild, omvärdera prioriteringar och justera planen utifrån förändringar i verksamhet och hot.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPPLÄGG -->
+    <section class="section" aria-label="Upplägg">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Upplägg</h2>
+          <p class="muted">
+            Vi anpassar workshoppen efter er verklighet. Målet är alltid samma: en prioriterad lista på beslut och åtgärder.
+          </p>
+        </header>
+
+        <div class="grid2">
+          <article class="card">
+            <h3 class="h2">Förberedelse</h3>
+            <ul class="bullets">
+              <li>Kort kickoff för scope och mål.</li>
+              <li>Insamling av underlag (tillgångar, beroenden, incidenter, krav).</li>
+              <li>Förslag på riskkriterier och mallar (om ni saknar).</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Workshop (1–2 tillfällen)</h3>
+            <ul class="bullets">
+              <li>Identifiera topp-risker och scenarier.</li>
+              <li>Bedöm konsekvens/sannolikhet och beroenden.</li>
+              <li>Prioritera åtgärder och besluta ägarskap.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTAT -->
+    <section class="section"

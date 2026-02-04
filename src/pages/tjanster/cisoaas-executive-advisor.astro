@@ -1,0 +1,152 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const title = "CISOaaS / Executive Advisor | Brave Security";
+const description =
+  "Strategiskt och operativt CISO-stöd – interim eller löpande. Skapar lägesbild, prioritering, styrning och genomförande som minskar risk i praktiken.";
+
+const heroImage = "/hero-cisoaas.png"; // byt vid behov
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="section">
+      <div class="section-surface">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src={heroImage}
+            alt=""
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <header class="section-head">
+          <h1 class="h1">CISOaaS / Executive Advisor</h1>
+          <p class="lead">
+            När ni behöver både riktning och tempo. Vi kliver in som strategiskt och operativt stöd – interimt
+            eller löpande – för att skapa lägesbild, prioritera rätt och driva säkerhetsarbetet framåt.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-secondary" href="/tjanster">Tillbaka till Tjänster</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NÄR PASSAR DET -->
+    <section class="section" aria-label="När passar det?">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">När passar det?</h2>
+          <p class="muted">
+            När ni behöver en CISO-förmåga som kan ta ansvar, skapa struktur och få saker gjorda – utan att bygga upp
+            allt internt direkt.
+          </p>
+        </header>
+
+        <div class="grid2">
+          <article class="card">
+            <h3 class="h2">Typiska lägen</h3>
+            <ul class="bullets">
+              <li>Ni saknar CISO eller har ett glapp i rollen.</li>
+              <li>Mycket initiativ – men svårt att prioritera och följa upp.</li>
+              <li>Ni behöver förankra risk och ansvar i ledningen.</li>
+              <li>Ni vill accelerera ett säkerhetsprogram utan mer intern belastning.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Vad ni får</h3>
+            <ul class="bullets">
+              <li>Tydlig lägesbild och prioriterad plan.</li>
+              <li>Styrning: roller, beslutsforum, rapportering och mätpunkter.</li>
+              <li>Operativt stöd i genomförande och uppföljning.</li>
+              <li>Ledningsstöd: beslut, kommunikation och riskägarskap.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VAD VI GÖR -->
+    <section class="section" aria-label="Vad vi gör">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Så jobbar vi</h2>
+          <p class="muted">
+            Upplägg som går att anpassa – från “interim CISO” till ett rådgivande ledningsstöd.
+          </p>
+        </header>
+
+        <div class="grid3">
+          <article class="card">
+            <h3 class="h2">Skapa klarhet</h3>
+            <p class="p">
+              Vi ringar in riskbild, kritiska tillgångar, beroenden och var ni har störst gap.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Prioritera och styra</h3>
+            <p class="p">
+              Vi sätter en realistisk plan och etablerar uppföljning som fungerar i vardagen.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Driva genomförande</h3>
+            <p class="p">
+              Vi stöttar i åtgärder, kravställning mot leverantörer och koordinering internt.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEVERABLER -->
+    <section class="section" aria-label="Typiska leverabler">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Typiska leverabler</h2>
+          <p class="muted">Saker som går att använda i beslut, planering och uppföljning.</p>
+        </header>
+
+        <ul class="bullets">
+          <li>Nulägesbild och prioriterad roadmap (0–90 dagar + längre sikt).</li>
+          <li>Risk- och säkerhetsrapportering till ledning/styrelse.</li>
+          <li>Styrmodell: roller, forum, ansvar och mätpunkter.</li>
+          <li>Underlag för budget, kravställning och initiativprioritering.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- NÄSTA STEG -->
+    <section class="section" aria-label="Nästa steg">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Nästa steg</h2>
+          <p class="p">
+            Vi börjar med ett kort samtal och ringar in upplägg, tid och förväntad effekt. Därefter föreslår vi en
+            start som ger tydlig riktning snabbt.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+  </main>
+</Layout>
