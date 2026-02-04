@@ -410,3 +410,48 @@ a.card:hover,
   font-weight: 700;
   margin-bottom: 0.35rem;
 }
+/* ===== Insights listing (insikter.astro) ===== */
+.insights-hero {
+  max-width: 90ch;
+  margin-bottom: 1.2rem;
+}
+
+/* klickbart kort som använder .card som bas */
+a.insights-post {
+  text-decoration: none;
+  display: block;
+}
+
+a.insights-post.card {
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+a.insights-post.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(231, 111, 81, 0.55);
+}
+
+/* meta-rad */
+.insights-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  color: rgba(229, 231, 235, 0.75);
+  font-size: 0.85rem;
+}
+
+.insights-dot { opacity: 0.6; }
+
+.insights-tag {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(2, 6, 23, 0.22);
+}
+
+.insights-more {
+  margin-top: 0.8rem;
+  color: rgba(229, 231, 235, 0.85);
+  font-weight: 600;
+}

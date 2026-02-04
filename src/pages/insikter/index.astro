@@ -30,54 +30,34 @@ const posts = (await getCollection("insikter"))
       </div>
 
       <header class="section-head">
-        <h1 class="section-title">Insikter</h1>
-        <p class="section-desc">
+        <h1 class="h1">Insikter</h1>
+        <p class="lead">
           Korta perspektiv och konkreta lärdomar inom cybersäkerhet, risk och AI – skrivna för ledning och IT.
         </p>
       </header>
 
-      <section class="grid3" aria-label="Artiklar">
+     <section class="grid3" aria-label="Artiklar">
         {posts.map((post) => (
-          <a class="card post" href={`/insikter/${post.slug}/`}>
-            <div class="meta">
+          <a class="card insights-post" href={`/insikter/${post.slug}/`}>
+            <div class="insights-meta">
               <time datetime={post.data.date.toISOString()}>
                 {post.data.date.toLocaleDateString("sv-SE")}
               </time>
-              {post.data.tags?.length ? <span class="dot">•</span> : null}
+              {post.data.tags?.length ? <span class="insights-dot">•</span> : null}
               {post.data.tags?.slice(0, 2).map((t) => (
-                <span class="tag">{t}</span>
+                <span class="insights-tag">{t}</span>
               ))}
             </div>
+
             <h2 class="h2">{post.data.title}</h2>
             <p class="p">{post.data.description}</p>
-            <div class="more">Läs →</div>
+            <div class="insights-more">Läs →</div>
           </a>
         ))}
       </section>
-    </div>
-  </section>
 
   <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
 </main>
 
 </Layout>
 
-<style>
-  .hero { max-width: 90ch; margin-bottom: 1.2rem; }
-  .h1 { font-size: clamp(2rem, 2.2vw + 1rem, 2.7rem); margin: 0 0 0.6rem 0; }
-  .h2 { margin: 0.4rem 0 0.4rem 0; font-size: 1.05rem; }
-  .p { margin: 0; color: var(--muted); line-height: 1.7; }
-
-  .post { text-decoration: none; display: block; transition: transform 0.15s ease, border-color 0.15s ease; }
-  .post:hover { transform: translateY(-2px); border-color: rgba(231, 111, 81, 0.55); }
-
-  .meta { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; color: rgba(229,231,235,0.75); font-size: 0.85rem; }
-  .dot { opacity: 0.6; }
-  .tag {
-    padding: 0.15rem 0.5rem;
-    border-radius: 999px;
-    border: 1px solid rgba(148,163,184,0.25);
-    background: rgba(2,6,23,0.22);
-  }
-  .more { margin-top: 0.8rem; color: rgba(229,231,235,0.85); font-weight: 600; }
-</style>
