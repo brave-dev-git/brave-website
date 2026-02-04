@@ -1,10 +1,12 @@
 ---
+import MegaMenu from "./MegaMenu.astro";
+import { servicesMegaMenu } from "../config/megaMenu"
+
 type NavItem =
   | { label: string; page: string }
   | { label: string; section: string };
 
 const nav: NavItem[] = [
-  { label: "Tjänster", page: "/tjanster" },
   { label: "Utmaningar", page: "/utmaningar" },
   { label: "Lösningar", page: "/losningar" },
   { label: "AI & säkerhet", section: "ai" },
@@ -38,11 +40,19 @@ const hrefFor = (item: NavItem) => {
   </a>
 
   <nav class="nav" aria-label="Huvudnavigation">
+    <MegaMenu
+      label={servicesMegaMenu.label}
+      overviewHref={servicesMegaMenu.overviewHref}
+      groups={servicesMegaMenu.groups}
+    />
+
     {nav.map((item) => (
       <a class="nav-link" href={hrefFor(item)}>{item.label}</a>
     ))}
+
     <a class="nav-cta" href="/kontakt">Boka samtal</a>
   </nav>
+
 </header>
 
 <style>
