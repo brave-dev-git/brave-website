@@ -20,9 +20,9 @@ export const servicesMegaMenu: { label: string; overviewHref: string; groups: Me
       overviewHref: "/tjanster/cybersakerhet",
       description: "Från nuläge och gap till kontroller och genomförande.",
       links: [
-        { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys", soon: true },
-        { label: "Cybersäkerhetslagen", href: "/tjanster/NIS2", soon: true },
-        { label: "Detektions- och motståndstest", href: "/tjanster/assumebreach", soon: true },
+        { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys", soon: false },
+        { label: "Cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen", soon: false },
+        { label: "Detektions- och motståndstest", href: "/tjanster/assume-breach", soon: false },
         { label: "Extern exponeringsanalys", href: "/tjanster/attackvektor", soon: true },
         { label: "Incidentberedskap", href: "/tjanster/incidentberedskap", soon: true },
         { label: "CISOaaS", href: "/tjanster/CISO", soon: true },
@@ -33,10 +33,10 @@ export const servicesMegaMenu: { label: string; overviewHref: string; groups: Me
       overviewHref: "/tjanster/sakerhetskultur-och-ovning",
       description: "Träna beslut, roller och kommunikation.",
       links: [
-        { label: "Ledningsutbildning", href: "/tjanster/ledningsutbildning", soon: true },
+        { label: "Ledningsutbildning", href: "/tjanster/ledningsutbildning", soon: false },
         { label: "Regelverksutbildning", href: "/tjanster/regelverksutbildning", soon: true },
         { label: "Tabletop-övning", href: "/tjanster/tabletop-ovning", soon: true },
-        { label: "Ledningsutbildning", href: "/tjanster/ledningsutbildning", soon: true },
+
 
       ],
     },

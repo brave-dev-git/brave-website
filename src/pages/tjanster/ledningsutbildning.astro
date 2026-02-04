@@ -1,0 +1,134 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const title = "Ledningsutbildning i cybersäkerhet | Brave Security";
+const description =
+  "Praktisk cybersäkerhetsutbildning för ledning och styrelse. Fokus på ansvar, risk och beslut – utan onödiga tekniska detaljer.";
+
+const heroImage = "/hero-ledningsutbildning.png"; // byt/lägg till bild vid behov
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+  <main class="container">
+    <!-- HERO -->
+    <section class="section">
+      <div class="section-surface">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src={heroImage}
+            alt=""
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <header class="section-head">
+          <h1 class="h1">Ledningsutbildning</h1>
+          <p class="lead">
+            Cybersäkerhet är en ledningsfråga. Vi genomför utbildningar som stärker beslutsförmågan och gör
+            ansvar, risk och prioriteringar tydliga – på ett språk som fungerar för ledning och styrelse.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-secondary" href="/tjanster/sakerhetskultur-och-ovning">Tillbaka till Säkerhetskultur</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INNEHÅLL -->
+    <section class="section" aria-label="Innehåll">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Innehåll</h2>
+          <p class="muted">Vi fokuserar på beslut och ansvar – inte detaljer för detaljens skull.</p>
+        </header>
+
+        <div class="grid2">
+          <article class="card">
+            <h3 class="h2">Perspektiv</h3>
+            <ul class="bullets">
+              <li>Hotbild och affärsrisk</li>
+              <li>Vad som brukar gå fel – och varför</li>
+              <li>Vilka beslut som ger verklig riskreduktion</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Ansvar & styrning</h3>
+            <ul class="bullets">
+              <li>Ledningens ansvar och uppföljning</li>
+              <li>Vilka frågor ledningen bör ställa</li>
+              <li>Hur man mäter progression utan att bli byråkratisk</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMAT -->
+    <section class="section" aria-label="Format">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Format</h2>
+          <p class="muted">Anpassas efter er mognad, bransch och aktuella risker.</p>
+        </header>
+
+        <div class="grid3">
+          <article class="card">
+            <h3 class="h2">Utbildningspass</h3>
+            <p class="p">60–120 minuter. Gemensam bas och ett tydligt språk för cybersäkerhet.</p>
+          </article>
+          <article class="card">
+            <h3 class="h2">Workshop</h3>
+            <p class="p">Prioritering, riskbeslut och uppföljning – med era verkliga exempel.</p>
+          </article>
+          <article class="card">
+            <h3 class="h2">Kombinera med övning</h3>
+            <p class="p">Kan byggas ihop med tabletop-övning för att träna roller och beslut.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NÄR PASSAR -->
+    <section class="section" aria-label="När passar det">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">När passar det?</h2>
+          <p class="muted">När ni vill få en gemensam grund och skarpare beslutsförmåga.</p>
+        </header>
+
+        <ul class="bullets">
+          <li>Ny ledning/styrelse, eller nya krav på ansvar och uppföljning</li>
+          <li>Cyberrisk behöver bli tydligare som affärsrisk</li>
+          <li>Ni vill kunna prioritera mellan initiativ med bättre precision</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- NÄSTA STEG -->
+    <section class="section" aria-label="Nästa steg">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Nästa steg</h2>
+          <p class="p">
+            Vi tar ett kort samtal och anpassar upplägg: målgrupp, längd och vilka beslut ni vill bli bättre på.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+  </main>
+</Layout>

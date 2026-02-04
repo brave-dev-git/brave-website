@@ -1,0 +1,145 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const title = "Cybersäkerhetslagen & NIS2 | Gap-analys, införande och uppföljning | Brave Security";
+const description =
+  "Praktiskt stöd för Cybersäkerhetslagen och NIS2 – från gap-analys till införande och uppföljning. Struktur, prioritering och genomförande som fungerar i vardagen.";
+
+const heroImage = "/hero-cybersakerhetslagen.png"; // byt/lägg till bild vid behov
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+  <main class="container">
+    <!-- HERO -->
+    <section class="section">
+      <div class="section-surface">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src={heroImage}
+            alt=""
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <header class="section-head">
+          <h1 class="h1">Cybersäkerhetslagen (NIS2)</h1>
+          <p class="lead">
+            Vi hjälper er att översätta krav till praktik. Från gap-analys och prioritering till införande,
+            uppföljning och rapportering – med fokus på tydliga beslut och faktisk riskreduktion.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-secondary" href="/insikter/nis2-som-marknadsstandard/">Läs insikt om NIS2</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRE DELAR -->
+    <section class="section" aria-label="Upplägg">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Tre upplägg</h2>
+          <p class="muted">
+            Välj det som passar: klarhet i nuläge, stöd i genomförande eller struktur för uppföljning.
+          </p>
+        </header>
+
+        <div class="grid3">
+          <article class="card">
+            <h3 class="h2">Gap-analys</h3>
+            <p class="p">
+              Jämför nuläge mot kravbild. Identifiera brister, risker och vad som behöver prioriteras.
+            </p>
+            <ul class="bullets">
+              <li>Nulägesbild och gap</li>
+              <li>Prioriterad åtgärdslista</li>
+              <li>Beslutsunderlag för ledning</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Införande</h3>
+            <p class="p">
+              Gör planen genomförbar. Roller, processer, kontroller och en realistisk tidslinje.
+            </p>
+            <ul class="bullets">
+              <li>Roadmap med ägarskap</li>
+              <li>Kontroller och arbetssätt</li>
+              <li>Stöd i genomförande</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Uppföljning</h3>
+            <p class="p">
+              Mät, följ upp och rapportera. Struktur för att visa progression och hålla riktning över tid.
+            </p>
+            <ul class="bullets">
+              <li>Mätpunkter och rapportering</li>
+              <li>Rytm för uppföljning</li>
+              <li>Stöd inför tillsyn</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NÄR PASSAR -->
+    <section class="section" aria-label="När passar det">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">När passar detta?</h2>
+          <p class="muted">
+            Oavsett om ni omfattas direkt eller påverkas via kund- och leverantörskedjor.
+          </p>
+        </header>
+
+        <div class="grid2">
+          <article class="card">
+            <h3 class="h2">Typiska lägen</h3>
+            <ul class="bullets">
+              <li>Otydligt nuläge och vad som är “good enough”</li>
+              <li>Svårt att prioritera mellan många initiativ</li>
+              <li>Behov av tydligare ansvar och uppföljning</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Vad vi fokuserar på</h3>
+            <ul class="bullets">
+              <li>Praktiskt genomförbara åtgärder</li>
+              <li>Spårbarhet: vad som är gjort och varför</li>
+              <li>Beslutsunderlag som håller för granskning</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NÄSTA STEG -->
+    <section class="section" aria-label="Nästa steg">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Nästa steg</h2>
+          <p class="p">
+            Vi tar ett kort samtal och ringar in vilka krav som är mest relevanta för er och vad som ger effekt först.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-secondary" href="/tjanster/cybersakerhet">Tillbaka till Cybersäkerhet</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+  </main>
+</Layout>

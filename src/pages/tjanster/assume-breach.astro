@@ -1,0 +1,141 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const title = "Assume breach – testa er verkliga motståndskraft | Brave Security";
+const description =
+  "Assume breach-test som visar hur långt en angripare kan komma och om ni märker det. Realistiska scenarier, prioriterade fynd och rekommendationer för upptäckt och respons.";
+
+const heroImage = "/hero-assume-breach.png"; // byt/lägg till bild vid behov
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+  <main class="container">
+    <!-- HERO -->
+    <section class="section">
+      <div class="section-surface">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src={heroImage}
+            alt=""
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <header class="section-head">
+          <h1 class="h1">Assume breach</h1>
+          <p class="lead">
+            Hur långt kommer en angripare – och märker ni det? I ett assume-breach-scenario utgår vi från att
+            angriparen redan är inne och testar om upptäckt, respons och motståndskraft håller i praktiken.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-secondary" href="/tjanster/cybersakerhet">Tillbaka till Cybersäkerhet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPPLÄGG -->
+    <section class="section" aria-label="Upplägg">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Upplägg</h2>
+          <p class="muted">
+            Ett realistiskt test där vi fokuserar på vad som faktiskt går att göra med begränsade rättigheter.
+          </p>
+        </header>
+
+        <div class="grid2">
+          <article class="card">
+            <h3 class="h2">Utgångsläge</h3>
+            <ul class="bullets">
+              <li>Testarna har intern åtkomst med låg behörighet</li>
+              <li>Målet är att förstå möjligheter till eskalering och rörelse</li>
+              <li>Vi dokumenterar vägar, hinder och exponering</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Vi testar bland annat</h3>
+            <ul class="bullets">
+              <li>Rättighetseskalering och lateral movement</li>
+              <li>Åtkomst till system och data</li>
+              <li>Om angreppet upptäcks och stoppas (SOC/övervakning)</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VAD NI FÅR UT -->
+    <section class="section" aria-label="Vad ni får ut">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Vad ni får ut</h2>
+          <p class="muted">Klarhet i verklig risk och konkreta förbättringar i teknik och arbetssätt.</p>
+        </header>
+
+        <ul class="bullets">
+          <li>Prioriterade fynd baserat på risk för er verksamhet</li>
+          <li>Förbättringar för upptäckt, respons och begränsning</li>
+          <li>Underlag för beslut och planering (inte bara tekniska listor)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LEVERABLER -->
+    <section class="section" aria-label="Leverabler">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Leverabler</h2>
+          <p class="muted">Separation mellan ledningsunderlag och teknisk rapport.</p>
+        </header>
+
+        <div class="grid2">
+          <article class="card">
+            <h3 class="h2">Ledningssammanfattning</h3>
+            <ul class="bullets">
+              <li>Riskbild och viktigaste åtgärder</li>
+              <li>Vad som brast och varför</li>
+              <li>Rekommenderad prioritering: nu / snart / senare</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Teknisk rapport</h3>
+            <ul class="bullets">
+              <li>Tekniska fynd och reproduktionsstöd</li>
+              <li>Prioritering baserat på risk</li>
+              <li>Rekommendationer för åtgärd och verifiering</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NÄSTA STEG -->
+    <section class="section" aria-label="Nästa steg">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Nästa steg</h2>
+          <p class="p">
+            Vi tar ett kort samtal och ringar in scope: miljöer, antaganden, tidsfönster och vad ni vill få svar på.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+  </main>
+</Layout>

@@ -1,0 +1,180 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const title = "Säkerhetsmognadsanalys enligt NIST CSF | Brave Security";
+const description =
+  "Få en tydlig bild av er säkerhetsmognad kategoriserad efter er förmåga. Prioriterade åtgärder, färgkodad mognad och beslutsunderlag för ledning.";
+
+const heroImage = "/hero-mognadsanalys.png"; // byt/lägg till bild vid behov
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+  <main class="container">
+    <!-- HERO -->
+    <section class="section">
+      <div class="section-surface">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src={heroImage}
+            alt=""
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <header class="section-head">
+          <h1 class="h1">Säkerhetsmognadsanalys</h1>
+          <p class="lead">
+            Från magkänsla till beslutsunderlag. Vi bedömer mognad i styrning, arbetssätt och teknik enligt
+            NIST Cybersecurity Framework (CSF) 2.0 och presenterar resultatet tydligt med färgkodning enligt
+            COBITs mognadsskala.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-secondary" href="/tjanster/cybersakerhet">Tillbaka till Cybersäkerhet</a>
+        </div>
+      </div>
+    </section>
+<!-- NÄR PASSAR DETTA -->
+        <section class="section" aria-label="När passar detta?">
+        <div class="section-surface">
+            <header class="section-head">
+            <h2 class="h2xl">När passar detta?</h2>
+            <p class="muted">
+                När ni behöver en gemensam bild av nuläge och vad som bör prioriteras – oavsett om ni omfattas av krav
+                eller vill höja lägstanivån av egen kraft.
+            </p>
+            </header>
+
+            <div class="grid2">
+            <article class="card">
+                <h3 class="h2">Typiska lägen</h3>
+                <ul class="bullets">
+                <li>Vill följa upp olika organisationer/företag för att skapa värde på sikt</li>
+                <li>Vill förstå hur bra det egna säkerthetsarbetet är jämfört med andra.</li>
+                <li>Skapa förståelse för säkerhet genom hela organisationen.</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3 class="h2">Vad vi fokuserar på</h3>
+                <ul class="bullets">
+                <li>Praktiskt genomförbara åtgärder – inte bara “compliance”.</li>
+                <li>Spårbarhet: vad som är gjort, varför och vad som är nästa steg.</li>
+                <li>Prioritering som håller över tid och går att följa upp utifrån vår erfarenhet.</li>
+                </ul>
+            </article>
+            </div>
+        </div>
+        </section>
+
+    <!-- VAD INGÅR -->
+    <section class="section" aria-label="Vad ingår">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Vad analysen omfattar</h2>
+          <p class="muted">
+            Vi tittar på både förmåga och praktisk effekt – inte bara dokument.
+          </p>
+        </header>
+
+        <div class="grid2">
+          <article class="card">
+            <h3 class="h2">Styrning & arbetssätt</h3>
+            <ul class="bullets">
+              <li>Policyer, roller och ansvar</li>
+              <li>Riskarbete och uppföljning</li>
+              <li>Processer för förändring och efterlevnad</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Tekniska förmågor</h3>
+            <ul class="bullets">
+              <li>Identitet & behörighet</li>
+              <li>Skydd av data och kritiska tillgångar</li>
+              <li>Loggning, upptäckt och incidentförmåga</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- METODIK -->
+    <section class="section" aria-label="Metodik">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Metodik</h2>
+          <p class="muted">
+            Arbetet genomförs genom intervjuer och dokumentgranskning samt med en teknisk granskning, och sammanfattas i en rapport
+            som presenteras för relevanta intressenter.
+          </p>
+        </header>
+
+        <div class="grid2">
+          <article class="card">
+            <h3 class="h2">Genomförande</h3>
+            <ul class="bullets">
+              <li>Intervjuer med nyckelroller (ledning/IT/säkerhet)</li>
+              <li>Granskning av styrande dokument och rutiner</li>
+               <li>Genomförande av peneterationstest för att bedöma motståndskraft och detektering.</li>
+              <li>Bedömning per NIST-funktion och kategori</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Resultat</h3>
+            <ul class="bullets">
+              <li>Färgkodad mognad enligt gällande skala</li>
+              <li>Executive summary med prioriterade åtgärder</li>
+              <li>Rekommendationer för varje relevant område</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEVERABLER -->
+    <section class="section" aria-label="Leverabler">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Leverabler</h2>
+          <p class="muted">Du får ett underlag som går att använda i beslut, planering och uppföljning.</p>
+        </header>
+
+        <ul class="bullets">
+          <li>Executive summary för ledning</li>
+          <li>Mognadsbedömning per NIST CSF 2.0-funktion och kategori</li>
+          <li>Prioriterade åtgärder: nu / snart / senare</li>
+          <li>Rekommenderade nästa steg och upplägg för uppföljning</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- NÄSTA STEG -->
+    <section class="section" aria-label="Nästa steg">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Nästa steg</h2>
+          <p class="p">
+            Vill du snabbt få klarhet i var ni står och vad som ger mest effekt? Vi tar ett kort samtal och
+            föreslår ett upplägg baserat på er verklighet.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+  </main>
+</Layout>
