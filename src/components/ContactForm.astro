@@ -1,0 +1,158 @@
+---
+const {
+  heading = "Kontakt",
+  text = "Hör av dig så tar vi ett kort, förutsättningslöst samtal. Beskriv gärna din roll och vad du vill få klarhet i.",
+  endpoint,
+  redirectTo = "/tack",
+  source = "",
+}: {
+  heading?: string;
+  text?: string;
+  endpoint: string;
+  redirectTo?: string;
+  source?: string;
+} = Astro.props;
+
+---
+
+<section class="section" aria-label="Kontakt">
+  <div class="section-surface">
+    <header class="section-head">
+      <h2 class="h2xl">{heading}</h2>
+      <p class="muted">{text}</p>
+    </header>
+
+    <form class="form" method="POST" action={endpoint}>
+      <input type="hidden" name="_redirect" value={redirectTo} />
+      {source ? <input type="hidden" name="source" value={source} /> : null}
+
+      <div class="grid2">
+        <label class="field">
+          <span class="label">Förnamn *</span>
+          <input class="input" name="firstName" autocomplete="given-name" required />
+        </label>
+
+        <label class="field">
+          <span class="label">Efternamn *</span>
+          <input class="input" name="lastName" autocomplete="family-name" required />
+        </label>
+
+        <label class="field">
+          <span class="label">Telefon</span>
+          <input class="input" name="phone" autocomplete="tel" inputmode="tel" />
+        </label>
+
+        <label class="field">
+          <span class="label">E-post *</span>
+          <input class="input" type="email" name="email" autocomplete="email" required />
+        </label>
+      </div>
+
+      <label class="field">
+        <span class="label">Meddelande *</span>
+        <textarea class="textarea" name="message" rows="6" required></textarea>
+      </label>
+
+      <fieldset class="field">
+        <legend class="label">Hur hittade du oss?</legend>
+        <div class="checks">
+          <label class="check"><input type="radio" name="foundVia" value="Rekommendation" /> Jag blev rekommenderad</label>
+          <label class="check"><input type="radio" name="foundVia" value="Google" /> Jag sökte Google</label>
+          <label class="check"><input type="radio" name="foundVia" value="AI" /> Jag sökte AI (ChatGPT, Claude, Gemini, etc)</label>
+          <label class="check"><input type="radio" name="foundVia" value="LinkedIn" /> Jag hittade er på LinkedIn</label>
+          <label class="check"><input type="radio" name="foundVia" value="Annat" /> Annat</label>
+        </div>
+      </fieldset>
+
+      <label class="check consent">
+        <input type="checkbox" name="consent" required />
+        Jag accepterar att mina personuppgifter behandlas enligt Brave Securitys integritetsskyddspolicy *
+      </label>
+
+      <!-- Honeypot (spam) -->
+      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+
+      <div class="cta-row">
+        <button class="btn-primary" type="submit">Skicka</button>
+        <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<style>
+  .form { max-width: 980px; }
+
+  /* Viktigt för att grid-barn inte ska "spränga" layouten */
+  .grid2 > * { min-width: 0; }
+
+  .field { display: grid; gap: 0.45rem; margin-top: 1rem; }
+  .label {
+    color: rgba(229,231,235,0.85);
+    font-size: 0.9rem;
+    font-weight: 650;
+  }
+
+  .input, .textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 14px;
+    border: 1px solid rgba(148,163,184,0.28);
+    background: rgba(2,6,23,0.28);
+    color: var(--text);
+    padding: 0.8rem 0.9rem;
+    outline: none;
+  }
+
+  .textarea { resize: vertical; min-height: 140px; }
+
+  .input:focus, .textarea:focus {
+    border-color: rgba(231,111,81,0.6);
+    box-shadow: 0 0 0 3px rgba(231,111,81,0.12);
+  }
+
+  /* Fieldset/legend: ta bort “fula ramar” */
+  fieldset.field {
+    border: 0;
+    padding: 0;
+    margin: 1.1rem 0 0;
+    min-width: 0;
+  }
+  legend.label {
+    padding: 0;
+    margin-bottom: 0.45rem;
+  }
+
+  .checks {
+    display: grid;
+    gap: 0.65rem;
+    margin-top: 0.35rem;
+    padding: 0.75rem;
+    border-radius: 14px;
+    border: 1px solid rgba(148,163,184,0.18);
+    background: rgba(2,6,23,0.18);
+  }
+
+  .check {
+    display: inline-flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    color: rgba(229,231,235,0.82);
+    line-height: 1.35;
+  }
+
+  .check input { margin-top: 0.18rem; }
+
+  .consent {
+    margin-top: 1rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid rgba(148,163,184,0.14);
+  }
+
+  .hp { display: none; }
+
+  /* Mobil: gör grid till en kolumn */
+  @media (max-width: 720px) {
+    .grid2 { grid-template-columns: 1fr; }
+  }
+</style>

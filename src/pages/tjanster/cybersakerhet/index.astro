@@ -2,6 +2,9 @@
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 
+import ContactEmbed from "../../../components/ContactEmbed.astro";
+const tallyUrl = "https://tally.so/embed/J9zjWz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+
 const title = "Cybersäkerhet & informationssäkerhet | Brave Security";
 const description =
   "Från nuläge och gap till säkerhetsarkitektur, kontroller och genomförande. Praktiskt stöd inom cybersäkerhet och informationssäkerhet.";
@@ -113,6 +116,8 @@ const description =
         </div>
       </div>
     </section>
+     <ContactEmbed tallyUrl={tallyUrl} />
   </main>
+ 
 </Layout>
 

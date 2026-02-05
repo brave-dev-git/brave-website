@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
+import ContactForm from "../../components/ContactForm.astro";
 
 const title = "Kontakt | Brave Security";
 const description =
@@ -11,6 +12,9 @@ const phoneDisplay = "+46 730 666 891";
 const phoneTel = "+46730666891";
 const linkedinCompany = "https://www.linkedin.com/company/bravesecurity/";
 const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
+const endpoint = "https://formspree.io/f/mbdargky"; // byt till din
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? "http://localhost:4321";
+const redirectTo = `${siteUrl}/tack`;
 ---
 
 <Layout title={title} description={description} lang="sv">
@@ -104,6 +108,11 @@ const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
       </div>
     </div>
   </section>
+  <ContactForm
+      endpoint={endpoint}
+      redirectTo={redirectTo}
+      source="kontakt"
+    />
 
   <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
 </main>

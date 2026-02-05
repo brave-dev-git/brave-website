@@ -1,0 +1,39 @@
+---
+const {
+  heading = "Kontakt",
+  text = "Hör av dig så tar vi ett kort, förutsättningslöst samtal. Beskriv gärna din roll och vad du vill få klarhet i.",
+  tallyUrl,
+}: {
+  heading?: string;
+  text?: string;
+  tallyUrl: string;
+} = Astro.props;
+---
+
+<section class="section" aria-label="Kontakt">
+  <div class="section-surface">
+    <header class="section-head">
+      <h2 class="h2xl">{heading}</h2>
+      <p class="muted">{text}</p>
+    </header>
+
+    <div class="tally">
+      <iframe
+        src={tallyUrl}
+        loading="lazy"
+        title="Kontaktformulär"
+        class="tally__frame"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tally__frame{
+    width: 100%;
+    min-height: 640px;
+    border: 0;
+    border-radius: 14px;
+    background: rgba(2, 6, 23, 0.18);
+  }
+</style>

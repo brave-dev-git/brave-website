@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+
+const title = "Tack | Brave Security";
+const description = "Tack för ditt meddelande. Vi återkommer så snart vi kan.";
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+
+  <main class="container">
+    <section class="section">
+      <div class="section-surface">
+        <header class="section-head">
+          <h1 class="h1">Tack!</h1>
+          <p class="lead">
+            Vi har tagit emot ditt meddelande och återkommer så snart vi kan.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/tjanster">Se tjänster</a>
+          <a class="btn-secondary" href="/insikter">Läs insikter</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+  </main>
+</Layout>

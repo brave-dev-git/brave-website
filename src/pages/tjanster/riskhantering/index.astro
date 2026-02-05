@@ -1,6 +1,12 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
+import ContactForm from "../../../components/ContactForm.astro";
+
+const endpoint = "https://formspree.io/f/mbdargky";
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? "http://localhost:4321";
+const redirectTo = `${siteUrl}/tack`;
+
 
 const title = "Riskhantering | Brave Security";
 const description =
@@ -108,6 +114,13 @@ const description =
         </div>
       </div>
     </section>
+    <ContactForm
+  endpoint={endpoint}
+  redirectTo={redirectTo}
+  heading="Vill du prata om det här?"
+  text="Skriv kort vad du vill få klarhet i, så återkommer vi."
+  source="tjanster-cybersakerhet"
+/>
   </main>
 </Layout>
 
