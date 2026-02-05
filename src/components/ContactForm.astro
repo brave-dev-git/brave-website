@@ -69,15 +69,17 @@ const effectiveSource = source || (path ? `page:${path}` : "");
             <option value="">Välj…</option>
             <option value="Rekommendation">Jag blev rekommenderad</option>
             <option value="Google">Jag sökte Google</option>
-            <option value="AI">Jag sökte AI (ChatGPT, Claude, Gemini, etc)</option>
+            <option value="AI">Jag sökte på en AI-tjänst</option>
             <option value="LinkedIn">Jag hittade er på LinkedIn</option>
             <option value="Annat">Annat</option>
         </select>
         </label>
 
       <label class="check consent">
-        <input type="checkbox" name="consent" required />
-        Jag accepterar att mina personuppgifter behandlas enligt Brave Securitys integritetsskyddspolicy *
+        <!-- <input type="checkbox" name="consent" required />-->
+         När du kontaktar oss behandlar vi dina personuppgifter för att kunna hantera din förfrågan.
+         Uppgifterna används endast för detta ändamål.
+ 
       </label>
 
       <!-- Honeypot (spam). OBS: lämna tom -->

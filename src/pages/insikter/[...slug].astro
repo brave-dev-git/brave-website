@@ -21,43 +21,90 @@ const description = post.data.description;
   <Header />
 
   <main class="container">
-    <nav class="crumbs" aria-label="Brödsmulor">
-      <a class="link" href="/insikter">← Till Insikter</a>
-    </nav>
+    <section class="section">
+      <div class="section-surface">
+        <div class="prose prose--article">
+          <article class="article">
+            <header class="head">
+              <a class="link" href="/insikter">← Till Insikter</a>
 
-    <article class="article">
-      <header class="head">
-        <h1 class="h1">{post.data.title}</h1>
-        <div class="meta">
-          <time datetime={post.data.date.toISOString()}>
-            {post.data.date.toLocaleDateString("sv-SE")}
-          </time>
-          {post.data.tags?.length ? <span class="dot">•</span> : null}
-          {post.data.tags?.map((t) => <span class="tag">{t}</span>)}
+              <h1 class="h1">{post.data.title}</h1>
+
+              <div class="meta">
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString("sv-SE")}
+                </time>
+                {post.data.tags?.length ? <span class="dot">•</span> : null}
+                {post.data.tags?.map((t) => <span class="tag">{t}</span>)}
+              </div>
+
+              <p class="lead">{post.data.description}</p>
+            </header>
+
+            <div class="content">
+              <Content />
+            </div>
+
+            <section class="card cta" aria-label="Kontakt CTA">
+              <h2 class="h2">Vill du bolla detta i er kontext?</h2>
+              <p class="p">Hör av dig så tar vi ett kort, förutsättningslöst samtal.</p>
+              <div class="cta-row">
+                <a class="btn-primary" href="/kontakt">Kontakt</a>
+                <a class="btn-secondary" href="/tjanster">Se tjänster</a>
+              </div>
+            </section>
+          </article>
         </div>
-        <p class="lead">{post.data.description}</p>
-      </header>
 
-      <div class="content">
-        <Content />
+        <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
       </div>
-
-      <section class="card cta">
-        <h2 class="h2">Vill du bolla detta i er kontext?</h2>
-        <p class="p">Hör av dig så tar vi ett kort, förutsättningslöst samtal.</p>
-        <div class="cta-row">
-          <a class="btn-primary" href="/kontakt">Kontakt</a>
-          <a class="btn-secondary" href="/tjanster">Se tjänster</a>
-        </div>
-      </section>
-    </article>
-
-    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+    </section>
   </main>
 </Layout>
 
+
 <style>
-  .article { max-width: 80ch; }
+    /* Artikel-layout i samma stil som resten */
+    .article {
+      margin-top: 1.2rem;
+    }
+
+    /* Rytm: gör texten lättare att läsa */
+    .article :is(p, ul, ol, blockquote) {
+      margin: 0.9rem 0;
+    }
+
+    .article :is(h2, h3) {
+      margin: 1.6rem 0 0.6rem;
+    }
+
+    .article ul, .article ol {
+      padding-left: 1.2rem;
+    }
+
+    .article blockquote {
+      margin: 1.2rem 0;
+      padding: 0.9rem 1rem;
+      border-left: 3px solid rgba(124, 58, 237, 0.7);
+      background: rgba(2, 6, 23, 0.22);
+      border-radius: 0.9rem;
+    }
+
+    /* Bilder i artiklar */
+    .article img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 1rem;
+      border: 1px solid rgba(148,163,184,0.22);
+    }
+
+    .prose--article {
+        max-width: 90ch;     /* test: 86–100ch */
+        margin: 0 auto;      /* centrera i ytan */
+      }
+
+
   .head { margin-bottom: 1rem; }
   
   .meta { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; color: rgba(229,231,235,0.75); font-size: 0.85rem; }
