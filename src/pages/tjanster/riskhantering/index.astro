@@ -1,12 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
-import ContactForm from "../../../components/ContactForm.astro";
-
-const endpoint = "https://formspree.io/f/mbdargky";
-const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? "http://localhost:4321";
-const redirectTo = `${siteUrl}/tack`;
-
+import PageContact from "../../../components/PageContact.astro";
 
 const title = "Riskhantering | Brave Security";
 const description =
@@ -93,7 +88,7 @@ const description =
           Ofta kan vi ge tydlig riktning inom 2–4 veckor — och samtidigt sätta strukturen för att fortsätta över tid.
         </p>
         <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Boka samtal</a>
           <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
         </div>
       </div>
@@ -114,13 +109,12 @@ const description =
         </div>
       </div>
     </section>
-    <ContactForm
-  endpoint={endpoint}
-  redirectTo={redirectTo}
-  heading="Vill du prata om det här?"
-  text="Skriv kort vad du vill få klarhet i, så återkommer vi."
-  source="tjanster-cybersakerhet"
-/>
+    <PageContact
+      heading="Kontakt"
+      text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."
+      placement="footer"
+    />
+
   </main>
 </Layout>
 

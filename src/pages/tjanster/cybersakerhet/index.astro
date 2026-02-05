@@ -1,9 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
-
-import ContactEmbed from "../../../components/ContactEmbed.astro";
-const tallyUrl = "https://tally.so/embed/J9zjWz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+import PageContact from "../../../components/PageContact.astro";
 
 const title = "Cybersäkerhet & informationssäkerhet | Brave Security";
 const description =
@@ -95,7 +93,7 @@ const description =
             som resulterar iu en tydlig plan på kort och lång sikt.
         </p>
         <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Boka samtal</a>
           <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
         </div>
       </div>
@@ -116,7 +114,11 @@ const description =
         </div>
       </div>
     </section>
-     <ContactEmbed tallyUrl={tallyUrl} />
+    <PageContact
+      heading="Kontakt"
+      text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."
+      placement="footer"
+    />
   </main>
  
 </Layout>

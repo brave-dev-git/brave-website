@@ -3,19 +3,28 @@ const {
   heading = "Kontakt",
   text = "Hör av dig så tar vi ett kort, förutsättningslöst samtal. Beskriv gärna din roll och vad du vill få klarhet i.",
   endpoint,
-  redirectTo = "/tack",
   source = "",
+
+  // Fallback-kontakt (visas bara om skickning misslyckas)
+  email = "kontakt@bravesecurity.se",
+  phoneDisplay = "+46 730 666 891",
+  phoneTel = "+46730666891",
 }: {
   heading?: string;
   text?: string;
   endpoint: string;
-  redirectTo?: string;
   source?: string;
+  email?: string;
+  phoneDisplay?: string;
+  phoneTel?: string;
 } = Astro.props;
 
+// 2) Auto-source: om ingen source skickas in, använd aktuell path
+const path = Astro.url?.pathname ?? "";
+const effectiveSource = source || (path ? `page:${path}` : "");
 ---
 
-<section class="section" aria-label="Kontakt">
+<section class="section" aria-label="Kontakt" id="kontakt">
   <div class="section-surface">
     <header class="section-head">
       <h2 class="h2xl">{heading}</h2>
@@ -23,8 +32,9 @@ const {
     </header>
 
     <form class="form" method="POST" action={endpoint} data-contact-form>
-      
-      {source ? <input type="hidden" name="source" value={source} /> : null}
+      {effectiveSource ? (
+        <input type="hidden" name="source" value={effectiveSource} />
+      ) : null}
 
       <div class="grid2">
         <label class="field">
@@ -53,49 +63,71 @@ const {
         <textarea class="textarea" name="message" rows="6" required></textarea>
       </label>
 
-      <fieldset class="field">
-        <legend class="label">Hur hittade du oss?</legend>
-        <div class="checks">
-          <label class="check"><input type="radio" name="foundVia" value="Rekommendation" /> Jag blev rekommenderad</label>
-          <label class="check"><input type="radio" name="foundVia" value="Google" /> Jag sökte Google</label>
-          <label class="check"><input type="radio" name="foundVia" value="AI" /> Jag sökte AI (ChatGPT, Claude, Gemini, etc)</label>
-          <label class="check"><input type="radio" name="foundVia" value="LinkedIn" /> Jag hittade er på LinkedIn</label>
-          <label class="check"><input type="radio" name="foundVia" value="Annat" /> Annat</label>
-        </div>
-      </fieldset>
+        <label class="field">
+        <span class="label">Hur hittade du oss?</span>
+        <select class="input" name="foundVia">
+            <option value="">Välj…</option>
+            <option value="Rekommendation">Jag blev rekommenderad</option>
+            <option value="Google">Jag sökte Google</option>
+            <option value="AI">Jag sökte AI (ChatGPT, Claude, Gemini, etc)</option>
+            <option value="LinkedIn">Jag hittade er på LinkedIn</option>
+            <option value="Annat">Annat</option>
+        </select>
+        </label>
 
       <label class="check consent">
         <input type="checkbox" name="consent" required />
         Jag accepterar att mina personuppgifter behandlas enligt Brave Securitys integritetsskyddspolicy *
       </label>
 
-      <!-- Honeypot (spam) -->
-      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+      <!-- Honeypot (spam). OBS: lämna tom -->
+      <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" />
 
       <div class="cta-row">
         <button class="btn-primary" type="submit">Skicka</button>
         <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
       </div>
+
       <p class="form-status" aria-live="polite"></p>
+
+      <!-- 3) Fallback visas endast vid fel -->
+      <p class="form-fallback" hidden>
+        Problem att skicka? Maila oss på
+        <a class="link" href={`mailto:${email}`}>{email}</a>
+        eller ring
+        <a class="link" href={`tel:${phoneTel}`}>{phoneDisplay}</a>.
+      </p>
     </form>
   </div>
 </section>
+
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     const forms = document.querySelectorAll("[data-contact-form]");
 
     forms.forEach((form) => {
       const statusEl = form.querySelector(".form-status");
+      const fallbackEl = form.querySelector(".form-fallback");
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const honeypot = form.querySelector('input[name="company_website"]');
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
+        // 3) Honeypot: om den är ifylld -> gör inget
+        if (honeypot && honeypot.value) return;
+
+        // kör browserns validering först
         if (!form.checkValidity()) {
           form.reportValidity();
           return;
         }
 
+        // 1) Disable submit (hindrar dubbelklick)
+        if (submitBtn) submitBtn.disabled = true;
+
         if (statusEl) statusEl.textContent = "Skickar...";
+        if (fallbackEl) fallbackEl.hidden = true;
 
         try {
           const data = new FormData(form);
@@ -112,15 +144,17 @@ const {
           }
 
           if (statusEl) statusEl.textContent = "Något gick fel. Försök igen eller maila oss.";
+          if (fallbackEl) fallbackEl.hidden = false;
+          if (submitBtn) submitBtn.disabled = false;
         } catch {
           if (statusEl) statusEl.textContent = "Något gick fel. Försök igen eller maila oss.";
+          if (fallbackEl) fallbackEl.hidden = false;
+          if (submitBtn) submitBtn.disabled = false;
         }
       });
     });
   });
 </script>
-
-
 
 <style>
   .form { max-width: 980px; }
@@ -193,8 +227,66 @@ const {
 
   .hp { display: none; }
 
+  .form-status {
+    margin-top: 0.85rem;
+    color: rgba(229,231,235,0.75);
+    font-size: 0.9rem;
+  }
+
+  .form-fallback {
+    margin-top: 0.55rem;
+    color: rgba(229,231,235,0.75);
+    font-size: 0.9rem;
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
   /* Mobil: gör grid till en kolumn */
   @media (max-width: 720px) {
     .grid2 { grid-template-columns: 1fr; }
   }
+
+  /* ===== Compact mode (default) ===== */
+.form { max-width: 880px; }            /* lite smalare */
+.field { margin-top: 0.75rem; }        /* mindre luft mellan fält */
+.label { font-size: 0.85rem; }         /* lite mindre label */
+
+.input, .textarea {
+  padding: 0.6rem 0.75rem;             /* tajtare inputs */
+  border-radius: 12px;
+}
+
+.textarea {
+  min-height: 110px;                   /* mindre än 140px */
+}
+
+.checks {
+  padding: 0.6rem;                     /* tajtare box */
+  gap: 0.5rem;
+}
+
+.check {
+  gap: 0.55rem;                        /* tajtare mellan radio och text */
+  line-height: 1.25;
+}
+
+.consent {
+  margin-top: 0.75rem;
+  padding-top: 0.7rem;
+}
+
+/* CTA-raden lite tajtare */
+.cta-row { margin-top: 0.75rem; }
+
+/* Mobil: lite extra tajt */
+@media (max-width: 720px) {
+  .field { margin-top: 0.65rem; }
+  .textarea { min-height: 100px; }
+}
+
+
 </style>

@@ -1,0 +1,33 @@
+---
+import ContactForm from "./ContactForm.astro";
+
+const {
+  heading = "Kontakt",
+  text = "Hör av dig så tar vi ett kort, förutsättningslöst samtal. Beskriv gärna din roll och vad du vill få klarhet i.",
+  source,
+  placement = "footer",
+}: {
+  heading?: string;
+  text?: string;
+  source?: string;
+  placement?: string;
+} = Astro.props;
+
+const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
+
+if (!endpoint) {
+  throw new Error("PUBLIC_FORMSPREE_ENDPOINT saknas. Lägg den i .env och på Vercel.");
+}
+
+const path = Astro.url?.pathname ?? "";
+const effectiveSource = source ?? (path ? `page:${path}` : "");
+
+const effectivePlacement = placement;
+---
+
+<ContactForm
+  endpoint={endpoint}
+  heading={heading}
+  text={text}
+  source={`${effectiveSource}${effectivePlacement ? `|${effectivePlacement}` : ""}`}
+/>
