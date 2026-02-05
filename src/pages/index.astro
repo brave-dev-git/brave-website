@@ -20,10 +20,10 @@ const latestPosts = (await getCollection("insikter"))
   <div id="top"></div>
   <Header variant="overlay" />
 
-  <main class="wrap">
+  <main class="container">
     <!-- HERO -->
-    <section class="hero">
-      <div class="hero-card">
+    <section class="section hero">
+      <div class="section-surface hero-surface">
         <!-- Ambient bakgrund kvar -->
         <img
           class="hero-bg"
@@ -34,31 +34,30 @@ const latestPosts = (await getCollection("insikter"))
           loading="eager"
         />
 
-       <div class="hero-grid">
-          <!-- FULLBREDDS-BILD -->
-          <div class="hero-media hero-media--wide" aria-hidden="true">
-            <img
-              src="/starting-page.png"
-              alt="Abstrakt ljusvirvel i lila/blå toner"
-              loading="eager"
-              decoding="async"
-              width="1600"
-              height="900"
-            />
-          </div>
-
+    <div class="hero-grid">
+      <!-- FULLBREDDS-BILD -->
+      <div class="hero-media hero-media--wide hero-media--flush" aria-hidden="true">
+        <img
+          src="/starting-page.png"
+          alt="Abstrakt ljusvirvel i lila/blå toner"
+          loading="eager"
+          decoding="async"
+          width="1600"
+          height="900"
+        />
+      </div>
           <!-- VÄNSTER: TEXT -->
           <div class="hero-content">
-            <h1 class="h1">Cybersäkerhet och risk som går att fatta beslut på.</h1>
+            <h1 class="h1">No risk no reward.</h1>
 
             <p class="lead">
               Brave Security är en svensk säkerhetsparter inom cybersäkerhet, riskhantering och
               säkerhetskultur samt innovativa lösningar för modern säkerhet. Vi hjälper verksamheter
-              att förstå läget, prioritera rätt och genomföra åtgärder som faktiskt minskar risk
-              och bygger säkerhetsförmåga på riktigt.
+              att förstå läget, prioritera rätt och genomföra åtgärder som hanterar risk och bygger 
+              säkerhetsförmåga på riktigt.
             </p>
 
-            <div class="hero-actions">
+            <div class="cta-row">
               <a class="btn-primary" href="/#kontakt">Boka samtal</a>
               <a class="btn-secondary" href="/#tjanster">Se tjänster</a>
             </div>
@@ -69,7 +68,7 @@ const latestPosts = (await getCollection("insikter"))
 
           <!-- Höger: kort -->
           <div class="hero-side">
-            <div class="side-card">
+            <div class="card">
               <h2 class="h2">Vanliga utmaningar</h2>
               <ul class="bullets">
                 <li>Otydlig lägesbild och svårt att prioritera</li>
@@ -79,7 +78,7 @@ const latestPosts = (await getCollection("insikter"))
               <a class="link" href="/utmaningar">Se fler utmaningar →</a>
             </div>
 
-            <div class="side-card">
+            <div class="card">
               <h2 class="h2">Så jobbar vi</h2>
               <ul class="bullets">
                 <li>Anpassat och strukturerat</li>
@@ -109,7 +108,7 @@ const latestPosts = (await getCollection("insikter"))
           </p>
         </div>
 
-      <div class="cards">
+      <div class="grid3">
         <article class="card">
           <h3 class="h3">Riskhantering</h3>
           <p class="p">
@@ -147,7 +146,7 @@ const latestPosts = (await getCollection("insikter"))
           </p>
         </div>
 
-      <div class="cards two">
+      <div class="grid2">
         <article class="card">
           <h3 class="h3">Upptäckt & lägesbild</h3>
           <ul class="bullets">
@@ -165,7 +164,7 @@ const latestPosts = (await getCollection("insikter"))
         </article>
       </div>
       
-      <div class="section-cta">
+      <div class="cta-row">
         <a class="btn-secondary" href="/utmaningar">Alla utmaningar</a>
         <a class="btn-primary" href="/#kontakt">Boka samtal</a>
       </div>
@@ -256,365 +255,165 @@ const latestPosts = (await getCollection("insikter"))
     <!-- INSIKTER -->
     <section id="insikter" class="section" aria-label="Insikter">
       <div class="section-surface">
-      <header class="section-head">
-        <h2 class="section-title">Insikter</h2>
-        <p class="section-desc">
-          Korta perspektiv och konkreta lärdomar inom cybersäkerhet, risk och AI.
-        </p>
-      </header>
+        <header class="section-head">
+          <h2 class="h2xl">Insikter</h2>
+          <p class="muted">Korta perspektiv och konkreta lärdomar inom cybersäkerhet, risk och AI.</p>
+        </header>
 
-      <div class="grid3">
-        {latestPosts.map((post) => (
-          <a class="card post" href={`/insikter/${post.slug}/`}>
-            <div class="meta">
-              <time datetime={post.data.date.toISOString()}>
-                {post.data.date.toLocaleDateString("sv-SE")}
-              </time>
-              {post.data.tags?.length ? <span class="dot">•</span> : null}
-              {post.data.tags?.slice(0, 2).map((t) => <span class="tag">{t}</span>)}
-            </div>
-            <h3 class="card-title">{post.data.title}</h3>
-            <p class="p">{post.data.description}</p>
-            <div class="more">Läs →</div>
-          </a>
-        ))}
-      </div>
+        <div class="grid3">
+          {latestPosts.map((post) => (
+            <a class="card insights-post" href={`/insikter/${post.slug}/`}>
+              <div class="insights-meta">
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString("sv-SE")}
+                </time>
 
-      <div class="cta-row" style="margin-top: 1rem;">
-        <a class="btn-secondary" href="/insikter">Läs alla insikter</a>
-      </div>
+                {post.data.tags?.length ? <span class="insights-dot">•</span> : null}
+                {post.data.tags?.slice(0, 2).map((t) => (
+                  <span class="insights-tag">{t}</span>
+                ))}
+              </div>
+
+              <h3 class="h2" style="margin-top: 0.6rem;">{post.data.title}</h3>
+              <p class="p" style="margin-top: 0.5rem;">{post.data.description}</p>
+              <div class="insights-more">Läs →</div>
+            </a>
+          ))}
+        </div>
+
+        <div class="cta-row" style="margin-top: 1rem;">
+          <a class="btn-secondary" href="/insikter">Läs alla insikter</a>
+        </div>
       </div>
     </section>
+
 
     <!-- KONTAKT -->
     <section id="kontakt" class="section">
-       <div class="section-surface">
-      <div class="section-head">
-        <h2 class="h2xl">Kontakt</h2>
-        <p class="muted">Välj det som passar. Du når oss direkt.</p>
-      </div>
+      <div class="section-surface">
+        <div class="section-head">
+          <h2 class="h2xl">Kontakt</h2>
+          <p class="muted">Välj det som passar. Du når oss direkt.</p>
+        </div>
 
-      <div class="contact">
-        <a class="contact-card" href={`mailto:${site.email}?subject=Kontakt%20-%20Brave%20Security`}>
-          <div class="k">E-post</div>
-          <div class="v">{site.email}</div>
-          <div class="hint">Maila oss →</div>
-        </a>
+        <div class="grid3">
+          <a class="card link-card" href={`mailto:${site.email}?subject=Kontakt%20-%20Brave%20Security`}>
+            <div class="contact-k">E-post</div>
+            <div class="contact-v">{site.email}</div>
+            <div class="contact-hint">Maila oss →</div>
+          </a>
 
-        <a class="contact-card" href={`tel:${site.phoneTel}`}>
-          <div class="k">Telefon</div>
-          <div class="v">{site.phoneDisplay}</div>
-          <div class="hint">Ring →</div>
-        </a>
+          <a class="card link-card" href={`tel:${site.phoneTel}`}>
+            <div class="contact-k">Telefon</div>
+            <div class="contact-v">{site.phoneDisplay}</div>
+            <div class="contact-hint">Ring →</div>
+          </a>
 
-        <a class="contact-card" href={site.linkedinCompany} target="_blank" rel="noopener noreferrer">
-          <div class="k">LinkedIn</div>
-          <div class="v">Brave Security</div>
-          <div class="hint">Följ oss →</div>
-        </a>
-      </div>
+          <a class="card link-card" href={site.linkedinCompany} target="_blank" rel="noopener noreferrer">
+            <div class="contact-k">LinkedIn</div>
+            <div class="contact-v">Brave Security</div>
+            <div class="contact-hint">Följ oss →</div>
+          </a>
+        </div>
 
-      <div class="foot">
-        © {new Date().getFullYear()} {site.legalName}
-      </div>
+        <div class="foot">
+          © {new Date().getFullYear()} {site.legalName}
+        </div>
       </div>
     </section>
+
   </main>
 </Layout>
 
 <style>
-  .wrap {
-    padding-top: 74px; /* space for fixed header */
-  }
-
-  .hero {
-    padding: 2.2rem 1.2rem 1.4rem;
-  }
-
-  .hero-card::before {
-    content: "";
-    display: block;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, rgba(231,111,81,0), rgba(231,111,81,0.8), rgba(231,111,81,0));
-    margin-bottom: 1.2rem;
-  }
-
-
-  .hero-card {
-    max-width: 1120px;
-    margin: 0 auto;
-    border: 1px solid rgba(148, 163, 184, 0.18);
-    box-shadow: 0 24px 60px rgba(2, 6, 23, 0.75);
-    box-shadow: var(--shadow-lg);
-    background: rgba(2, 6, 23, 0.55);
-    backdrop-filter: blur(10px);
-    padding: 2.2rem;
-    position: relative;
-    overflow: hidden;
-
-    border-radius: var(--radius-lg); /* ✅ NY: matchar section-surface */
-  }
-
-  /* Bakgrundsbilden (subtil) */
-  .hero-bg {
-    position: absolute;
-    inset: -140px -220px -140px -220px; /* gör den större än kortet så det inte blir kanter */
-    width: calc(100% + 440px);
-    height: calc(100% + 280px);
-    object-fit: cover;
-    opacity: 0.22;              /* justera 0.15–0.30 efter smak */
-    filter: blur(0px) saturate(1.05);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* Mjuk “tint” för läsbarhet (ingen hård gradient, bara en tonad slöja) */
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(2, 6, 23, 0.72);
-      z-index: 0;
-    }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 1.4rem;
-    align-items: start;
-    position: relative;
-    z-index: 1;
-  }
-
-  .logo-wrap {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 1rem;
-  }
-
-  .logo-badge {
-    background: rgba(255, 255, 255, 0.92);
-    border-radius: 1rem;
-    padding: 1rem;
-    box-shadow: 0 12px 30px rgba(2, 6, 23, 0.35);
-  }
-
-  .h1 {
-    font-size: clamp(2rem, 2.8vw + 1rem, 3rem);
-    line-height: 1.12;
-    margin: 0 0 0.9rem 0;
-  }
-
-  .lead {
-    margin: 0 0 1.1rem 0;
-    color: var(--text);
-    line-height: 1.7;
-    max-width: 70ch;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.8rem;
-  }
-
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.7rem 1.3rem;
-    border-radius: 999px;
-    border: 1px solid rgba(229, 231, 235, 0.55);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text);
-    background: rgba(2, 6, 23, 0.25);
-    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
-  }
-  .btn-secondary:hover {
-    transform: translateY(-1px);
-    border-color: var(--accent);
-    background: rgba(2, 6, 23, 0.4);
-  }
-
-  .micro {
-    margin: 0;
-    color: rgba(229, 231, 235, 0.85);
-    font-size: 0.9rem;
-  }
-
-  .hero-side {
-    display: grid;
-    gap: 1rem;
-  }
-
-  .side-card {
-    background: rgba(2, 6, 23, 0.40);
-    border: 1px solid rgba(148, 163, 184, 0.25);
-    border-radius: 1rem;
-    padding: 1.1rem;
-  }
-
-  .h2, .h3 {
-    margin: 0 0 0.6rem 0;
-  }
-  .h2 { font-size: 1.05rem; }
-  .h3 { font-size: 1.05rem; }
-
-  .bullets {
-    margin: 0;
-    padding-left: 1.1rem;
-    color: rgba(229, 231, 235, 0.9);
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-
-  .section {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 2.2rem 1.2rem;
-  }
-
-  .section-head {
-    margin-bottom: 1.2rem;
-    max-width: 70ch;
-  }
-
-  .h2xl {
-    font-size: 1.7rem;
-    margin: 0 0 0.5rem 0;
-  }
-
-  .muted {
-    margin: 0;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
-  .cards.two {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .card:hover {
-    border-color: rgba(231, 111, 81, 0.55);
-    transform: translateY(-2px);
-  }
-  .card {
-    background: rgba(2, 6, 23, 0.35);
-    border: 1px solid rgba(148, 163, 184, 0.35);
-    border-radius: 1rem;
-    padding: 1.25rem;
-    transition: transform 0.15s ease, border-color 0.15s ease;
-  }
-
-  .p {
-    margin: 0 0 0.8rem 0;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-
-  .section-cta {
-    margin-top: 1.2rem;
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  .contact {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
-  .contact-card {
-    display: block;
-    text-decoration: none;
-    background: rgba(2, 6, 23, 0.35);
-    border: 1px solid rgba(148, 163, 184, 0.35);
-    border-radius: 1rem;
-    padding: 1.25rem;
-  }
-  .contact-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-1px);
-  }
-
-  .k {
-    color: rgba(229, 231, 235, 0.85);
-    font-size: 0.85rem;
-    margin-bottom: 0.35rem;
-  }
-  .v {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin-bottom: 0.4rem;
-  }
-  .hint {
-    color: var(--muted);
-    font-size: 0.9rem;
-  }
-
-  .nav-cta {
-  background: rgba(231, 111, 81, 0.08);
-  border-color: rgba(231, 111, 81, 0.45);
-  }
-  .nav-cta:hover {
-    background: rgba(231, 111, 81, 0.14);
-  }
-
-  .foot {
-    margin-top: 1.8rem;
-    color: #94a3b8;
-    font-size: 0.8rem;
-  }
-
-  .post { text-decoration: none; display: block; transition: transform 0.15s ease, border-color 0.15s ease; }
-  .post:hover { transform: translateY(-2px); border-color: rgba(231, 111, 81, 0.55); }
-
-  .meta { display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; color: rgba(229,231,235,0.75); font-size:0.85rem; }
-  .dot { opacity: 0.6; }
-  .tag { padding: 0.15rem 0.5rem; border-radius: 999px; border: 1px solid rgba(148,163,184,0.25); background: rgba(2,6,23,0.22); }
-  .more { margin-top: 0.8rem; color: rgba(229,231,235,0.85); font-weight: 600; }
-
   
-  @media (max-width: 980px) {
-    .hero-grid { grid-template-columns: 1fr; }
-    .hero-card { padding: 1.6rem; }
-    .cards { grid-template-columns: 1fr; }
-    .cards.two { grid-template-columns: 1fr; }
-    .contact { grid-template-columns: 1fr; }
-  }
+.hero {
+  padding: 0;
+}
 
-/* GRID-AREAS så att bilden ligger överst och spänner båda kolumner */
-.hero-grid{
+/* Behåll section-surface look, men ge den "hero-känsla" */
+.hero-surface {
+  position: relative;
+  overflow: hidden;
+  padding: 2.2rem;
+}
+
+/* Ambient bakgrundsbild (subtil) */
+.hero-bg {
+  position: absolute;
+  inset: -140px -220px;
+  width: calc(100% + 440px);
+  height: calc(100% + 280px);
+  object-fit: cover;
+  opacity: 0.22;
+  filter: saturate(1.05);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* En enda tint ovanpå ambient (viktig: bara EN) */
+.hero-surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.72);
+  z-index: 0;
+}
+
+/* Layout */
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.4rem;
   grid-template-columns: 1.2fr 0.8fr;
   grid-template-areas:
     "media media"
     "content side";
 }
 
-.hero-media--wide{ grid-area: media; }
-.hero-content{ grid-area: content; }
-.hero-side{ grid-area: side; }
+.hero-media--wide { grid-area: media; }
+.hero-content { grid-area: content; }
+.hero-side { grid-area: side; }
 
-/* Ta bort global "margin-top" på hero-media i just heron */
-.hero-grid > .hero-media--wide{
-  margin-top: 0;
-  margin-bottom: 1.4rem;
-  /* Lite mindre hög hero på desktop */
-  aspect-ratio: 16 / 6;
-  max-height: 320px;
+/* Bildramen */
+.hero-media--wide {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(148,163,184,0.18);
+  background: rgba(2,6,23,0.25);
+  height: clamp(220px, 26vw, 360px);
+  margin: 0 0 0.6rem 0; /* liten luft under bilden */
 }
+
+.hero-media--wide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+/* Högerkort */
+.hero-side {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero + .section {
+  border-top: 0;
+}
+
+@media (max-width: 980px) {
+  .hero-surface { padding: 1.6rem; }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "media"
+      "content"
+      "side";
+  }
+}
+
 
 </style>

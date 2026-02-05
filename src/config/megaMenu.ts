@@ -19,7 +19,7 @@ export const servicesMegaMenu: { label: string; overviewHref: string; groups: Me
     {
       title: "Cybersäkerhet & informationssäkerhet",
       overviewHref: "/tjanster/cybersakerhet",
-      description: "Från nuläge och gap till kontroller och genomförande.",
+      description: "Från nuläge till kontroller och genomförande.",
       links: [
         { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys", soon: false },
         { label: "Cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen", soon: false },

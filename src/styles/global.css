@@ -93,6 +93,7 @@ a {
   max-width: 1120px;
   margin: 0 auto;
   padding: 2.2rem 1.2rem 3rem;
+  padding-top: calc(var(--header-h) + 12px);
 }
 
 /* ========== Sections / rhythm (global) ========== */
@@ -151,11 +152,14 @@ a {
 }
 
 /* Card */
+/* Kort: hover även på vanliga <article class="card"> */
 .card {
   background: rgba(2, 6, 23, 0.35);
   border: 1px solid rgba(148, 163, 184, 0.35);
   border-radius: 1rem;
   padding: 1.25rem;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease,
+  background 160ms ease;
 }
 
 /* Grids */
@@ -226,10 +230,6 @@ a {
   .grid2, .grid3 { grid-template-columns: 1fr; }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* så att rubriken inte hamnar under headern när man hoppar till en sektion */
 section[id] {
   scroll-margin-top: calc(var(--header-h) + 16px);
@@ -241,11 +241,6 @@ section[id] {
    Gör att äldre markup får samma "surface/section"-känsla
 -------------------------------- */
 
-/* Kort: hover även på vanliga <article class="card"> */
-.card {
-  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease,
-    background 160ms ease;
-}
 
 .card:hover {
   transform: translateY(-1px);
@@ -315,19 +310,15 @@ a.card:hover,
   transform: scale(1.02);
 }
 
-/* lite overlay så text/ytor känns integrerade */
-.hero-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-
 /* behövs för ::after */
 .hero-media {
   position: relative;
 }
 
 .hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: radial-gradient(
       900px 260px at 70% 30%,
       rgba(124, 58, 237, 0.18),
@@ -343,8 +334,18 @@ a.card:hover,
 
 /* Hero-bild i section-surface (kant-i-kant) */
 .hero-surface{
-  padding: 0;
+  position: relative;
+  /*padding: 0; -> låt .section-surface styra padding */
   overflow: hidden; /* gör att rounding “klipper” bilden korrekt */
+}
+
+/* Om du vill ha kant-i-kant-bild: lägg denna på själva bild-blocket */
+.hero-media--flush{
+  margin: calc(clamp(18px, 2.6vw, 30px) * -1);
+  margin-bottom: 1rem; /* lite luft till innehåll under */
+  border-radius: inherit;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(148,163,184,0.14);
 }
 
 .hero-surface .hero-media{
