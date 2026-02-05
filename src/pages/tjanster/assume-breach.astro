@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
+import PageContact from "../../components/PageContact.astro";
 
 const title = "Assume breach – testa er verkliga motståndskraft | Brave Security";
 const description =
@@ -35,7 +36,7 @@ const heroImage = "/hero-assume-breach.png"; // byt/lägg till bild vid behov
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Boka samtal</a>
           <a class="btn-secondary" href="/tjanster/cybersakerhet">Tillbaka till Cybersäkerhet</a>
         </div>
       </div>
@@ -110,7 +111,7 @@ const heroImage = "/hero-assume-breach.png"; // byt/lägg till bild vid behov
           <article class="card">
             <h3 class="h2">Teknisk rapport</h3>
             <ul class="bullets">
-              <li>Tekniska fynd och reproduktionsstöd</li>
+              <li>Tekniska resultat och reproduktionsstöd</li>
               <li>Prioritering baserat på risk</li>
               <li>Rekommendationer för åtgärd och verifiering</li>
             </ul>
@@ -130,12 +131,16 @@ const heroImage = "/hero-assume-breach.png"; // byt/lägg till bild vid behov
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Boka samtal</a>
           <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
         </div>
       </div>
     </section>
-
+    <PageContact
+      heading="Kontakt"
+      text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."
+      placement="footer"
+    />
     <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
   </main>
 </Layout>

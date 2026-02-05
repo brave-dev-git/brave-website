@@ -44,7 +44,7 @@ const redirectTo = `${siteUrl}/tack`;
           </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href={`mailto:${email}?subject=Kontakt%20-%20Brave%20Security`}>Maila oss</a>
+          <a class="btn-primary" href="#kontakt">Boka ett förutsättningslöst möte</a>
           <a class="btn-secondary" href="/tjanster">Se tjänster</a>
         </div>
       </div>
@@ -88,27 +88,7 @@ const redirectTo = `${siteUrl}/tack`;
   </section>
 
   <!-- Förbered samtal -->
-  <section class="section">
-    <div class="section-surface">
-     
-      <header class="section-head">
-        <h2 class="h2xl">Vill du att vi förbereder ett samtal?</h2>
-        <p class="p">
-          Skicka ett par rader om nuläge, mål och vad som skaver — så kan vi ta samtalet mer effektivt.
-        </p>
-      </header>
 
-      <div class="cta-row">
-        <a
-          class="btn-primary"
-          href={`mailto:${email}?subject=Bakgrund%20inf%C3%B6r%20samtal%20-%20Brave%20Security&body=Hej!%0A%0ARoll%3A%20%0A%0AM%C3%A5l%3A%20%0A%0ANul%C3%A4ge%3A%20%0A%0AVad%20som%20skaver%3A%20%0A%0A`}
-        >
-          Maila med bakgrund
-        </a>
-        <a class="btn-secondary" href="/tjanster">Se tjänster</a>
-      </div>
-    </div>
-  </section>
   <ContactForm
       endpoint={endpoint}
       redirectTo={redirectTo}

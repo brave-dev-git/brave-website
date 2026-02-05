@@ -1,12 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
+import PageContact from "../../components/PageContact.astro";
 
 const title = "Ledningsutbildning i cybersäkerhet | Brave Security";
 const description =
   "Praktisk cybersäkerhetsutbildning för ledning och styrelse. Fokus på ansvar, risk och beslut – utan onödiga tekniska detaljer.";
 
-const heroImage = "/hero-ledningsutbildning.png"; // byt/lägg till bild vid behov
+const heroImage = "/hero-insikter_old.png"; // byt/lägg till bild vid behov
 ---
 
 <Layout title={title} description={description} lang="sv">
@@ -35,7 +36,7 @@ const heroImage = "/hero-ledningsutbildning.png"; // byt/lägg till bild vid beh
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Boka samtal</a>
           <a class="btn-secondary" href="/tjanster/sakerhetskultur-och-ovning">Tillbaka till Säkerhetskultur</a>
         </div>
       </div>
@@ -123,11 +124,17 @@ const heroImage = "/hero-ledningsutbildning.png"; // byt/lägg till bild vid beh
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Boka samtal</a>
           <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
         </div>
       </div>
     </section>
+    <PageContact
+      heading="Kontakt"
+      text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."
+      placement="footer"
+    />
+
 
     <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
   </main>

@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
+import PageContact from "../../components/PageContact.astro";
 
 const title = "Säkerhetspartnerskap | Brave Security";
 const description =
@@ -34,7 +35,7 @@ const description =
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="/kontakt">Boka ett förutsättningslöst möte</a>
+          <a class="btn-primary" href="#kontakt">Boka ett förutsättningslöst möte</a>
           <a class="btn-secondary" href="/tjanster">Se tjänster</a>
         </div>
       </div>
@@ -116,7 +117,7 @@ const description =
             </ul>
           </article>
           <article class="card">
-            <h3 class="h3">Rytm</h3>
+            <h3 class="h3">Struktur</h3>
             <ul class="bullets">
               <li>Mål, ansvar och uppföljning</li>
               <li>Beslutsunderlag + stöd i genomförande</li>
@@ -126,11 +127,16 @@ const description =
         </div>
 
         <div class="cta-row" style="margin-top: 1rem;">
-          <a class="btn-primary" href="/kontakt">Boka ett förutsättningslöst möte</a>
+          <a class="btn-primary" href="#kontakt">Boka ett förutsättningslöst möte</a>
           <a class="btn-secondary" href="/utmaningar">Se vanliga utmaningar</a>
         </div>
       </div>
     </section>
+    <PageContact
+        heading="Kontakt"
+        text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."
+        placement="footer"
+    />
 
     <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
   </main>

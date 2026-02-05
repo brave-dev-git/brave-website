@@ -1,12 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
+import PageContact from "../../components/PageContact.astro";
 
 const title = "Riskworkshop | Brave Security";
 const description =
   "Riskworkshop som skapar gemensam riskbild och tydliga prioriteringar. Första gången, löpande stöd eller årlig workshop – ofta startpunkten för en fungerande riskprocess.";
 
-const heroImage = "/hero-riskworkshop.png"; // byt vid behov
+const heroImage = "/hero-riskhantering.png"; // byt vid behov
 ---
 
 <Layout title={title} description={description} lang="sv">
@@ -36,7 +37,7 @@ const heroImage = "/hero-riskworkshop.png"; // byt vid behov
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Boka samtal</a>
           <a class="btn-secondary" href="/tjanster/riskhantering">Tillbaka till Riskhantering</a>
         </div>
       </div>
@@ -83,7 +84,7 @@ const heroImage = "/hero-riskworkshop.png"; // byt vid behov
         <header class="section-head">
           <h2 class="h2xl">Upplägg</h2>
           <p class="muted">
-            Vi anpassar workshoppen efter er verklighet. Målet är alltid samma: en prioriterad lista på beslut och åtgärder.
+            Vi anpassar workshop efter er verklighet. Målet är alltid samma: en prioriterad lista på risker med beslutade åtgärder.
           </p>
         </header>
 
@@ -108,6 +109,12 @@ const heroImage = "/hero-riskworkshop.png"; // byt vid behov
         </div>
       </div>
     </section>
+    <PageContact
+      heading="Kontakt"
+      text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."
+      placement="footer"
+    />
 
-    <!-- RESULTAT -->
-    <section class="section"
+    <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
+  </main>
+</Layout>

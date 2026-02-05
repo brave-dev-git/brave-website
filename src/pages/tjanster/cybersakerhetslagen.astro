@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
+import PageContact from "../../components/PageContact.astro";
 
 const title = "Cybersäkerhetslagen & NIS2 | Gap-analys, införande och uppföljning | Brave Security";
 const description =
@@ -35,7 +36,7 @@ const heroImage = "/hero-cybersakerhetslagen.png"; // byt/lägg till bild vid be
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Boka samtal</a>
           <a class="btn-secondary" href="/insikter/nis2-som-marknadsstandard/">Läs insikt om NIS2</a>
         </div>
       </div>
@@ -134,11 +135,16 @@ const heroImage = "/hero-cybersakerhetslagen.png"; // byt/lägg till bild vid be
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Boka samtal</a>
           <a class="btn-secondary" href="/tjanster/cybersakerhet">Tillbaka till Cybersäkerhet</a>
         </div>
       </div>
     </section>
+    <PageContact
+      heading="Kontakt"
+      text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."
+      placement="footer"
+    />
 
     <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
   </main>

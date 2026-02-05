@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
+import PageContact from "../../components/PageContact.astro";
 
 const title = "CISOaaS / Executive Advisor | Brave Security";
 const description =
@@ -36,7 +37,7 @@ const heroImage = "/hero-cisoaas.png"; // byt vid behov
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Boka samtal</a>
           <a class="btn-secondary" href="/tjanster">Tillbaka till Tjänster</a>
         </div>
       </div>
@@ -141,11 +142,17 @@ const heroImage = "/hero-cisoaas.png"; // byt vid behov
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Boka samtal</a>
           <a class="btn-secondary" href="/kontakt">Kontaktuppgifter</a>
         </div>
       </div>
     </section>
+    <PageContact
+      heading="Kontakt"
+      text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."
+      placement="footer"
+    />
+
 
     <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
   </main>
