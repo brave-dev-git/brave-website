@@ -24,54 +24,65 @@ const hrefFor = (item: NavItem) => {
 ---
 
 <header class={`header ${variant === "overlay" ? "overlay" : ""}`}>
-  <a class="brand" href="/" aria-label="Brave Security">
-    <span class="brand-badge" aria-hidden="true">
-      <img
-        src="/logo-mark-white.png"
-        alt=""
-        width="44"
-        height="44"
-        decoding="async"
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Brave Security">
+      <span class="brand-badge" aria-hidden="true">
+        <img
+          src="/logo-mark-white.png"
+          alt=""
+          width="44"
+          height="44"
+          decoding="async"
+        />
+      </span>
+      <span class="brand-name">Brave Security</span>
+    </a>
+
+    <nav class="nav" aria-label="Huvudnavigation">
+      <MegaMenu
+        label={servicesMegaMenu.label}
+        overviewHref={servicesMegaMenu.overviewHref}
+        groups={servicesMegaMenu.groups}
       />
-    </span>
-    <span class="brand-name">Brave Security</span>
-  </a>
 
-  <nav class="nav" aria-label="Huvudnavigation">
-    <MegaMenu
-      label={servicesMegaMenu.label}
-      overviewHref={servicesMegaMenu.overviewHref}
-      groups={servicesMegaMenu.groups}
-    />
+      {nav.map((item) => (
+        <a class="nav-link" href={hrefFor(item)}>{item.label}</a>
+      ))}
 
-    {nav.map((item) => (
-      <a class="nav-link" href={hrefFor(item)}>{item.label}</a>
-    ))}
-
-    <a class="nav-cta" href="/kontakt">Kontakta oss</a>
-  </nav>
-
+      <a class="nav-cta" href="/kontakt">Kontakta oss</a>
+    </nav>
+  </div>
 </header>
 
-<style>
-  .header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.9rem 1.2rem;
-    border-bottom: 1px solid var(--border);
-    background: rgba(2, 6, 23, 0.65);
-    backdrop-filter: blur(10px);
-  }
 
-  .header.overlay {
-    position: fixed;
-    left: 0;
-    right: 0;
-  }
+<style>
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--border);
+  background: rgba(2, 6, 23, 0.65);
+  backdrop-filter: blur(10px);
+}
+
+/* overlay ska fortfarande vara fixed och fullbredd */
+.header.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+/* NY: centrerar innehållet och blir ankare för dropdowns */
+.header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.9rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* VIKTIG: dropdown ska kunna ankra här */
+}
+
 
   .brand {
     display: inline-flex;
