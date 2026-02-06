@@ -68,6 +68,8 @@ const hrefFor = (item: NavItem) => {
         groups={servicesMegaMenu.groups}
       />
 
+
+
       {nav.map((item) => (
         <a class="nav-mobile__link" href={hrefFor(item)}>{item.label}</a>
       ))}
@@ -196,7 +198,10 @@ const hrefFor = (item: NavItem) => {
 /* Mobile */
 @media (max-width: 820px) {
   .nav-desktop { display: none; }
-  .nav-mobile { display: block; }
+  .nav-mobile { 
+      display: block;
+      position: relative; /* ankare för panelen */ 
+    }
 
 
   .nav-mobile__btn {
@@ -217,7 +222,15 @@ const hrefFor = (item: NavItem) => {
   .nav-mobile__btn::-webkit-details-marker { display: none; }
 
   .nav-mobile__panel {
-    margin-top: 0.75rem;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.75rem);
+    z-index: 80;
+
+    width: min(92vw, 360px);         /* <-- viktig */
+    max-width: calc(100vw - 2.4rem); /* <-- extra säkerhet */
+    margin-top: 0;                   /* eftersom vi nu positionerar absolut */
+
     padding: 0.9rem;
     border-radius: 16px;
     border: 1px solid rgba(148, 163, 184, 0.25);
@@ -225,7 +238,6 @@ const hrefFor = (item: NavItem) => {
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
     display: grid;
     gap: 0.5rem;
-    min-width: min(92vw, 420px);
   }
 
   .nav-mobile__link {
