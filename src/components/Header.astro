@@ -84,6 +84,7 @@ const hrefFor = (item: NavItem) => {
 
 
 <style>
+
 .header {
   position: sticky;
   top: 0;
@@ -194,9 +195,14 @@ const hrefFor = (item: NavItem) => {
 }
 
 .nav-mobile { display: none; }
+/* Bra grund (om du inte redan har globalt) */
+*, *::before, *::after { box-sizing: border-box; }
 
 /* Mobile */
 @media (max-width: 820px) {
+    /* Gör så panelen kan positioneras mot nav */
+  .nav { position: relative; }
+
   .nav-desktop { display: none; }
   .nav-mobile { 
       display: block;
@@ -224,12 +230,15 @@ const hrefFor = (item: NavItem) => {
   .nav-mobile__panel {
     position: absolute;
     right: 0;
+    left: auto; /* så den växer åt vänster */
     top: calc(100% + 0.75rem);
     z-index: 80;
 
     width: min(92vw, 360px);         /* <-- viktig */
     max-width: calc(100vw - 2.4rem); /* <-- extra säkerhet */
-    margin-top: 0;                   /* eftersom vi nu positionerar absolut */
+    margin-top: 0;   
+    min-width: 0;                /* viktigt: låt den krympa */
+    overflow: hidden;           /* inga “läckor” */
 
     padding: 0.9rem;
     border-radius: 16px;

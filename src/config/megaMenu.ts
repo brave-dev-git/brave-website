@@ -23,7 +23,7 @@ export const servicesMegaMenu: { label: string; overviewHref: string; groups: Me
       links: [
         { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys", soon: false },
         { label: "Cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen", soon: false },
-        { label: "Detektions- och motståndstest", href: "/tjanster/assume-breach", soon: false },
+        { label: "Assume breach", href: "/tjanster/assume-breach", soon: false },
         { label: "CISOaaS / Executive Advisor ", href: "/tjanster/cisoaas-executive-advisor", soon: false },
         { label: "Extern exponeringsanalys", href: "/tjanster/attackvektor", soon: true },
         { label: "Incidentberedskap", href: "/tjanster/incidentberedskap", soon: true },

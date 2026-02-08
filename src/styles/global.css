@@ -117,7 +117,7 @@ a {
 
 /* Rubrikblock med lila accentlinje */
 .section-head {
-  max-width: 72ch;
+  max-width: 90ch; /* gör att det inte blir för “brett” men kan behöva att ändras. Var 72 innan */
   margin-bottom: 1.2rem;
 }
 
