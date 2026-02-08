@@ -22,9 +22,9 @@ export const servicesMegaMenu: { label: string; overviewHref: string; groups: Me
       description: "Från nuläge till kontroller och genomförande.",
       links: [
         { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys", soon: false },
-        { label: "Cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen", soon: false },
         { label: "Assume breach", href: "/tjanster/assume-breach", soon: false },
-        { label: "CISOaaS / Executive Advisor ", href: "/tjanster/cisoaas-executive-advisor", soon: false },
+        { label: "CISO as a Service ", href: "/tjanster/cisoaas-executive-advisor", soon: false },
+        { label: "Cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen", soon: false },
         { label: "Extern exponeringsanalys", href: "/tjanster/attackvektor", soon: true },
         { label: "Incidentberedskap", href: "/tjanster/incidentberedskap", soon: true },
 
