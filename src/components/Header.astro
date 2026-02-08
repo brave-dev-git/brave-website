@@ -238,8 +238,7 @@ const hrefFor = (item: NavItem) => {
     max-width: calc(100vw - 2.4rem); /* <-- extra säkerhet */
     margin-top: 0;   
     min-width: 0;                /* viktigt: låt den krympa */
-    overflow: hidden;           /* inga “läckor” */
-
+   
     padding: 0.9rem;
     border-radius: 16px;
     border: 1px solid rgba(148, 163, 184, 0.25);
@@ -247,7 +246,12 @@ const hrefFor = (item: NavItem) => {
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
     display: grid;
     gap: 0.5rem;
-  }
+
+      /* ✅ NYTT: gör panelen scrollbar inom viewport */
+    max-height: calc(100vh - (var(--header-h) + 24px));
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    }
 
   .nav-mobile__link {
     text-decoration: none;

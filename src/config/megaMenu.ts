@@ -8,36 +8,33 @@ export const servicesMegaMenu: { label: string; overviewHref: string; groups: Me
     {
       title: "Riskhantering",
       overviewHref: "/tjanster/riskhantering",
-      description: "Beslut, prioritering och uppföljning över tid.",
+      description: "Beslut och prioriteringar som håller över tid.",
       links: [
         { label: "Riskworkshop", href: "/tjanster/riskworkshop", soon: false },
         { label: "AI & säkerhet", href: "/ai-sakerhet", soon: false },
-        { label: "Leverantörsrisk", href: "/tjanster/leverantorsrisk", soon: true },
-        { label: "Kontinuitet & kris", href: "/tjanster/leverantorsrisk", soon: true },
+
       ],
     },
     {
-      title: "Cybersäkerhet & informationssäkerhet",
+      title: "Cybersäkerhet",
       overviewHref: "/tjanster/cybersakerhet",
-      description: "Från nuläge till kontroller och genomförande.",
+      description: "Från nuläge till fungerande säkerhet i praktiken.",
       links: [
         { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys", soon: false },
         { label: "Assume breach", href: "/tjanster/assume-breach", soon: false },
         { label: "CISO as a Service ", href: "/tjanster/cisoaas-executive-advisor", soon: false },
         { label: "Cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen", soon: false },
-        { label: "Extern exponeringsanalys", href: "/tjanster/attackvektor", soon: true },
-        { label: "Incidentberedskap", href: "/tjanster/incidentberedskap", soon: true },
+
 
       ],
     },
     {
-      title: "Säkerhetskultur & övning",
+      title: "Säkerhetskultur",
       overviewHref: "/tjanster/sakerhetskultur-och-ovning",
-      description: "Träna beslut, roller och kommunikation.",
+      description: "Träna beslut, ansvar och kommunikation..",
       links: [
         { label: "Ledningsutbildning", href: "/tjanster/ledningsutbildning", soon: false },
-        { label: "Regelverksutbildning", href: "/tjanster/regelverksutbildning", soon: true },
-        { label: "Tabletop-övning", href: "/tjanster/tabletop-ovning", soon: true },
+
 
 
       ],
