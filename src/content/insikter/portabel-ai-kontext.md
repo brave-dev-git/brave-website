@@ -31,7 +31,7 @@ Det kan innebära:
 - Inkonsistenta svar  
 - Sämre effektivitet 
 
-Det inte ett kapacitetsproblem — det är ett kontextproblem.
+Det är inte ett kapacitetsproblem — det är ett kontextproblem.
 
 När vi arbetar professionellt är sammanhang viktigt: hur beslut fattas, vilka mål som styr och vilka kompromisser som är acceptabla. Utan den förståelsen kan AI bara ge generella svar.
 
