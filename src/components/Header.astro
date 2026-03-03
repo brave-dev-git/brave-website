@@ -7,9 +7,9 @@ type NavItem =
   | { label: string; section: string };
 
 const nav: NavItem[] = [
-  { label: "Utmaningar", page: "/utmaningar" },
-  { label: "Insikter", page: "/insikter" },
-  { label: "Om oss", page: "/om-oss" },
+  { label: "Utmaningar", page: "/utmaningar/" },
+  { label: "Insikter", page: "/insikter/" },
+  { label: "Om oss", page: "/om-oss/" },
 ];
 
 const { variant = "overlay" } = Astro.props;
@@ -51,7 +51,7 @@ const hrefFor = (item: NavItem) => {
       <a class="nav-link" href={hrefFor(item)}>{item.label}</a>
     ))}
 
-    <a class="nav-cta" href="/kontakt">Kontakta oss</a>
+    <a class="nav-cta" href="/kontakt/">Kontakta oss</a>
   </div>
 
   <!-- Mobile -->
@@ -74,7 +74,7 @@ const hrefFor = (item: NavItem) => {
         <a class="nav-mobile__link" href={hrefFor(item)}>{item.label}</a>
       ))}
 
-      <a class="nav-mobile__cta" href="/kontakt">Kontakta oss</a>
+      <a class="nav-mobile__cta" href="/kontakt/">Kontakta oss</a>
     </div>
   </details>
 </nav>
