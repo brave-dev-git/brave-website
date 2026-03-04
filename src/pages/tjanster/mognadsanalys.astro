@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import PageContact from "../../components/PageContact.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
 
 
 const title = "Säkerhetsmognadsanalys – från nuläge till prioritering | Brave Security";
@@ -159,17 +160,10 @@ const heroImage = "/hero-mognadsanalys.png"; // byt/lägg till bild vid behov
           <li>Prioriterade åtgärder: nu / snart / senare</li>
           <li>Rekommenderade nästa steg och upplägg för uppföljning</li>
         </ul>
-        <p class="micro" style="margin-top: 0.6rem;">Vad brukar var nästa steg?</p>
-        <p>Säkerhetsmognadsanalysen ger en tydlig nulägesbild och gemensam prioritering.
-        För många organisationer är nästa steg att verifiera hur väl dessa
-        förmågor faktiskt fungerar i praktiken – och därefter säkerställa
-        att säkerhetsarbetet hålls samman över tid.</p>
-         
-        <a class="link" href="../tjanster/assume-breach/">Verifiera upptäckt och incidentförmåga med Assume breach →</a><br>
-        <a class="link" href="../tjanster/cisoaas-executive-advisor/">Få löpande strategiskt stöd genom CISO as a Service →</a>
+        
       </div>
     </section>
-
+    <RelatedServices />
     <!-- NÄSTA STEG -->
     <section class="section" aria-label="Nästa steg">
       <div class="section-surface">

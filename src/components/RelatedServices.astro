@@ -1,0 +1,82 @@
+---
+import { getCollection } from "astro:content";
+import { relatedServicesByPath } from "../config/relatedServices";
+
+const {
+  title = "Håll kurs i säkerhetsarbetet",
+  path = Astro.url.pathname,
+} = Astro.props as { title?: string; path?: string };
+
+//const data = relatedServicesByPath[path];
+const normalizedPath = path.endsWith("/") ? path : `${path}/`;
+const data = relatedServicesByPath[normalizedPath];
+
+const items = data?.items ?? [];
+
+//const insights = data?.insights ?? [];
+const limit = data?.insightLimit ?? 2;
+const tags = (data?.insightTags ?? []).map((t) => String(t).toLowerCase());
+
+const all = await getCollection("insikter");
+
+// 1) Sortera senaste först
+const sorted = all.sort((a, b) => +new Date(b.data.pubDate) - +new Date(a.data.pubDate));
+
+// 2) Taggmatch: minst en tag
+const tagged =
+  tags.length === 0
+    ? []
+    : sorted.filter((p) =>
+        (p.data.tags ?? []).some((t) => tags.includes(String(t).toLowerCase()))
+      );
+
+// 3) Välj upp till limit
+let selected = tagged.slice(0, limit);
+
+// 4) Fallback: fyll upp med senaste om vi saknar
+if (selected.length < limit) {
+  const selectedSlugs = new Set(selected.map((p) => p.slug));
+  const fill = sorted
+    .filter((p) => !selectedSlugs.has(p.slug))
+    .slice(0, limit - selected.length);
+  selected = selected.concat(fill);
+}
+
+const insightMatches = selected;
+---
+
+{items.length > 0 && (
+  <section class="section" aria-label={title}>
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">{title}</h2>
+        {data?.intro && <p class="muted">{data.intro}</p>}
+      </header>
+
+      <div class="grid2">
+        {items.slice(0, 2).map((i) => (
+          <a class="card link-card" href={i.href}>
+            <h3 class="h2">{i.label}</h3>
+            {i.description && <p class="p">{i.description}</p>}
+          </a>
+        ))}
+      </div>
+        
+         {insightMatches.length > 0 && (
+        <div class="mt-2">
+          <h3 class="h2">Fördjupning</h3>
+          <p class="muted mt-1">Vi hjälper er hålla kurs över tid – med underlag som går att använda i beslut.</p>
+
+          <div class="mt-1">
+            {insightMatches.map((p) => (
+              <>
+                <a class="link" href={`/insikter/${p.slug}/`}>{p.data.title} →</a><br />
+              </>
+            ))}
+          </div>
+        </div>
+      )}
+      
+    </div>
+  </section>
+)}

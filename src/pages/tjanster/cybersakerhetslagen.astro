@@ -2,6 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import PageContact from "../../components/PageContact.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
+
 
 const title = "Cybersäkerhetslagen & NIS2 | Gap-analys, införande och uppföljning | Brave Security";
 const description =
@@ -45,7 +47,44 @@ const heroImage = "/hero-cybersakerhetslagen.png"; // byt/lägg till bild vid be
         </div>
       </div>
     </section>
+    
+    <!-- NÄR PASSAR -->
+    <section class="section" aria-label="När passar det">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">När passar detta?</h2>
+          <p class="muted">
 
+            Oavsett om ni omfattas direkt eller påverkas via kund- och leverantörskedjor så hjälper vi:
+          </p>
+           <ul class="bullets">
+              <li>Tydliggör vad lagen faktiskt kräver av er</li>
+              <li>Sätter kraven i relation till verksamhetens risker</li>
+              <li>Integrerar cybersäkerhetslagen i befintligt säkerhetsarbete</li>
+              <li>Undviker parallella compliance-spår</li>
+            </ul>
+        </header>
+
+        <div class="grid2">
+          <article class="card">
+            <h3 class="h2">Typiska lägen</h3>
+            <ul class="bullets">
+              <li>Otydligt nuläge och vad som är “good enough”</li>
+              <li>Svårt att prioritera mellan många initiativ</li>
+              <li>Behov av tydligare ansvar och uppföljning</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="h2">Vad vi fokuserar på</h3>
+            <ul class="bullets">
+              <li>Praktiskt genomförbara åtgärder</li>
+              <li>Spårbarhet: vad som är gjort och varför</li>
+              <li>Beslutsunderlag som håller för granskning</li>
+            </ul>
+          </article>
+        
+    </section>
     <!-- TRE DELAR -->
     <section class="section" aria-label="Upplägg">
       <div class="section-surface">
@@ -96,50 +135,8 @@ const heroImage = "/hero-cybersakerhetslagen.png"; // byt/lägg till bild vid be
       </div>
     </section>
 
-    <!-- NÄR PASSAR -->
-    <section class="section" aria-label="När passar det">
-      <div class="section-surface">
-        <header class="section-head">
-          <h2 class="h2xl">När passar detta?</h2>
-          <p class="muted">
-
-            Oavsett om ni omfattas direkt eller påverkas via kund- och leverantörskedjor så hjälper vi:
-          </p>
-           <ul class="bullets">
-              <li>Tydliggör vad lagen faktiskt kräver av er</li>
-              <li>Sätter kraven i relation till verksamhetens risker</li>
-              <li>Integrerar cybersäkerhetslagen i befintligt säkerhetsarbete</li>
-              <li>Undviker parallella compliance-spår</li>
-            </ul>
-        </header>
-
-        <div class="grid2">
-          <article class="card">
-            <h3 class="h2">Typiska lägen</h3>
-            <ul class="bullets">
-              <li>Otydligt nuläge och vad som är “good enough”</li>
-              <li>Svårt att prioritera mellan många initiativ</li>
-              <li>Behov av tydligare ansvar och uppföljning</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3 class="h2">Vad vi fokuserar på</h3>
-            <ul class="bullets">
-              <li>Praktiskt genomförbara åtgärder</li>
-              <li>Spårbarhet: vad som är gjort och varför</li>
-              <li>Beslutsunderlag som håller för granskning</li>
-            </ul>
-          </article>
-        </div>
-            <p>För många organisationer är säkerhetsmognadsanalys ett effektivt
-            första steg för att förstå hur väl dagens säkerhetsarbete möter
-            kraven i cybersäkerhetslagen.</p>
-       <a class="link" href="../tjanster/mognadsanalys/">Skapa en gemensam nulägesbild med Säkerhetsmognadsanalys →</a><br> 
-      <a class="link" href="../tjanster/cisoaas-executive-advisor/">Få löpande strategiskt stöd genom CISO as a Service →</a>
-      </div>
-    </section>
-
+    
+    <RelatedServices />
     <!-- NÄSTA STEG -->
     <section class="section" aria-label="Nästa steg">
       <div class="section-surface">

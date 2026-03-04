@@ -1,6 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
+import PageContact from "../../components/PageContact.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
 
 const title = "AI & säkerhet | Brave Security";
 const description =
@@ -12,11 +14,10 @@ const description =
 
 <main class="container">
 
-  <!-- Intro / hero -->
 <!-- Intro / hero -->
     <section class="section">
-      <div class="section-surface section-surface-hero">
-        <div class="hero-media" aria-hidden="true">
+      <div class="section-surface">
+          <div class="hero-media" aria-hidden="true">
           <img
             src="/hero-ai-sakerhet.png"
             alt=""
@@ -39,7 +40,7 @@ const description =
           </header>
 
           <div class="cta-row">
-            <a class="btn-primary" href="/kontakt/">Boka ett förutsättningslöst möte</a>
+            <a class="btn-primary" href="#kontakt/">Diskutera AI & säkerhet</a>
             <a class="btn-secondary" href="/utmaningar/">Se vanliga utmaningar</a>
           </div>
         </div>
@@ -49,7 +50,7 @@ const description =
 
   <!-- Risker & mål -->
   <section class="section" aria-label="Vanliga riskområden">
-   
+   <div class="section-surface">
       <header class="section-head">
         <h2 class="h2xl">Riskbild och mål</h2>
         <p class="muted">
@@ -90,6 +91,7 @@ const description =
             <div class="pill">Incidentberedskap</div>
           </div>
         </article>
+      </div>
       </div>
     </div>
   </section>
@@ -170,21 +172,34 @@ const description =
           <div class="p">Minimikrav, kontroller och beslutspaket.</div>
         </div>
       </div>
-      <p class="micro" style="margin-top: 0.6rem;">Vad brukar var nästa steg?</p>
-        <p>För många organisationer är nästa steg att koppla AI-arbetet till
-          befintlig säkerhetsstyrning och riskhantering – så att AI inte blir
-          ett parallellt spår utan en del av helheten.</p>
-         
-        <a class="link" href="../tjanster/mognadsanalys/">Skapa en gemensam grund med Säkerhetsmognadsanalys →</a><br>
-        <a class="link" href="../tjanster/cisoaas-executive-advisor/">Få löpande strategiskt stöd genom CISO as a Service →</a>
-      </div>
+      
 
-      <div class="cta-row" style="margin-top: 1rem;">
-        <a class="btn-primary" href="/kontakt/">Diskutera AI & säkerhet</a>
-        <a class="btn-secondary" href="/tjanster/">Se tjänster</a>
-      </div>
+
     </div>
+    
   </section>
+  <RelatedServices />
+      <section class="section" aria-label="Nästa steg">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Nästa steg</h2>
+          <p class="p">
+            Vi börjar med ett kort samtal och ringar in upplägg, tid och förväntad effekt. Därefter föreslår vi en
+            start som ger tydlig riktning snabbt.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="#kontakt">Diskutera AI & säkerhet</a>
+          <a class="btn-secondary" href="/utmaningar/">Se vanliga utmaningar</a>
+        </div>
+      </div>
+    </section>
+    <PageContact
+      heading="Kontakt"
+      text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."
+      placement="footer"
+    />
 
   <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
 </main>

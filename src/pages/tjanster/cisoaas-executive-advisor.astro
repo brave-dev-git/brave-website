@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import PageContact from "../../components/PageContact.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
 
 const title = "CISOaaS / Executive Advisor | Brave Security";
 const description =
@@ -151,28 +152,11 @@ const heroImage = "/hero-cisoaas.png"; // byt vid behov
           <li>Nulägesbild och prioriterad roadmap (0–90 dagar + längre sikt).</li>
         </ul>
         
-        <article class="card mt-2">
-            <h3 class="h2">Relaterade steg</h3>
-            <p class="p">
-              CISO as a Service är ofta nästa steg för organisationer som redan har en grundläggande förståelse för sitt säkerhetsläge
-              – men som behöver löpande stöd för att fatta rätt beslut och hålla riktning över tid.
-            </p>
-            <p class="p mt-1">
-              Uppdraget bygger ofta vidare på insikter från säkerhetsmognadsanalys och tester som Assume breach.
-            </p>
-
-            <div class="mt-2">
-              <a class="link" href="../tjanster/mognadsanalys/">
-                Skapa en gemensam nulägesbild med Säkerhetsmognadsanalys →
-              </a><br />
-              <a class="link" href="../tjanster/assume-breach/">
-                Verifiera upptäckt och incidentförmåga med Assume breach →
-              </a>
-            </div>
-          </article>
+        
       </div>
     </section>
 
+    <RelatedServices />
     <!-- NÄSTA STEG -->
     <section class="section" aria-label="Nästa steg">
       <div class="section-surface">
@@ -190,6 +174,7 @@ const heroImage = "/hero-cisoaas.png"; // byt vid behov
         </div>
       </div>
     </section>
+    
     <PageContact
       heading="Kontakt"
       text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."

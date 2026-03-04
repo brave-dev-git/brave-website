@@ -2,6 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import PageContact from "../../components/PageContact.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
+
 
 const title = "Riskworkshop | Brave Security";
 const description =
@@ -37,7 +39,7 @@ const heroImage = "/hero-riskhantering.png"; // byt vid behov
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="#kontakt">Boka samtal</a>
+          <a class="btn-primary" href="#kontakt">Diskutera vilket värde en riskworkshop ger er</a>
           <a class="btn-secondary" href="/tjanster/riskhantering/">Tillbaka till Riskhantering</a>
         </div>
       </div>
@@ -109,6 +111,25 @@ const heroImage = "/hero-riskhantering.png"; // byt vid behov
         </div>
       </div>
     </section>
+    <RelatedServices />
+    <!-- NÄSTA STEG -->
+    <section class="section" aria-label="Nästa steg">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Nästa steg</h2>
+          <p class="p">
+            Vi tar ett kort samtal och ringar in vilka krav som är mest relevanta för er och vad som ger effekt först.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="#kontakt">Diskutera vilket värde en riskworkshop ger er</a>
+          <a class="btn-secondary" href="/tjanster/riskhantering/">Tillbaka till Riskhantering</a>
+        </div>
+      </div>
+    </section>
+
+    
     <PageContact
       heading="Kontakt"
       text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."

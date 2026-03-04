@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import PageContact from "../../components/PageContact.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
 
 const title = "Ledningsutbildning i cybersäkerhet | Brave Security";
 const description =
@@ -46,7 +47,23 @@ const heroImage = "/hero-insikter_old.png"; // byt/lägg till bild vid behov
         </div>
       </div>
     </section>
+    
+    <!-- NÄR PASSAR -->
+    <section class="section" aria-label="När passar det">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">När passar det?</h2>
+          <p class="muted">När ni vill få en gemensam grund och skarpare beslutsförmåga.</p>
+        </header>
 
+        <ul class="bullets">
+          <li>Ny ledning/styrelse, eller nya krav på ansvar och uppföljning</li>
+          <li>Cyberrisk behöver bli tydligare som affärsrisk</li>
+          <li>Nya lagar och regelverk med ansvar för ledning och styrelse så som NIS2, DORA, CRA mfl</li>
+          <li>Ni vill kunna prioritera mellan initiativ med bättre precision</li>
+        </ul>
+      </div>
+    </section>
     <!-- INNEHÅLL -->
     <section class="section" aria-label="Innehåll">
       <div class="section-surface">
@@ -103,22 +120,7 @@ const heroImage = "/hero-insikter_old.png"; // byt/lägg till bild vid behov
       </div>
     </section>
 
-    <!-- NÄR PASSAR -->
-    <section class="section" aria-label="När passar det">
-      <div class="section-surface">
-        <header class="section-head">
-          <h2 class="h2xl">När passar det?</h2>
-          <p class="muted">När ni vill få en gemensam grund och skarpare beslutsförmåga.</p>
-        </header>
-
-        <ul class="bullets">
-          <li>Ny ledning/styrelse, eller nya krav på ansvar och uppföljning</li>
-          <li>Cyberrisk behöver bli tydligare som affärsrisk</li>
-          <li>Nya lagar och regelverk med ansvar för ledning och styrelse så som NIS2, DORA, CRA mfl</li>
-          <li>Ni vill kunna prioritera mellan initiativ med bättre precision</li>
-        </ul>
-      </div>
-    </section>
+<RelatedServices />
 
     <!-- NÄSTA STEG -->
     <section class="section" aria-label="Nästa steg">
