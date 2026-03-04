@@ -16,25 +16,18 @@ const visible = (items ?? []).filter((i) => !i.soon);
 ---
 
 {visible.length > 0 && (
-  <section class="mt-2" aria-label={title ?? "Undertjänster"}>
-    <div class="stack">
-      <div class="section-head">
-        <h2 class="h2">{title ?? "Undertjänster"}</h2>
+  <section  aria-label={title ?? "Tjänster inom området"}>
+   
+      <header class="section-head">
+        <h2 class="h2x1">{title ?? "Tjänster inom området"}</h2>
         {intro && <p class="muted prose">{intro}</p>}
-      </div>
+      </header>
 
-      <div class="grid3">
-        {visible.map((s) => (
-          <a class="link-card mini-card" href={s.href}>
-            <div class="k">{s.label}</div>
-            {s.description ? (
-              <p class="muted mt-1">{s.description}</p>
-            ) : (
-              <p class="muted mt-1">Läs mer</p>
-            )}
-          </a>
+        <div class="cta-row">
+            {visible.map((s) => (
+            <a class="btn-secondary" href={s.href}>{s.label}</a>
         ))}
-      </div>
+        </div>
     </div>
   </section>
 )}

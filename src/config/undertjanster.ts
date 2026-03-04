@@ -12,8 +12,8 @@ export type SubserviceBlock = {
 };
 
 export const cybersakerhetSubservices: SubserviceBlock = {
-  title: "Undertjänster",
-  intro: "Välj ett område så tar vi det därifrån.",
+  title: "Tjänster inom cybersäkerhet",
+  intro: "Från nuläge till fungerande säkerhet i praktiken.",
   items: [
     {
       label: "Säkerhetsmognadsanalys",
@@ -39,7 +39,7 @@ export const cybersakerhetSubservices: SubserviceBlock = {
 };
 
 export const riskSubservices: SubserviceBlock = {
-  title: "Undertjänster",
+  title: "Tjänster inom riskhantering",
   intro: "Fokus på beslut och prioriteringar som håller över tid.",
   items: [
     { label: "Riskworkshop", href: "/tjanster/riskworkshop/", description: "Gemensam riskbild och tydliga prioriteringar." },
@@ -48,7 +48,7 @@ export const riskSubservices: SubserviceBlock = {
 };
 
 export const kulturSubservices: SubserviceBlock = {
-  title: "Undertjänster",
+  title: "Tjänster inom säkerhetskultur",
   intro: "Träna beslut, ansvar och kommunikation – inte bara policy.",
   items: [
     { label: "Ledningsutbildning", href: "/tjanster/ledningsutbildning/", description: "Roller, ansvar och beslutsförmåga i praktiken." },

@@ -2,6 +2,9 @@
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import PageContact from "../../../components/PageContact.astro";
+import SubservicesList from "../../../components/SubservicesList.astro";
+import { cybersakerhetSubservices } from "../../../config/undertjanster";
+
 
 const title = "Cybersäkerhet & informationssäkerhet | Brave Security";
 const description =
@@ -13,41 +16,43 @@ const description =
   <main class="container">
     
     <section class="section">
-      <div class="section-surface section-surface-hero">
-        <div class="hero-media" aria-hidden="true">
-          <img
-            src="/hero-cybersakerhet.png"
-            alt=""
-            width="1600"
-            height="900"
-            loading="eager"
-            decoding="async"
-          />
-        </div>
-
-        <div class="section-pad">
-          <header class="section-head">
-            <h1 class="h1">Cybersäkerhet</h1>
-            <p class="lead">
-              Cybersäkerhet är sällan ett isolerat initiativ.
-              Det fungerar först när det bygger på förståelse för risk,
-              verksamhetens behov och tydliga prioriteringar. Här samlar vi hur vi arbetar med att omsätta prioriteringar
-              och krav till fungerande säkerhet i praktiken.
-              Vi hjälper er att förstå ert nuläge, hur ni kan möta hot, lagar och era utamningar 
-              samt hur ni tar er dit på ett strukturerat sätt över tid.
-        
-            </p>
-          </header>
-
-          <div class="cta-row">
-            <a class="btn-primary" href="/#kontakt">Boka samtal</a>
-            <a class="btn-secondary" href="/utmaningar/">Se vanliga utmaningar</a>
+        <div class="section-surface">
+          <div class="hero-media" aria-hidden="true">
+            <img
+              src="/hero-cybersakerhet.png"
+              alt=""
+              width="1600"
+              height="900"
+              loading="eager"
+              decoding="async"
+            />
           </div>
+
+         
+            <header class="section-head">
+              <h1 class="h1">Cybersäkerhet</h1>
+              <p class="lead">
+                Cybersäkerhet är sällan ett isolerat initiativ. Det fungerar först när det bygger på förståelse för risk,
+                verksamhetens behov och tydliga prioriteringar. Här samlar vi hur vi arbetar med att omsätta prioriteringar
+                och krav till fungerande säkerhet i praktiken. Vi hjälper er att förstå ert nuläge, hur ni kan möta hot,
+                lagar och era utmaningar samt hur ni tar er dit på ett strukturerat sätt över tid.
+              </p>
+            </header>
+
+            <div class="cta-row">
+              <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+              <a class="btn-secondary" href="/utmaningar/">Se vanliga utmaningar</a>
+            </div>
+          
         </div>
+      </section>
+
+    <!-- Undertjänster (NYTT) -->
+    <section class="section">
+      <div class="section-surface">
+        <SubservicesList {...cybersakerhetSubservices} />
       </div>
     </section>
-
-
 
     <section class="section">
       <div class="section-surface">
@@ -93,7 +98,7 @@ const description =
       <div class="section-surface">
         <h2 class="h2">Så startar vi</h2>
         <p class="p">
-            Mognads och nulägeanalys av verksamheten för att identifiera prioriterade åtgärder 
+            Mognads- och nulägeanalys av verksamheten för att identifiera prioriterade åtgärder 
             som resulterar i en tydlig plan på kort och lång sikt.
         </p>
         <div class="cta-row">

@@ -2,6 +2,8 @@
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import PageContact from "../../../components/PageContact.astro";
+import SubservicesList from "../../../components/SubservicesList.astro";
+import { kulturSubservices } from "../../../config/undertjanster";
 
 const title = "Säkerhetskultur & övning | Brave Security";
 const description =
@@ -14,7 +16,7 @@ const description =
    
     <!-- HERO -->
     <section class="section">
-      <div class="section-surface section-surface-hero">
+      <div class="section-surface">
         <div class="hero-media" aria-hidden="true">
           <img
             src="/hero-sakerhetskultur.png"
@@ -26,7 +28,7 @@ const description =
           />
         </div>
 
-        <div class="section-pad">
+        
           <header class="section-head">
             <h1 class="h1">Säkerhetskultur & övning</h1>
             <p class="lead">
@@ -41,7 +43,14 @@ const description =
             <a class="btn-primary" href="/#kontakt">Boka samtal</a>
             <a class="btn-secondary" href="/utmaningar/">Se vanliga utmaningar</a>
           </div>
-        </div>
+        
+      </div>
+    </section>
+
+    <!-- Undertjänster (NYTT) -->
+    <section class="section">
+      <div class="section-surface">
+        <SubservicesList {...kulturSubservices} />
       </div>
     </section>
 

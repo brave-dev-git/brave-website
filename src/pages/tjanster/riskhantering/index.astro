@@ -2,6 +2,8 @@
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import PageContact from "../../../components/PageContact.astro";
+import SubservicesList from "../../../components/SubservicesList.astro";
+import { riskSubservices } from "../../../config/undertjanster";
 
 const title = "Riskhantering | Brave Security";
 const description =
@@ -15,7 +17,7 @@ const description =
 
     <!-- HERO -->
     <section class="section">
-      <div class="section-surface section-surface-hero">
+      <div class="section-surface">
         <div class="hero-media" aria-hidden="true">
           <img
             src="/hero-riskhantering.png"
@@ -27,8 +29,7 @@ const description =
           />
         </div>
 
-        <div class="section-pad">
-          <header class="section-head">
+        <header class="section-head">
             <h1 class="h1">Riskhantering</h1>
             <p class="lead">
               Vi hjälper er fatta medvetna riskbeslut — och skapa ett riskarbete som går att driva i vardagen.
@@ -42,7 +43,13 @@ const description =
             <a class="btn-primary" href="#kontakt">Boka samtal</a>
             <a class="btn-secondary" href="/utmaningar/">Se vanliga utmaningar</a>
           </div>
-        </div>
+        
+      </div>
+    </section>
+    <!-- Undertjänster (NYTT) -->
+    <section class="section">
+      <div class="section-surface">
+        <SubservicesList {...riskSubservices} />
       </div>
     </section>
 
