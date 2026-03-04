@@ -3,72 +3,135 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import { getCollection } from "astro:content";
 
+
 const title = "Insikter | Brave Security";
 const description =
-  "Insikter om cybersäkerhet, riskhantering och säkra AI-lösningar – konkreta perspektiv utan fluff.";
-
-const selectedTag = Astro.url.searchParams.get("tag");
+  "Insikter om cybersäkerhet, riskhantering och säker AI. Artiklar för ledning, CISO och IT med konkreta perspektiv, beslutsstöd och tydliga nästa steg.";
 
 const allPosts = (await getCollection("insikter"))
   .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const posts = selectedTag
-  ? allPosts.filter((p) => p.data.tags?.includes(selectedTag))
-  : allPosts;
+// Aktiv tagg från URL: /insikter?tag=AI
+//const activeTag = Astro.url.searchParams.get("tag");
 
-// Unika taggar för filter-raden
-const tags = Array.from(
-  new Set(allPosts.flatMap((p) => p.data.tags ?? []))
-).sort((a, b) => a.localeCompare(b, "sv"));
+const posts = allPosts;
+
+// Bygg unika taggar från frontmatter tags: [...]
+const tagSet = new Set<string>();
+for (const p of allPosts) {
+  for (const t of p.data.tags ?? []) tagSet.add(t);
+}
+const tags = Array.from(tagSet).sort((a, b) => a.localeCompare(b, "sv"));
+
+// Filtrera om tagg är vald
+// const posts = activeTag
+ //  ? allPosts.filter((p) => (p.data.tags ?? []).includes(activeTag))
+ //  : allPosts;
 ---
 
 <Layout title={title} description={description} lang="sv">
   <Header />
 
-<main class="container">
-  <section class="section" aria-label="Insikter">
-    <div class="section-surface">
-      <div class="hero-media" aria-hidden="true">
-        <img
-          src="/hero-insikter.png"
-          alt=""
-          width="1600"
-          height="900"
-          loading="eager"
-          decoding="async"
-        />
+  <main class="container">
+    <section class="section" aria-label="Insikter">
+      <div class="section-surface">
+        <div class="hero-media" aria-hidden="true">
+          <img src="/hero-insikter.png" alt="" width="1600" height="900" loading="eager" decoding="async" />
+        </div>
+
+        <header class="section-head">
+          <h1 class="h1">Insikter</h1>
+          <p class="lead">
+            Korta perspektiv och konkreta lärdomar inom cybersäkerhet, risk och AI – skrivna för ledning och IT.
+          </p>
+        </header>
+
+        <!-- TAGG-FILTER UI -->
+        <div class="tagbar" aria-label="Filtrera på tagg"> 
+           <a class="chip" data-tag="ALL" href="/insikter/">Alla</a> 
+           {tags.map((t) => ( 
+             <a class="chip" data-tag={t} href={`/insikter/?tag=${encodeURIComponent(t)}`}>{t}</a> 
+           ))} 
+         </div> 
+
+
+
+
+        <section class="grid3" aria-label="Artiklar">
+          {posts.map((post) => (
+            <a
+              class="card insights-post"
+              href={`/insikter/${post.slug}/`}
+              data-tags={(post.data.tags ?? []).join("|")}
+            >
+              <div class="insights-meta">
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString("sv-SE")}
+                </time>
+                {post.data.tags?.length ? <span class="insights-dot">•</span> : null}
+                {post.data.tags?.slice(0, 2).map((t) => (
+                  <span class="insights-tag">{t}</span>
+                ))}
+              </div>
+
+              <h2 class="h2">{post.data.title}</h2>
+              <p class="p">{post.data.description}</p>
+              <div class="insights-more">Läs →</div>
+            </a>
+          ))}
+        </section>
+
+        <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
       </div>
+    </section>
+  </main>
+  <script is:inline>
+    const params = new URLSearchParams(window.location.search);
+    const active = params.get("tag");
 
-      <header class="section-head">
-        <h1 class="h1">Insikter</h1>
-        <p class="lead">
-          Korta perspektiv och konkreta lärdomar inom cybersäkerhet, risk och AI – skrivna för ledning och IT.
-        </p>
-      </header>
+    const cards = Array.from(document.querySelectorAll(".insights-post"));
+    if (active) {
+      cards.forEach((card) => {
+        const tags = (card.getAttribute("data-tags") || "").split("|").filter(Boolean);
+        card.style.display = tags.includes(active) ? "" : "none";
+      });
+    } else {
+      cards.forEach((card) => (card.style.display = ""));
+    }
 
-     <section class="grid3" aria-label="Artiklar">
-        {posts.map((post) => (
-          <a class="card insights-post" href={`/insikter/${post.slug}/`}>
-            <div class="insights-meta">
-              <time datetime={post.data.date.toISOString()}>
-                {post.data.date.toLocaleDateString("sv-SE")}
-              </time>
-              {post.data.tags?.length ? <span class="insights-dot">•</span> : null}
-              {post.data.tags?.slice(0, 2).map((t) => (
-                <span class="insights-tag">{t}</span>
-              ))}
-            </div>
-
-            <h2 class="h2">{post.data.title}</h2>
-            <p class="p">{post.data.description}</p>
-            <div class="insights-more">Läs →</div>
-          </a>
-        ))}
-      </section>
-
-  <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
-</main>
-
+    // Markera aktiv chip
+    document.querySelectorAll(".chip").forEach((chip) => {
+      const tag = chip.getAttribute("data-tag");
+      chip.classList.toggle("is-active", (!active && tag === "ALL") || (active && tag === active));
+    });
+  </script>
 </Layout>
 
+<style>
+  .tagbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.25rem 0 1rem;
+  }
+
+  .chip {
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148,163,184,0.25);
+    background: rgba(2,6,23,0.22);
+    color: rgba(229,231,235,0.88);
+    font-size: 0.85rem;
+    font-weight: 650;
+  }
+
+  .chip:hover { border-color: rgba(231,111,81,0.55); }
+
+  .chip.is-active {
+    border-color: rgba(124,58,237,0.55);
+    background: rgba(124,58,237,0.12);
+    color: rgba(229,231,235,0.95);
+  }
+</style>

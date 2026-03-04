@@ -15,6 +15,20 @@ const { Content } = await post.render();
 
 const title = `${post.data.title} | Brave Security`;
 const description = post.data.description;
+
+const tagToService: Record<string, { label: string; href: string }> = {
+  "cybersäkerhetslagen": { label: "Cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen/" },
+  "NIS2": { label: "NIS2", href: "/tjanster/cybersakerhetslagen/" },
+  "AI": { label: "AI & säkerhet", href: "/ai-sakerhet/" },
+  "styrning": { label: "Styrning", href: "/tjanster/cisoaas-executive-advisor/" },
+  "cybersäkerhet": { label: "Cybersäkerhet", href: "/tjanster/cybersakerhet/" },
+  "Cybersecurity": { label: "Cybersäkerhet", href: "/tjanster/cybersakerhet/" },
+  "riskhantering": { label: "Riskhantering", href: "/tjanster/riskhantering/" },
+};
+
+const related = (post.data.tags ?? [])
+  .map((t) => tagToService[t])
+  .filter(Boolean);
 ---
 
 <Layout title={title} description={description} lang="sv">
@@ -26,25 +40,72 @@ const description = post.data.description;
         <div class="prose prose--article">
           <article class="article">
             <header class="head">
-              <a class="link" href="/insikter/">← Till Insikter</a>
+              <a class="back" href="/insikter/">
+                <span aria-hidden="true">←</span> Till Insikter
+              </a>
 
               <h1 class="h1">{post.data.title}</h1>
-
+              <div class="byline">
+              {post.data.author?.name ? (
+                <>
+                  <span>
+                    Skriven av {post.data.author.name}{post.data.author.role ? ` – ${post.data.author.role}` : ""}
+                  </span>
+              
+              {post.data.author?.linkedin ? (
+                  <>
+                    <span class="sep">·</span>
+                    <a href={post.data.author.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                  </>
+                ) : null}
+                </>
+              ) : (
+                <span>Skriven av Brave Security</span>
+              )}
+            </div>
               <div class="meta">
                 <time datetime={post.data.date.toISOString()}>
                   {post.data.date.toLocaleDateString("sv-SE")}
                 </time>
                 {post.data.tags?.length ? <span class="dot">•</span> : null}
                 {post.data.tags?.map((t) => <span class="tag">{t}</span>)}
+                
               </div>
 
               <p class="lead">{post.data.description}</p>
             </header>
+            <div class="related">
+              <div class="related__k">Relaterade sidor</div>
+              <div class="related__chips">
+                  {related.length ? (
 
+                      <div class="cta-row">
+                        {related.map((r) => (
+                          <a class="btn-secondary" href={r.href}>{r.label}</a>
+                        ))}
+                      </div>
+                   
+                  ) : null}
+               </div>
+            </div>     
             <div class="content">
               <Content />
             </div>
+            
+            <div class="related">
+              <div class="related__k">Relaterade sidor</div>
+              <div class="related__chips">
+                  {related.length ? (
 
+                      <div class="cta-row">
+                        {related.map((r) => (
+                          <a class="btn-secondary" href={r.href}>{r.label}</a>
+                        ))}
+                      </div>
+                   
+                  ) : null}
+               </div>
+            </div>      
             <section class="card cta" aria-label="Kontakt CTA">
               <h2 class="h2">Vill du bolla detta i er kontext?</h2>
               <p class="p">Hör av dig så tar vi ett kort, förutsättningslöst samtal.</p>
@@ -123,4 +184,49 @@ const description = post.data.description;
   .content :global(ul) { line-height: 1.8; }
 
   .cta { margin-top: 1.4rem; }
+
+  .back{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.25);
+  background: rgba(2,6,23,0.22);
+  color: rgba(229,231,235,0.9);
+  text-decoration: none;
+  font-weight: 650;
+  font-size: 0.85rem;
+}
+.back:hover{
+  border-color: rgba(231,111,81,0.55);
+}
+
+.related{
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(148,163,184,0.14);
+}
+.related__k{
+  color: rgba(229,231,235,0.75);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.related__chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.6rem;
+}
+.meta { margin-top: 0.6rem; }
+.lead { margin-top: 0.8rem; }
+.tag { font-weight: 600; }
+
+.byline{
+  margin-top: .5rem;
+  color: rgba(229,231,235,0.75);
+  font-size: .9rem;
+}
+.byline__title{ opacity: .9; }
+
 </style>

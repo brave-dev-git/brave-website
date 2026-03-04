@@ -2,7 +2,11 @@
 title: "AI som möjliggörare – men på vems villkor?"
 description: "AI gör det möjligt att gå från idé till prototyp på timmar. Men det som känns gratis och friktionsfritt idag kan bli dyrt, låst och riskfyllt imorgon."
 date: 2026-01-24
-tags: ["AI", "Cybersecurity", "Innovation"]
+tags: ["AI", "cybersäkerhet", "innovation"]
+author:
+  name: "Jonas Stewén"
+  role: "Grundare, Brave Security"
+  linkedin: "https://www.linkedin.com/in/jonasstewen/"   
 draft: false
 ---
 

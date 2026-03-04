@@ -8,6 +8,15 @@ const insikter = defineCollection({
     date: z.date(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+    author: z
+      .object({
+        name: z.string(),
+        role: z.string().optional(),
+        linkedin: z.string().url().optional(),
+        email: z.string().email().optional(),
+        })
+      .optional(),
+
   }),
 });
 

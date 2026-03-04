@@ -2,7 +2,11 @@
 title: "När AI driver cyberangrepp"
 description: "Jag får inte kalla kårar så ofta av en säkerhetsrapport längre – men Anthropics senaste genomlysning av en AI-orkestrerad cyberattack fick mig att stanna upp."
 date: 2026-01-17
-tags: ["AI", "cybersäkerhet", "styrning"]
+tags: ["AI", "riskhantering", "cybersäkerhet", "styrning"]
+author:
+  name: "Jonas Stewén"
+  role: "Grundare, Brave Security"
+  linkedin: "https://www.linkedin.com/in/jonasstewen/" 
 draft: false
 ---
 

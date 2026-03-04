@@ -2,9 +2,12 @@
 title: "Portabel arbetsprofil — varför din arbetsprofil snart blir viktigare än vilken AI du använder"
 description: "När AI blir en standardfunktion flyttar konkurrensen till något annat: din portabla arbetsprofil. Här är varför din portabla arbetsprofil kan bli både produktfunktion och rättighet."
 pubDate: 2026-03-03
-author: "Brave Security"
 date: 2026-03-03
-tags: ["AI", "Governance", "GDPR", "Dataportabilitet", "Strategi"]
+tags: ["AI", "styrning", "GDPR", "dataportabilitet", "strategi"]
+author:
+  name: "Jonas Stewén"
+  role: "Grundare, Brave Security"
+  linkedin: "https://www.linkedin.com/in/jonasstewen/"   
 draft: false
 ---
 

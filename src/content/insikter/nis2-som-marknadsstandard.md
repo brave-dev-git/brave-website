@@ -3,6 +3,10 @@ title: "Är NIS2 på väg att bli den nya lägstanivån för cybersäkerhet?"
 description: "Även organisationer som inte formellt omfattas av NIS2 kan snart behöva förhålla sig till kraven. Min spaning är att direktivet blir en praktisk marknadsstandard."
 date: 2026-01-10
 tags: ["NIS2", "cybersäkerhet", "informationssäkerhet", "riskhantering", "resiliens", "ledarskap"]
+author:
+  name: "Jonas Stewén"
+  role: "Grundare, Brave Security"
+  linkedin: "https://www.linkedin.com/in/jonasstewen/"   
 draft: false
 ---
 

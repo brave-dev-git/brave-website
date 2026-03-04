@@ -8,3 +8,8 @@ export const site = {
   linkedinCompany: "https://www.linkedin.com/company/bravesecurity/",
   linkedinJonas: "https://www.linkedin.com/in/jonasstewen/",
 } as const;
+
+export const defaultAuthor = {
+  name: "Jonas Stewén",
+  linkedin: "https://www.linkedin.com/in/jonasstewen/" // om du vill
+};

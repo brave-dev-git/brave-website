@@ -3,9 +3,12 @@ title: "NIS2 och leverantörsrisker – kontroll som fungerar i verkligheten"
 description: "Leverantörs- och tredjepartsrisker är centrala i NIS2. Mindre fokus på dokument och mer på faktisk förmåga är avgörande för att få kontroll som fungerar i praktiken."
 date: 2026-02-01
 tags: ["NIS2", "leverantörsrisker", "cybersäkerhet", "riskhantering", "styrning"]
+author:
+  name: "Jonas Stewén"
+  role: "Grundare, Brave Security"
+  linkedin: "https://www.linkedin.com/in/jonasstewen/"   
 draft: false
 ---
-Läs mer om [Cybersäkerhetslagen](/tjanster/cybersakerhetslagen/).
 
 Leverantörer och tredjepartstjänster är idag en självklar del av nästan varje verksamhet. Drift, molntjänster, integrationer och specialiserade konsulter gör organisationer snabbare och mer effektiva – men de ökar också den digitala attackytan. Det är därför ingen slump att leverantörs- och tredjepartsrisker har fått en så central roll i NIS2.
 
@@ -62,5 +65,3 @@ Ställ färre men skarpare krav.
 Följ upp det som verkligen spelar roll.
 
 Det är så man bygger leverantörssäkerhet som fungerar i verkligheten – inte bara på papper.
-
-Läs mer om [Cybersäkerhetslagen](/tjanster/cybersakerhetslagen/).
