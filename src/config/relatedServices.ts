@@ -33,6 +33,8 @@ export const relatedServicesByPath: Record<string, { intro?: string; items: Rela
       { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys/", description: "Nuläge, gap och prioriterad roadmap." },
       { label: "CISO as a Service", href: "/tjanster/cisoaas-executive-advisor/", description: "Håll riktning och få saker att hända." },
     ],
+    insightTags: ["sårbarhet"],
+    insightLimit: 2, 
     
 
   },
