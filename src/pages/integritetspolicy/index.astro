@@ -1,0 +1,123 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const title = "Integritetspolicy | Brave Security";
+const description = "Hur Brave Security AB hanterar personuppgifter i enlighet med GDPR.";
+const updated = "2026-03-15";
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+  <main class="container">
+    <section class="section">
+      <div class="section-surface">
+        <div class="prose">
+          <h1 class="h1">Integritetspolicy</h1>
+          <p class="muted">Senast uppdaterad: {updated}</p>
+
+          <h2 class="h2">Personuppgiftsansvarig</h2>
+          <p>
+            Brave Security AB<br />
+            Org.nr: 559549-0359<br />
+            Växjö, Sverige<br />
+            E-post: <a href="mailto:kontakt@bravesecurity.se">kontakt@bravesecurity.se</a>
+          </p>
+
+          <h2 class="h2">Vilka uppgifter samlar vi in?</h2>
+          <h3 class="h3">Kontaktformulär</h3>
+          <p>
+            När du skickar ett meddelande via webbplatsens kontaktformulär samlar vi in
+            namn, e-postadress och det meddelande du skriver. Uppgifterna används
+            enbart för att besvara din förfrågan.
+          </p>
+          <h3 class="h3">Besöksstatistik</h3>
+          <p>
+            Vi använder Vercel Analytics för att förstå hur webbplatsen används.
+            Vercel Analytics samlar inte in personuppgifter och använder inga cookies.
+            All statistik är aggregerad och anonym.
+          </p>
+
+          <h2 class="h2">Rättslig grund</h2>
+          <p>
+            Behandlingen av uppgifter från kontaktformuläret sker med stöd av
+            <strong>berättigat intresse</strong> (GDPR artikel 6.1 f) — att kunna
+            besvara inkomna förfrågningar.
+          </p>
+
+          <h2 class="h2">Tredjeparter</h2>
+          <h3 class="h3">Formspree</h3>
+          <p>
+            Kontaktformuläret skickar data via <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">Formspree</a>,
+            en tjänst för formulärhantering. Formspree lagrar inskickade meddelanden
+            på sina servrar i USA. Se
+            <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Formsprees integritetspolicy</a>
+            för mer information om hur de hanterar data.
+          </p>
+          <h3 class="h3">Vercel</h3>
+          <p>
+            Webbplatsen driftas via <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">Vercel</a>.
+            Vercel kan behandla teknisk information (t.ex. IP-adress) i samband med
+            driften av infrastrukturen. Se
+            <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercels integritetspolicy</a>.
+          </p>
+
+          <h2 class="h2">Hur länge sparas uppgifterna?</h2>
+          <p>
+            Uppgifter från kontaktformuläret sparas så länge det behövs för att
+            hantera ärendet, och raderas därefter. Vi sparar inte uppgifter längre
+            än nödvändigt.
+          </p>
+
+          <h2 class="h2">Dina rättigheter</h2>
+          <p>Du har rätt att:</p>
+          <ul>
+            <li>begära tillgång till de uppgifter vi har om dig</li>
+            <li>begära rättelse av felaktiga uppgifter</li>
+            <li>begära radering av dina uppgifter</li>
+            <li>invända mot behandlingen</li>
+            <li>inge klagomål till <a href="https://www.imy.se" target="_blank" rel="noopener noreferrer">Integritetsskyddsmyndigheten (IMY)</a></li>
+          </ul>
+          <p>
+            Kontakta oss på <a href="mailto:kontakt@bravesecurity.se">kontakt@bravesecurity.se</a>
+            för att utöva dina rättigheter.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    max-width: 72ch;
+    margin: 0 auto;
+  }
+  .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose h3 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.35rem;
+    font-size: 1rem;
+    color: rgba(229, 231, 235, 0.85);
+  }
+  .prose p,
+  .prose ul {
+    color: rgba(229, 231, 235, 0.8);
+    line-height: 1.8;
+    margin: 0.5rem 0;
+  }
+  .prose ul {
+    padding-left: 1.2rem;
+  }
+  .prose a {
+    color: rgba(203, 213, 245, 1);
+    text-underline-offset: 3px;
+  }
+  .muted {
+    margin-top: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

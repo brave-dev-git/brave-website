@@ -1,0 +1,129 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">Brave Security</a>
+      <p class="footer-tagline">No risk, no reward.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Sidfot-navigation">
+      <div class="footer-col">
+        <span class="footer-heading">Tjänster</span>
+        <a href="/tjanster/riskhantering/">Riskhantering</a>
+        <a href="/tjanster/cybersakerhet/">Cybersäkerhet</a>
+        <a href="/tjanster/sakerhetskultur-och-ovning/">Säkerhetskultur</a>
+        <a href="/tjanster/">Alla tjänster →</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-heading">Företaget</span>
+        <a href="/om-oss/">Om oss</a>
+        <a href="/insikter/">Insikter</a>
+        <a href="/kontakt/">Kontakt</a>
+        <a href="https://www.linkedin.com/company/bravesecurity/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© {year} Brave Security AB · Org.nr 559549-0359 · Växjö</span>
+    <a href="/integritetspolicy/">Integritetspolicy</a>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+    padding: 2.5rem 1.2rem 1.5rem;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-inner {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .footer-logo {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .footer-logo:hover { color: var(--accent); }
+
+  .footer-tagline {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-heading {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    opacity: 0.6;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-col a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .footer-col a:hover { color: var(--text); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    opacity: 0.5;
+  }
+
+  .footer-bottom a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .footer-bottom a:hover { opacity: 1; }
+
+  @media (max-width: 640px) {
+    .footer-inner { flex-direction: column; gap: 2rem; }
+    .footer-nav { gap: 2rem; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+</style>
