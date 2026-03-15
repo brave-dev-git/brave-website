@@ -34,7 +34,7 @@ const latestPosts = (await getCollection("insikter"))
         />
 
         <div class="hero-inner">
-          <div class="hero-media hero-media--wide" aria-hidden="true">
+          <div class="hero-media--wide" aria-hidden="true">
             <img
               src="/starting-page.png"
               alt=""
@@ -45,18 +45,38 @@ const latestPosts = (await getCollection("insikter"))
             />
           </div>
 
-          <div class="hero-content">
-            <h1 class="h1">No risk no reward.</h1>
-            <p class="hero-sub">Säkerhet ska möjliggöra framgång, inte hindra den.</p>
-            <p class="lead">
-              Vi hjälper ledning och styrelser att förstå läget, prioritera rätt
-              och fatta säkerhetsbeslut som håller.
-            </p>
-            <div class="cta-row">
-              <a class="btn-primary" href="/#kontakt">Boka samtal</a>
-              <a class="btn-secondary" href="/#utmaningar">Se utmaningar</a>
+          <div class="hero-grid">
+            <div class="card hero-content">
+              <h1 class="h1">No risk no reward.</h1>
+              <p class="hero-sub">Säkerhet ska möjliggöra framgång, inte hindra den.</p>
+              <p class="lead">
+                Vi hjälper ledning och styrelser att förstå läget, prioritera rätt
+                och fatta säkerhetsbeslut som håller.
+              </p>
+              <div class="cta-row">
+                <a class="btn-primary" href="/#kontakt">Boka samtal</a>
+                <a class="btn-secondary" href="/#utmaningar">Se utmaningar</a>
+              </div>
+              <p class="micro">Snabbt första steg: maila eller ring – du når oss direkt.</p>
             </div>
-            <p class="micro">Snabbt första steg: maila eller ring – du når oss direkt.</p>
+
+            <a class="card link-card hero-side" href="/sakerhetspartnerskap/">
+              <h2 class="h2">Er säkerhetspartner</h2>
+              <ul class="hero-points">
+                <li>
+                  <span class="hero-point-icon" aria-hidden="true">→</span>
+                  Faktabaserad riskbild — så att ni vet var ni faktiskt står.
+                </li>
+                <li>
+                  <span class="hero-point-icon" aria-hidden="true">→</span>
+                  Säkerhetsförmåga som håller — även när det verkligen gäller.
+                </li>
+                <li>
+                  <span class="hero-point-icon" aria-hidden="true">→</span>
+                  Mod att ta rätt beslut — med oss vid sidan om.
+                </li>
+              </ul>
+            </a>
           </div>
         </div>
       </div>
@@ -334,8 +354,63 @@ const latestPosts = (await getCollection("insikter"))
   object-position: 50% 50%;
 }
 
-.hero-content {
-  max-width: 640px;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-side h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+@media (max-width: 820px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
+
+.hero-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.hero-points li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.hero-points li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hero-point-icon {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+@media (max-width: 820px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .hero-sub {
