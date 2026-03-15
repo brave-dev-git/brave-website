@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 # duplicates form zip on Windows
 *Zone.Identifier*
+
+# local project files
+BACKLOG.md
+CLAUDE.md

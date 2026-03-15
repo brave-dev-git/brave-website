@@ -53,6 +53,24 @@ const {
   </div>
 </details>
 
+<script>
+  // Desktop hover: sätt/ta bort [open] på details-elementet
+  // CSS-hover fungerar inte pålitligt med <details> i moderna webbläsare
+  const isFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (isFinePointer) {
+    document.querySelectorAll<HTMLDetailsElement>("[data-mega]").forEach((el) => {
+      let closeTimer: ReturnType<typeof setTimeout>;
+      el.addEventListener("mouseenter", () => {
+        clearTimeout(closeTimer);
+        el.open = true;
+      });
+      el.addEventListener("mouseleave", () => {
+        closeTimer = setTimeout(() => { el.open = false; }, 120);
+      });
+    });
+  }
+</script>
+
 <style>
   .mega { position: static; }
 
@@ -96,12 +114,13 @@ const {
       box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
       z-index: 70;
 }
- /* Viktigt: låt den styras av details[open] så den fungerar på mobil utan hover */
-  /* details[open] > .mega__panel { display: block; } */
+  /* Visas när details har [open] (sätts av JS vid hover på desktop, och av webbläsaren vid klick på mobil) */
+  details[open] > .mega__panel {
+    display: block;
+  }
 
-  /* Desktop: hover öppnar */
+  /* Desktop: focus-within som fallback om JS är av */
   @media (hover: hover) and (pointer: fine) {
-    .mega:hover > .mega__panel,
     .mega:focus-within > .mega__panel {
       display: block;
     }
@@ -188,15 +207,7 @@ const {
   }
   
 
-  /* Desktop: hover öppnar */
-  @media (hover: hover) and (pointer: fine) {
-    .mega:hover > .mega__panel,
-    .mega:focus-within > .mega__panel {
-      display: block;
-    }
-  }
-
-  /* details[open] > .mega__panel detailsl { display: block; } */
+  /* details[open] > .mega__panel hanteras redan ovan */
 
   /* Responsive -- Behövs denna? */
   @media (max-width: 980px) {
@@ -274,13 +285,6 @@ const {
  
 }
 
-/* Desktop: hover/focus ska visa panelen */
-@media (hover: hover) and (pointer: fine) {
-  .mega:hover > .mega__panel,
-  .mega:focus-within > .mega__panel {
-    display: block;
-  }
-}
 
 
 
