@@ -5,13 +5,47 @@ export type Props = {
   title?: string;
   description?: string;
   lang?: "sv" | "en";
+  ogImage?: string;
+  ogType?: string;
+  canonicalUrl?: string;
+  jsonLd?: object;
 };
 
 const {
   title = "Brave Security",
   description = "Brave Security – rådgivning inom cybersäkerhet, riskhantering och säkra AI-lösningar.",
   lang = "sv",
+  ogImage = "/logo-brave-security.png",
+  ogType = "website",
+  canonicalUrl,
+  jsonLd,
 } = Astro.props;
+
+const siteUrl = "https://www.bravesecurity.se";
+const canonical = canonicalUrl ?? `${siteUrl}${Astro.url.pathname}`;
+const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Brave Security AB",
+  url: siteUrl,
+  logo: `${siteUrl}/logo-brave-security.png`,
+  email: "kontakt@bravesecurity.se",
+  telephone: "+46730666891",
+  description: "Cybersäkerhetsrådgivning för ledning och styrelser – riskhantering, mognadsanalys och säkerhetskultur.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Växjö",
+    addressCountry: "SE",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Jonas Stewén",
+    sameAs: "https://www.linkedin.com/in/jonasstewen/",
+  },
+  sameAs: ["https://www.linkedin.com/company/bravesecurity/"],
+};
 ---
 
 <!doctype html>
@@ -23,6 +57,7 @@ const {
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
 
     <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -31,10 +66,18 @@ const {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Basic OG (kan byggas ut senare) -->
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Brave Security" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageAbsolute} />
+    <meta property="og:locale" content="sv_SE" />
+
+    <!-- JSON-LD: Organization (alla sidor) -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link

@@ -15,6 +15,31 @@ const { Content } = await post.render();
 
 const title = `${post.data.title} | Brave Security`;
 const description = post.data.description;
+const canonicalUrl = `https://www.bravesecurity.se/insikter/${post.slug}/`;
+const publishedDate = post.data.date.toISOString();
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: publishedDate,
+  url: canonicalUrl,
+  author: {
+    "@type": "Person",
+    name: post.data.author?.name ?? "Jonas Stewén",
+    url: post.data.author?.linkedin ?? "https://www.linkedin.com/in/jonasstewen/",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Brave Security AB",
+    url: "https://www.bravesecurity.se",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.bravesecurity.se/logo-brave-security.png",
+    },
+  },
+};
 
 const tagToService: Record<string, { label: string; href: string }> = {
   "cybersäkerhetslagen": { label: "Cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen/" },
@@ -32,7 +57,14 @@ const related = (post.data.tags ?? [])
   .filter(Boolean);
 ---
 
-<Layout title={title} description={description} lang="sv">
+<Layout
+  title={title}
+  description={description}
+  lang="sv"
+  ogType="article"
+  canonicalUrl={canonicalUrl}
+  jsonLd={articleSchema}
+>
   <Header />
 
   <main class="container">
