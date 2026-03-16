@@ -1,5 +1,6 @@
 ---
 title: "Portabel arbetsprofil — varför din arbetsprofil snart blir viktigare än vilken AI du använder"
+seoTitle: "Portabel AI-kontext – Brave Security"
 description: "När AI blir en standardfunktion flyttar konkurrensen till något annat: din portabla arbetsprofil. Här är varför din portabla arbetsprofil kan bli både produktfunktion och rättighet."
 date: 2026-03-03
 tags: ["AI", "styrning", "GDPR", "dataportabilitet", "strategi"]

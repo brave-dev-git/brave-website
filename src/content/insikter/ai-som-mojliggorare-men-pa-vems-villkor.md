@@ -1,5 +1,6 @@
 ---
 title: "AI som möjliggörare – men på vems villkor?"
+seoTitle: "AI som möjliggörare – men på vems villkor? – Brave Security"
 description: "AI gör det möjligt att gå från idé till prototyp på timmar. Men det som känns gratis och friktionsfritt idag kan bli dyrt, låst och riskfyllt imorgon."
 date: 2026-01-24
 tags: ["AI", "cybersäkerhet", "innovation"]

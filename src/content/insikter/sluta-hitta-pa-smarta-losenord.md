@@ -1,5 +1,6 @@
 ---
 title: "Sluta hitta på smarta lösenord — börja använda en lösenordshanterare"
+seoTitle: "Lösenordshanterare – säkrare än smarta lösenord – Brave Security"
 description: "Att försöka hitta på smarta lösenord fungerar sällan i praktiken. En lösenordshanterare, kombinerad med MFA och rätt behörigheter, är ofta en bättre start."
 date: 2026-03-12
 tags: ["cybersäkerhet", "sårbarhet", "NIS2", "lösenord", "MFA", "säkerhetskultur", ]

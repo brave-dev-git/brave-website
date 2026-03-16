@@ -1,5 +1,6 @@
 ---
 title: "När AI driver cyberangrepp"
+seoTitle: "När AI driver cyberangrepp – Brave Security"
 description: "Jag får inte kalla kårar så ofta av en säkerhetsrapport längre – men Anthropics senaste genomlysning av en AI-orkestrerad cyberattack fick mig att stanna upp."
 date: 2026-01-17
 tags: ["AI", "riskhantering", "cybersäkerhet", "styrning"]
