@@ -48,12 +48,12 @@ const tags = Array.from(tagSet).sort((a, b) => a.localeCompare(b, "sv"));
         </header>
 
         <!-- TAGG-FILTER UI -->
-        <div class="tagbar" aria-label="Filtrera på tagg"> 
-           <a class="chip" data-tag="ALL" href="/insikter/">Alla</a> 
-           {tags.map((t) => ( 
-             <a class="chip" data-tag={t} href={`/insikter/?tag=${encodeURIComponent(t)}`}>{t}</a> 
-           ))} 
-         </div> 
+        <div class="tagbar" aria-label="Filtrera på tagg">
+          <a class="chip is-active" href="/insikter/">Alla</a>
+          {tags.map((t) => (
+            <a class="chip" href={`/insikter/tagg/${encodeURIComponent(t)}/`}>{t}</a>
+          ))}
+        </div>
 
 
 
@@ -86,26 +86,6 @@ const tags = Array.from(tagSet).sort((a, b) => a.localeCompare(b, "sv"));
       </div>
     </section>
   </main>
-  <script is:inline>
-    const params = new URLSearchParams(window.location.search);
-    const active = params.get("tag");
-
-    const cards = Array.from(document.querySelectorAll(".insights-post"));
-    if (active) {
-      cards.forEach((card) => {
-        const tags = (card.getAttribute("data-tags") || "").split("|").filter(Boolean);
-        card.style.display = tags.includes(active) ? "" : "none";
-      });
-    } else {
-      cards.forEach((card) => (card.style.display = ""));
-    }
-
-    // Markera aktiv chip
-    document.querySelectorAll(".chip").forEach((chip) => {
-      const tag = chip.getAttribute("data-tag");
-      chip.classList.toggle("is-active", (!active && tag === "ALL") || (active && tag === active));
-    });
-  </script>
 </Layout>
 
 <style>

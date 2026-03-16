@@ -103,7 +103,7 @@ const related = (post.data.tags ?? [])
                   {post.data.date.toLocaleDateString("sv-SE")}
                 </time>
                 {post.data.tags?.length ? <span class="dot">•</span> : null}
-                {post.data.tags?.map((t) => <span class="tag">{t}</span>)}
+                {post.data.tags?.map((t) => <a class="tag" href={`/insikter/tagg/${encodeURIComponent(t)}/`}>{t}</a>)}
                 
               </div>
 
