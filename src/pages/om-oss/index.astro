@@ -32,9 +32,8 @@ const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
       <header class="section-head">
         <h1 class="h1">Om Brave Security</h1>
         <p class="lead">
-          Brave Security är en svensk säkerhetsparter inom cybersäkerhet, riskhantering och
-          säkerhetskultur samt innovativa lösningar för modern säkerhet. Vi hjälper verksamheter att förstå läget, prioritera rätt och genomföra åtgärder som 
-          faktiskt minskar risk och bygger säkerhetsförmåga på riktigt.
+          Brave Security är en svensk säkerhetspartner inom cybersäkerhet, riskhantering och säkerhetskultur.
+          Vi hjälper ledning och styrelser att förstå läget, prioritera rätt och genomföra åtgärder som faktiskt minskar risk.
         </p>
       </header>
 
@@ -45,52 +44,96 @@ const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
     </div>
   </section>
 
- <!-- Vårt varför och övertygelse -->
+  <!-- Grundare -->
+  <section class="section" aria-label="Grundare">
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">Grundaren</h2>
+        <p class="muted">Grundare och senior rådgivare — med erfarenhet från båda sidor av säkerhetsbordet.</p>
+      </header>
+
+      <div class="founder-card card">
+        <img
+          src="/jonas-stewen.jpg"
+          alt="Jonas Stewén, grundare Brave Security"
+          class="founder-photo"
+          width="160"
+          height="160"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="founder-body">
+          <div class="founder-name">Jonas Stewén</div>
+          <div class="founder-title">Grundare, Brave Security AB</div>
+          <p class="p">
+            MSc Computer Science och CISA-certifierad med över 25 års erfarenhet inom informations- och cybersäkerhet.
+            Bakgrund som CTO, konsultchef och VD — och parallellt alltid aktiv som senior rådgivare i cybersäkerhet
+            direkt mot kunder.
+          </p>
+          <p class="p">
+            Erfarenhet som spänner från teknisk grund — pentest, IT-forensik och säkerhetsramverk — till
+            säkerhetsledning och styrelsenivå i nordiska och internationella koncerner. En kombination som
+            ger trovärdighet i tekniska diskussioner och förmågan att omsätta säkerhet till affärsbeslut.
+          </p>
+          <p class="p">
+            En återkommande del av arbetet har varit att mäta och utvärdera bolags säkerhetsmognad — och sedan
+            hjälpa dem att faktiskt lyckas, genom konkret planering och genomförande snarare än enbart analys.
+          </p>
+          <p class="p">
+            Brave Security grundades ur övertygelsen att säkerhet ska möjliggöra framgång, inte hindra den.
+            Att jobba med rätt risker — inte undvika alla — är vad som skiljer de som lyckas från de som inte gör det.
+          </p>
+          <div class="cta-row" style="margin-top: 0.9rem;">
+            <a class="btn-secondary" href={linkedinPerson} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vårt varför och övertygelse -->
   <section class="section" aria-label="Varfor">
     <div class="section-surface">
       <header class="section-head">
-        <h2 class="h2xl">Vilka är vi</h2>
+        <h2 class="h2xl">Varför Brave Security</h2>
         <p class="muted">
-          Det krävs mod att jobba med säkerhetsfrågor!
+          En övertygelse om att säkerhet ska möjliggöra – inte begränsa.
         </p>
       </header>
 
       <div class="grid2">
         <article class="card">
-          <h2 class="h2">Varför startade Brave Security</h2>
-            <p class="p">
-                Brave Security grundades ur en enkel men stark övertygelse:
-                <strong>Säkerhet ska möjliggöra framgång – inte begränsa den.</strong> 
-              </p>
-
-              <p class="p">
-                Säkerhet upplevs ofta som krånglig, hindrande och reaktiv – istället för strategisk och personlig.
-              </p>
-
-              <p class="p">
-                Vi vill förändra hur säkerhet upplevs, förstås och hanteras.
-             </p>
+          <h3 class="h2">Bakgrunden</h3>
+          <p class="p">
+            Brave Security grundades ur en enkel men stark övertygelse:
+            <strong>säkerhet ska möjliggöra framgång – inte begränsa den.</strong>
+          </p>
+          <p class="p">
+            Alltför ofta upplevs säkerhet som krånglig, hindrande och reaktiv.
+            Vi vill förändra det – med ett arbetssätt som är strategiskt, personligt och faktiskt går att genomföra.
+          </p>
         </article>
 
         <article class="card">
-          <h3 class="h2">Vår övertygelse - No risk No reward</h3>
-          <ul class="bullets">
-            <li>Säkerhet ska möjliggöra framgång – inte begränsa den</li>
-            <li>Att undvika alla risker är inte säkerhet</li>
-            <li>Framgång kräver mod att ta rätt risker</li>
-          </ul>
-          <h3 class="h2">Vägen till framgång enligt oss</h3>
-          <ul class="bullets">
-            <li>En helhet av processer, teknik och människor</li>
-            <li>Effekt uppstår först när delarna samverkar</li>
-            <li>Ledarskap och kultur är avgörande</li>
-          </ul>
+          <h3 class="h2">No risk, no reward</h3>
+          <p class="p">
+            Att undvika alla risker är inte säkerhet – det är stillestånd.
+            Framgång kräver mod att ta rätt risker, med ögonen öppna.
+          </p>
+          <p class="p">
+            Effekt uppstår när processer, teknik och människor samverkar.
+            Ledarskap och kultur är det som avgör om säkerhetsarbetet håller i längden.
+          </p>
           <div class="cta-row" style="margin-top: 0.9rem;">
-          <!--  <a class="btn-secondary" href="/utmaningar/">Se utmaningar</a> -->
             <a class="btn-secondary" href="/sakerhetspartnerskap/">Brave Security som säkerhetspartner</a>
           </div>
         </article>
       </div>
+
+      <blockquote class="founder-quote">
+        "Att undvika alla risker är inte säkerhet — det är stillestånd. De organisationer jag jobbar med vågar ta rätt risker, med ögonen öppna."
+        <cite>— Jonas Stewén</cite>
+      </blockquote>
     </div>
   </section>
 
@@ -108,20 +151,20 @@ const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
         <article class="card">
           <h3 class="h2">Så jobbar vi</h3>
           <ul class="bullets">
-            <li>Anpassat och strukturerat: tydlig bild, tydliga val.</li>
-            <li>Beslutsunderlag som ledning och IT kan använda direkt.</li>
-            <li>Praktiska åtgärder som går att driva i vardagen.</li>
-            <li>Transparens: vad ger effekt nu – och vad kan vänta?</li>
+            <li>Vi skapar en gemensam lägesbild — inte en rapport som ingen läser.</li>
+            <li>Beslutsunderlag anpassat för ledning och IT, inte bara för revisorn.</li>
+            <li>Prioritering utifrån faktisk risk — inte efter vad som är enklast att åtgärda.</li>
+            <li>Vi stannar kvar tills saker är genomförda, inte bara utredda.</li>
           </ul>
         </article>
 
         <article class="card">
           <h3 class="h2">När vi ofta kommer in</h3>
           <ul class="bullets">
-            <li>Otydlig lägesbild och svårt att prioritera.</li>
-            <li>Stora initiativ men begränsat med resurser.</li>
-            <li>Risk- och säkerhetsarbete som blir för tungt.</li>
-            <li>AI införs snabbare än styrning och kontroll.</li>
+            <li>Ledningen vet inte var de faktiskt står säkerhetsmässigt.</li>
+            <li>Säkerhetsarbetet är igång men ger inte tillräcklig effekt.</li>
+            <li>NIS2 eller nya krav skapar tryck men oklart vad som faktiskt krävs.</li>
+            <li>AI och ny teknik införs snabbare än styrning och kontroll hinner med.</li>
           </ul>
           <div class="cta-row" style="margin-top: 0.9rem;">
             <a class="btn-secondary" href="/utmaningar/">Se utmaningar</a>
@@ -159,22 +202,20 @@ const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
     </div>
   </section>
 
-  <!-- LinkedIn -->
+  <!-- CTA -->
   <section class="section">
     <div class="section-surface">
       <header class="section-head">
-        <h2 class="h2xl">LinkedIn</h2>
-        <p class="p">
-          Vi delar löpande korta perspektiv och konkreta lärdomar.
+        <h2 class="h2xl">Redo att prata?</h2>
+        <p class="muted">
+          Boka ett förutsättningslöst möte — vi lyssnar först och föreslår sedan.
         </p>
       </header>
 
       <div class="cta-row">
+        <a class="btn-primary" href="/kontakt/">Kontakta oss</a>
         <a class="btn-secondary" href={linkedinCompany} target="_blank" rel="noopener noreferrer">
-          Brave Security
-        </a>
-        <a class="btn-secondary" href={linkedinPerson} target="_blank" rel="noopener noreferrer">
-          Jonas Stewen
+          Brave Security på LinkedIn
         </a>
       </div>
     </div>
@@ -182,6 +223,72 @@ const linkedinPerson = "https://www.linkedin.com/in/jonasstewen/";
 
   <div class="foot">© {new Date().getFullYear()} Brave Security AB</div>
 </main>
+
+<style>
+  .founder-card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .founder-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    flex-shrink: 0;
+    border: 2px solid rgba(148, 163, 184, 0.2);
+  }
+
+  .founder-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(229, 231, 235, 0.95);
+  }
+
+  .founder-title {
+    font-size: 0.9rem;
+    color: rgba(229, 231, 235, 0.6);
+    margin-bottom: 0.8rem;
+    margin-top: 0.2rem;
+  }
+
+  .founder-body .p + .p {
+    margin-top: 0.75rem;
+  }
+
+  .founder-quote {
+    margin: 1rem 0 0.5rem;
+    padding: 0.9rem 1rem;
+    border-left: 3px solid rgba(124, 58, 237, 0.7);
+    background: rgba(2, 6, 23, 0.22);
+    border-radius: 0.9rem;
+    font-style: italic;
+    color: rgba(229, 231, 235, 0.85);
+    line-height: 1.6;
+  }
+
+  .founder-quote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-size: 0.85rem;
+    color: rgba(229, 231, 235, 0.55);
+  }
+
+  @media (max-width: 600px) {
+    .founder-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .founder-card .cta-row {
+      justify-content: center;
+    }
+  }
+</style>
 
 </Layout>
 
