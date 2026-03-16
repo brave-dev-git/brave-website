@@ -10,6 +10,7 @@ export type Props = {
   ogType?: string;
   canonicalUrl?: string;
   jsonLd?: object;
+  noindex?: boolean;
 };
 
 const {
@@ -20,6 +21,7 @@ const {
   ogType = "website",
   canonicalUrl,
   jsonLd,
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = "https://www.bravesecurity.se";
@@ -59,6 +61,7 @@ const organizationSchema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" sizes="any" />

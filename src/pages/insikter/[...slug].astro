@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
-const title = `${post.data.title} | Brave Security`;
+const title = `${post.data.title} – Brave Security`;
 const description = post.data.description;
 const canonicalUrl = `https://www.bravesecurity.se/insikter/${post.slug}/`;
 const publishedDate = post.data.date.toISOString();
