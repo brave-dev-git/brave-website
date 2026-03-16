@@ -43,13 +43,15 @@ const articleSchema = {
 
 const tagToService: Record<string, { label: string; href: string }> = {
   "cybersäkerhetslagen": { label: "Cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen/" },
-  "NIS2": { label: "NIS2", href: "/tjanster/cybersakerhetslagen/" },
+  "NIS2": { label: "Cybersäkerhetslagen & NIS2", href: "/tjanster/cybersakerhetslagen/" },
   "AI": { label: "AI & säkerhet", href: "/ai-sakerhet/" },
-  "styrning": { label: "Styrning", href: "/tjanster/ciso-as-a-service/" },
+  "styrning": { label: "CISO as a Service", href: "/tjanster/ciso-as-a-service/" },
   "cybersäkerhet": { label: "Cybersäkerhet", href: "/tjanster/cybersakerhet/" },
   "Cybersecurity": { label: "Cybersäkerhet", href: "/tjanster/cybersakerhet/" },
   "riskhantering": { label: "Riskhantering", href: "/tjanster/riskhantering/" },
   "sårbarhet": { label: "Assume breach", href: "/tjanster/assume-breach/" },
+  "riskworkshop": { label: "Riskworkshop", href: "/tjanster/riskworkshop/" },
+  "mognad": { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys/" },
 };
 
 const related = (post.data.tags ?? [])
