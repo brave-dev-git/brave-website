@@ -27,7 +27,7 @@ export const cybersakerhetSubservices: SubserviceBlock = {
     },
     {
       label: "CISO as a Service",
-      href: "/tjanster/cisoaas-executive-advisor/",
+      href: "/tjanster/ciso-as-a-service/",
       description: "Styrning, prioritering och genomförande över tid."
     },
     {

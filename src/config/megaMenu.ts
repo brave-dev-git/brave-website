@@ -22,7 +22,7 @@ export const servicesMegaMenu: { label: string; overviewHref: string; groups: Me
       links: [
         { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys/", soon: false },
         { label: "Assume breach", href: "/tjanster/assume-breach/", soon: false },
-        { label: "CISO as a Service ", href: "/tjanster/cisoaas-executive-advisor/", soon: false },
+        { label: "CISO as a Service", href: "/tjanster/ciso-as-a-service/", soon: false },
         { label: "Cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen/", soon: false },
 
 

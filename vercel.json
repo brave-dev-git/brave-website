@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/tjanster/cisoaas-executive-advisor/",
+      "destination": "/tjanster/ciso-as-a-service/",
+      "permanent": true
+    }
+  ]
+}
