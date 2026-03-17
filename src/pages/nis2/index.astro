@@ -1,0 +1,188 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import PageContact from "../../components/PageContact.astro";
+import { getCollection } from "astro:content";
+
+const title = "NIS2 och cybersäkerhetslagen – vad gäller för er? – Brave Security";
+const description =
+  "Cybersäkerhetslagen (NIS2) ställer krav på säkerhetsarbete, riskhantering och ledningsansvar. Här samlar vi det du behöver veta och hur vi hjälper er möta kraven i praktiken.";
+
+const nis2Posts = (await getCollection("insikter"))
+  .filter((p) => !p.data.draft && (p.data.tags ?? []).includes("NIS2"))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title={title} description={description} lang="sv">
+  <Header />
+
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="section">
+      <div class="section-surface">
+        <header class="section-head">
+          <h1 class="h1">NIS2 och cybersäkerhetslagen</h1>
+          <p class="lead">
+            Cybersäkerhetslagen (NIS2) ställer krav på säkerhetsarbete, riskhantering och ledningsansvar —
+            med personligt ansvar för ledning och styrelse. Här samlar vi det du behöver veta
+            och hur vi hjälper er att möta kraven i praktiken.
+          </p>
+        </header>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/tjanster/cybersakerhetslagen/">Se hur vi hjälper er</a>
+          <a class="btn-secondary" href="#insikter">Läs insikter om NIS2</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VAD, VILKA, VAD KRÄVS -->
+    <section class="section" aria-label="Om NIS2">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Vad innebär NIS2?</h2>
+          <p class="muted">Det viktigaste att veta som ledning eller beslutsfattare.</p>
+        </header>
+
+        <div class="grid3">
+          <div class="mini-card">
+            <div class="k">Vad är det?</div>
+            <div class="p">
+              EU-direktiv implementerat i svensk lag (cybersäkerhetslagen). Skärpta krav på
+              säkerhetsåtgärder, incidentrapportering och ledningsansvar — med sanktionsavgifter
+              vid bristande efterlevnad.
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <div class="k">Vilka berörs?</div>
+            <div class="p">
+              Verksamheter inom samhällsviktig och digital infrastruktur — energi, transport,
+              hälso- och sjukvård, finans, vatten och digital infrastruktur. Men även leverantörer
+              och partners till dessa kan påverkas via krav i leverantörskedjor.
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <div class="k">Vad krävs?</div>
+            <div class="p">
+              Riskhantering, incidenthantering och -rapportering, leverantörskontroll, kontinuitet,
+              kryptering och åtkomstkontroll. Ledningen ansvarar personligen för att kraven efterlevs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SÅ HJÄLPER VI -->
+    <section class="section" aria-label="Relaterade tjänster">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Så hjälper vi er</h2>
+          <p class="muted">
+            Vi hjälper er från nuläge och gap till faktisk efterlevnad — utan onödig administration.
+          </p>
+        </header>
+
+        <div class="grid3">
+          <a class="card link-card" href="/tjanster/cybersakerhetslagen/">
+            <h3 class="h2">Cybersäkerhetslagen</h3>
+            <p class="p">
+              Gap-analys, införande och uppföljning. Vi omsätter lagkrav till prioriterat,
+              verksamhetsnära säkerhetsarbete.
+            </p>
+            <span class="link">Läs mer →</span>
+          </a>
+
+          <a class="card link-card" href="/tjanster/mognadsanalys/">
+            <h3 class="h2">Mognadsanalys (NIST CSF)</h3>
+            <p class="p">
+              Mäter er säkerhetsmognad mot ett etablerat ramverk. Ger en tydlig bild av nuläge,
+              gap och vad som behöver prioriteras för att möta NIS2-krav.
+            </p>
+            <span class="link">Läs mer →</span>
+          </a>
+
+          <a class="card link-card" href="/tjanster/ciso-as-a-service/">
+            <h3 class="h2">CISO as a Service</h3>
+            <p class="p">
+              Löpande strategiskt stöd för säkerhetsstyrning och ledningsansvar — interim eller
+              som komplement till befintlig funktion.
+            </p>
+            <span class="link">Läs mer →</span>
+          </a>
+
+          <a class="card link-card" href="/tjanster/ledningsutbildning/">
+            <h3 class="h2">Ledningsutbildning</h3>
+            <p class="p">
+              NIS2 ställer personligt ansvar på ledning och styrelse. Praktisk utbildning som ger
+              förståelse för kraven, ansvaret och hur ni agerar rätt när det gäller.
+            </p>
+            <span class="link">Läs mer →</span>
+          </a>
+
+          <a class="card link-card" href="/tjanster/riskworkshop/">
+            <h3 class="h2">Riskworkshop</h3>
+            <p class="p">
+              NIS2 kräver systematisk riskhantering. En riskworkshop skapar gemensam riskbild
+              och tydliga prioriteringar — ofta startpunkten för ett fungerande NIS2-arbete.
+            </p>
+            <span class="link">Läs mer →</span>
+          </a>
+
+          <a class="card link-card" href="/tjanster/assume-breach/">
+            <h3 class="h2">Assume breach</h3>
+            <p class="p">
+              NIS2 kräver förmåga att upptäcka och hantera angrepp. Assume breach testar om ni
+              faktiskt märker när någon tar sig in — och hur långt de kan komma.
+            </p>
+            <span class="link">Läs mer →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIKTER OM NIS2 -->
+    {nis2Posts.length > 0 && (
+      <section id="insikter" class="section" aria-label="Insikter om NIS2">
+        <div class="section-surface">
+          <header class="section-head">
+            <h2 class="h2xl">Insikter om NIS2</h2>
+            <p class="muted">Perspektiv och lärdomar för dig som arbetar med NIS2-efterlevnad.</p>
+          </header>
+
+          <div class="grid3">
+            {nis2Posts.map((post) => (
+              <a class="card insights-post" href={`/insikter/${post.slug}/`}>
+                <div class="insights-meta">
+                  <time datetime={post.data.date.toISOString()}>
+                    {post.data.date.toLocaleDateString("sv-SE")}
+                  </time>
+                  {post.data.tags?.length ? <span class="insights-dot">•</span> : null}
+                  {post.data.tags?.slice(0, 2).map((t) => (
+                    <span class="insights-tag">{t}</span>
+                  ))}
+                </div>
+                <h3 class="h2" style="margin-top: 0.6rem;">{post.data.title}</h3>
+                <p class="p" style="margin-top: 0.5rem;">{post.data.description}</p>
+                <div class="insights-more">Läs →</div>
+              </a>
+            ))}
+          </div>
+
+          <div class="cta-row" style="margin-top: 1rem;">
+            <a class="btn-secondary" href="/insikter/tagg/NIS2/">Alla NIS2-artiklar</a>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <PageContact
+      heading="Vill ni förstå vad NIS2 kräver av er?"
+      text="Vi tar ett kort samtal och ringar in vad som är relevant för er verksamhet och vad som ger effekt först."
+      placement="footer"
+    />
+
+  </main>
+</Layout>
