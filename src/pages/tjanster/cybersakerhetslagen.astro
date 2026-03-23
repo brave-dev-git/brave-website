@@ -4,17 +4,17 @@ import Header from "../../components/Header.astro";
 import PageContact from "../../components/PageContact.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
 
-
-const title = "Cybersäkerhetslagen NIS2 – Brave Security";
+const title = "NIS2 och cybersäkerhetslagen – Brave Security";
 const description =
-  "Praktiskt stöd för Cybersäkerhetslagen och NIS2 – från gap-analys till införande och uppföljning. Struktur, prioritering och genomförande som fungerar i vardagen.";
+  "Praktiskt stöd för NIS2 och cybersäkerhetslagen – gap-analys, prioriterad åtgärdsplan och strukturen som håller för granskning.";
 
-const heroImage = "/hero-cybersakerhetslagen.png"; // byt/lägg till bild vid behov
+const heroImage = "/hero-cybersakerhetslagen.png";
 ---
 
 <Layout title={title} description={description} lang="sv">
   <Header />
   <main class="container">
+
     <!-- HERO -->
     <section class="section">
       <div class="section-surface">
@@ -30,61 +30,49 @@ const heroImage = "/hero-cybersakerhetslagen.png"; // byt/lägg till bild vid be
         </div>
 
         <header class="section-head">
-          <h1 class="h1">Cybersäkerhetslagen (NIS2)</h1>
+          <h1 class="h1">NIS2 och cybersäkerhetslagen</h1>
           <p class="lead">
-            Cybersäkerhetslagen ställer nya krav på ledningens ansvar
-            för säkerhetsarbete och riskhantering.<br>
-
-            Vi hjälper organisationer att omsätta lagkrav till praktiskt,
-            prioriterat och verksamhetsnära säkerhetsarbete – utan att
-            skapa onödig administration.
+            Från kravbild till genomförbart säkerhetsarbete — utan onödig administration.<br>
+            Vi hjälper er identifiera gap, sätta prioriteringar och bygga strukturen
+            som håller för granskning och ger ledningen ett reellt beslutsunderlag.
           </p>
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="#kontakt">Diskutera hur cybersäkerhetslagen påverkar er</a>
-          <a class="btn-secondary" href="/insikter/nis2-som-marknadsstandard/">Läs insikt om NIS2</a>
+          <a class="btn-primary" href="#kontakt">Boka ett samtal om er situation</a>
+          <a class="btn-secondary" href="/nis2/">Förstå vad NIS2 innebär</a>
         </div>
       </div>
     </section>
-    
-    <!-- NÄR PASSAR -->
-    <section class="section" aria-label="När passar det">
+
+    <!-- FÖR VEM -->
+    <section class="section" aria-label="För vem">
       <div class="section-surface">
         <header class="section-head">
-          <h2 class="h2xl">När passar detta?</h2>
+          <h2 class="h2xl">För vem?</h2>
           <p class="muted">
-
-            Oavsett om ni omfattas direkt eller påverkas via kund- och leverantörskedjor så hjälper vi:
+            Vi arbetar med organisationer som berörs direkt av lagen eller via leverantörskedjor —
+            och med ledningar som behöver förstå sitt ansvar.
           </p>
-           <ul class="bullets">
-              <li>Tydliggör vad lagen faktiskt kräver av er</li>
-              <li>Sätter kraven i relation till verksamhetens risker</li>
-              <li>Integrerar cybersäkerhetslagen i befintligt säkerhetsarbete</li>
-              <li>Undviker parallella compliance-spår</li>
-            </ul>
         </header>
 
-        <div class="grid2">
-          <article class="card">
-            <h3 class="h2">Typiska lägen</h3>
-            <ul class="bullets">
-              <li>Otydligt nuläge och vad som är “good enough”</li>
-              <li>Svårt att prioritera mellan många initiativ</li>
-              <li>Behov av tydligare ansvar och uppföljning</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3 class="h2">Vad vi fokuserar på</h3>
-            <ul class="bullets">
-              <li>Praktiskt genomförbara åtgärder</li>
-              <li>Spårbarhet: vad som är gjort och varför</li>
-              <li>Beslutsunderlag som håller för granskning</li>
-            </ul>
-          </article>
-        
+        <div class="grid3">
+          <div class="mini-card">
+            <div class="k">Ledning och styrelse</div>
+            <div class="p">Ni bär det personliga ansvaret och behöver ett beslutsunderlag som faktiskt håller — inte bara en compliance-checklista.</div>
+          </div>
+          <div class="mini-card">
+            <div class="k">CISO, CIO och säkerhetsansvarig</div>
+            <div class="p">Ni behöver omsätta lagkrav till ett prioriterat och genomförbart säkerhetsarbete utan att skapa parallella spår.</div>
+          </div>
+          <div class="mini-card">
+            <div class="k">Leverantörer med krav från kunder</div>
+            <div class="p">Ni påverkas via avtal och upphandling. Vi hjälper er förstå vad som faktiskt krävs och vad som är rimligt att göra.</div>
+          </div>
+        </div>
+      </div>
     </section>
+
     <!-- TRE DELAR -->
     <section class="section" aria-label="Upplägg">
       <div class="section-surface">
@@ -135,8 +123,37 @@ const heroImage = "/hero-cybersakerhetslagen.png"; // byt/lägg till bild vid be
       </div>
     </section>
 
-    
+    <!-- EFFEKT -->
+    <section class="section" aria-label="Effekt">
+      <div class="section-surface">
+        <header class="section-head">
+          <h2 class="h2xl">Det här ger det</h2>
+          <p class="muted">Konkreta resultat ni kan visa internt och mot styrelse eller tillsynsmyndighet.</p>
+        </header>
+
+        <div class="grid2">
+          <div class="mini-card">
+            <div class="k">Tydligare ansvar</div>
+            <div class="p">Styrelse och ledning vet vad de ansvarar för — och har underlag som visar att de tagit det ansvaret.</div>
+          </div>
+          <div class="mini-card">
+            <div class="k">Genomförbara prioriteringar</div>
+            <div class="p">Inte en lista på allt som saknas, utan en plan på vad som ger mest effekt och är möjlig att genomföra i er verksamhet.</div>
+          </div>
+          <div class="mini-card">
+            <div class="k">Bättre beredskap inför tillsyn</div>
+            <div class="p">Spårbarhet och dokumentation som håller för granskning — utan att skapa onödig administration.</div>
+          </div>
+          <div class="mini-card">
+            <div class="k">Integrerat, inte parallellt</div>
+            <div class="p">NIS2-arbetet integreras i befintligt säkerhetsarbete istället för att bli ett eget compliance-spår vid sidan av.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <RelatedServices />
+
     <!-- NÄSTA STEG -->
     <section class="section" aria-label="Nästa steg">
       <div class="section-surface">
@@ -148,17 +165,17 @@ const heroImage = "/hero-cybersakerhetslagen.png"; // byt/lägg till bild vid be
         </header>
 
         <div class="cta-row">
-          <a class="btn-primary" href="#kontakt">Diskutera hur cybersäkerhetslagen påverkar er</a>
+          <a class="btn-primary" href="#kontakt">Boka ett samtal</a>
           <a class="btn-secondary" href="/tjanster/cybersakerhet/">Tillbaka till Cybersäkerhet</a>
         </div>
       </div>
     </section>
+
     <PageContact
       heading="Kontakt"
       text="Beskriv gärna din roll och vad du vill få klarhet i, så återkommer vi."
       placement="footer"
     />
-
 
   </main>
 </Layout>

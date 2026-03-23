@@ -31,9 +31,9 @@ export const cybersakerhetSubservices: SubserviceBlock = {
       description: "Styrning, prioritering och genomförande över tid."
     },
     {
-      label: "Cybersäkerhetslagen",
+      label: "NIS2 och cybersäkerhetslagen",
       href: "/tjanster/cybersakerhetslagen/",
-      description: "Kravbild, påverkan och vad som behöver göras nu."
+      description: "Gap-analys, prioriterad åtgärdsplan och struktur som håller."
     },
   ],
 };
