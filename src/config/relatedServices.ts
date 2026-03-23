@@ -23,7 +23,7 @@ export const relatedServicesByPath: Record<string, { intro?: string; items: Rela
       { label: "Assume breach", href: "/tjanster/assume-breach/", description: "Verifiera upptäckt och incidentförmåga i praktiken." },
       { label: "CISO as a Service", href: "/tjanster/ciso-as-a-service/", description: "Styrning, prioritering och uppföljning över tid." },
     ],
-    insightTags: ["mognad", "styrning", "mätning"],
+    insightTags: ["mognadsanalys", "mognad", "styrning", "mätning"],
     insightLimit: 2,
   },
 
