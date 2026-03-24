@@ -1,6 +1,6 @@
 ---
 title: "Säkerhetsmognad — vad det egentligen betyder och varför det avgör din förmåga"
-seoTitle: "Säkerhetsmognad förklarad – förmåga, inte checklistor | Brave Security"
+seoTitle: "Säkerhetsmognad förklarad – förmåga, inte checklistor"
 description: "Säkerhetsmognad handlar inte om att ha en policy på plats — det handlar om förmåga. Hur processer, teknik och människor samverkar för att skydda verksamheten."
 date: 2026-03-23
 tags: ["säkerhetsmognad", "mognadsanalys", "NIST CSF", "cybersäkerhet", "assume breach", "NIS2", "ledarskap"]
