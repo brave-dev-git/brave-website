@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "indexnow": "node scripts/indexnow.mjs",
+    "fetch-bing": "node --env-file=.env scripts/fetch-bing.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.0",
