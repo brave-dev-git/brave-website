@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 const title =
   "Brave Security – cybersäkerhet, riskhantering och säkra AI-lösningar";
 const description =
-  "Brave Security hjälper ledning och IT att förstå, prioritera och hantera risker – från cybersäkerhet och informationssäkerhet till säkerhetskultur och säkra AI-lösningar.";
+  "Brave Security hjälper ledning och IT att förstå, prioritera och hantera risker – cybersäkerhet, informationssäkerhet och säkerhetskultur.";
   
 const latestPosts = (await getCollection("insikter"))
   .filter((p) => !p.data.draft)
