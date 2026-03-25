@@ -28,6 +28,7 @@ pnpm-debug.log*
 
 # SEO data (generated, not source)
 docs/seo-data/*.csv
+docs/seo-data/*.zip
 
 # local project files
 BACKLOG.md
