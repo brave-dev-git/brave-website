@@ -41,24 +41,24 @@ const articleSchema = {
   },
 };
 
-const tagToService: Record<string, { label: string; href: string }> = {
-  "cybersäkerhetslagen": { label: "NIS2 och cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen/" },
-  "NIS2": { label: "NIS2 – vad gäller för er?", href: "/nis2/" },
-  "leverantörsrisker": { label: "NIS2 och cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen/" },
-  "AI": { label: "AI & säkerhet", href: "/ai-sakerhet/" },
-  "styrning": { label: "CISO as a Service", href: "/tjanster/ciso-as-a-service/" },
-  "CISO": { label: "CISO as a Service", href: "/tjanster/ciso-as-a-service/" },
-  "ledarskap": { label: "CISO as a Service", href: "/tjanster/ciso-as-a-service/" },
-  "cybersäkerhet": { label: "Cybersäkerhet", href: "/tjanster/cybersakerhet/" },
-  "Cybersecurity": { label: "Cybersäkerhet", href: "/tjanster/cybersakerhet/" },
-  "riskhantering": { label: "Riskhantering", href: "/tjanster/riskhantering/" },
-  "sårbarhet": { label: "Assume breach", href: "/tjanster/assume-breach/" },
-  "assume breach": { label: "Assume breach", href: "/tjanster/assume-breach/" },
-  "riskworkshop": { label: "Riskworkshop", href: "/tjanster/riskworkshop/" },
-  "mognad": { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys/" },
-  "säkerhetsmognad": { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys/" },
-  "mognadsanalys": { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys/" },
-  "NIST CSF": { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys/" },
+const tagToService: Record<string, { label: string; href: string; description: string }> = {
+  "cybersäkerhetslagen": { label: "NIS2 och cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen/", description: "Förstå kraven och vad de innebär för er organisation och ledning." },
+  "NIS2": { label: "NIS2 – vad gäller för er?", href: "/nis2/", description: "Förstå kraven och vad de innebär för er organisation och ledning." },
+  "leverantörsrisker": { label: "NIS2 och cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen/", description: "Förstå kraven och vad de innebär för er organisation och ledning." },
+  "AI": { label: "AI & säkerhet", href: "/ai-sakerhet/", description: "Hantera AI-risker utan att bromsa användningen — data, styrning och ansvar." },
+  "styrning": { label: "CISO as a Service", href: "/tjanster/ciso-as-a-service/", description: "Senior säkerhetsledning på deltid — strategiskt stöd utan fast anställning." },
+  "CISO": { label: "CISO as a Service", href: "/tjanster/ciso-as-a-service/", description: "Senior säkerhetsledning på deltid — strategiskt stöd utan fast anställning." },
+  "ledarskap": { label: "CISO as a Service", href: "/tjanster/ciso-as-a-service/", description: "Senior säkerhetsledning på deltid — strategiskt stöd utan fast anställning." },
+  "cybersäkerhet": { label: "Cybersäkerhet", href: "/tjanster/cybersakerhet/", description: "Från nuläge och gap till åtgärder som faktiskt minskar risk." },
+  "Cybersecurity": { label: "Cybersäkerhet", href: "/tjanster/cybersakerhet/", description: "Från nuläge och gap till åtgärder som faktiskt minskar risk." },
+  "riskhantering": { label: "Riskhantering", href: "/tjanster/riskhantering/", description: "Struktur för att identifiera, värdera och prioritera rätt risker." },
+  "sårbarhet": { label: "Assume breach", href: "/tjanster/assume-breach/", description: "Testa om ni märker ett angrepp — och hur långt en angripare faktiskt kommer." },
+  "assume breach": { label: "Assume breach", href: "/tjanster/assume-breach/", description: "Testa om ni märker ett angrepp — och hur långt en angripare faktiskt kommer." },
+  "riskworkshop": { label: "Riskworkshop", href: "/tjanster/riskworkshop/", description: "Gemensam bild av risker och prioriteringar — klar för beslut." },
+  "mognad": { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys/", description: "Konkret bild av var ni faktiskt står — och vad ni bör prioritera nu." },
+  "säkerhetsmognad": { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys/", description: "Konkret bild av var ni faktiskt står — och vad ni bör prioritera nu." },
+  "mognadsanalys": { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys/", description: "Konkret bild av var ni faktiskt står — och vad ni bör prioritera nu." },
+  "NIST CSF": { label: "Säkerhetsmognadsanalys", href: "/tjanster/mognadsanalys/", description: "Konkret bild av var ni faktiskt står — och vad ni bör prioritera nu." },
 };
 
 const related = (post.data.tags ?? [])
@@ -117,38 +117,36 @@ const related = (post.data.tags ?? [])
 
               <p class="lead">{post.data.description}</p>
             </header>
-            <div class="related">
-              <div class="related__k">Relaterade sidor</div>
-              <div class="related__chips">
-                  {related.length ? (
-
-                      <div class="cta-row">
-                        {related.map((r) => (
-                          <a class="btn-secondary" href={r.href}>{r.label}</a>
-                        ))}
-                      </div>
-                   
-                  ) : null}
-               </div>
-            </div>     
+            {related.length > 0 && (
+              <div class="related">
+                <div class="related__k">Relaterade tjänster</div>
+                <div class="related__cards">
+                  {related.map((r) => (
+                    <a class="related__card" href={r.href}>
+                      <span class="related__card-label">{r.label} →</span>
+                      <span class="related__card-desc">{r.description}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}     
             <div class="content">
               <Content />
             </div>
             
-            <div class="related">
-              <div class="related__k">Relaterade sidor</div>
-              <div class="related__chips">
-                  {related.length ? (
-
-                      <div class="cta-row">
-                        {related.map((r) => (
-                          <a class="btn-secondary" href={r.href}>{r.label}</a>
-                        ))}
-                      </div>
-                   
-                  ) : null}
-               </div>
-            </div>      
+            {related.length > 0 && (
+              <div class="related">
+                <div class="related__k">Relaterade tjänster</div>
+                <div class="related__cards">
+                  {related.map((r) => (
+                    <a class="related__card" href={r.href}>
+                      <span class="related__card-label">{r.label} →</span>
+                      <span class="related__card-desc">{r.description}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}      
             <section class="card cta" aria-label="Kontakt CTA">
               <h2 class="h2">Vill du bolla detta i er kontext?</h2>
               <p class="p">Hör av dig så tar vi ett kort, förutsättningslöst samtal.</p>
@@ -256,10 +254,40 @@ const related = (post.data.tags ?? [])
   font-weight: 700;
   margin-bottom: 0.6rem;
 }
-.related__chips{
-  display:flex;
-  flex-wrap:wrap;
-  gap:0.6rem;
+.related__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.6rem;
+}
+
+.related__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(2, 6, 23, 0.25);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.related__card:hover {
+  border-color: rgba(231, 111, 81, 0.5);
+  background: rgba(2, 6, 23, 0.4);
+}
+
+.related__card-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.related__card-desc {
+  font-size: 0.8rem;
+  color: rgba(229, 231, 235, 0.55);
+  line-height: 1.5;
 }
 .meta { margin-top: 0.6rem; }
 .lead { margin-top: 0.8rem; }
