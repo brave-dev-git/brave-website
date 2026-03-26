@@ -1,0 +1,145 @@
+---
+import { testimonials } from "../config/testimonials";
+
+const { services, title = "Erfarenheter från organisationer vi arbetar med" } = Astro.props as {
+  services?: string[];
+  title?: string;
+};
+
+// Auto-detect service slug from URL path if no explicit services prop
+// e.g. /tjanster/assume-breach/ → "assume-breach"
+const pathSegments = Astro.url.pathname.replace(/\/$/, "").split("/").filter(Boolean);
+const detectedService = pathSegments.at(-1);
+
+const activeServices = services ?? (detectedService ? [detectedService] : undefined);
+
+const items = activeServices
+  ? testimonials.filter(
+      (t) => t.services?.some((s) => activeServices.includes(s))
+    )
+  : testimonials;
+
+const serviceLinks: Record<string, { label: string; href: string }> = {
+  "assume-breach":       { label: "Assume breach",            href: "/tjanster/assume-breach/" },
+  "mognadsanalys":       { label: "Säkerhetsmognadsanalys",   href: "/tjanster/mognadsanalys/" },
+  "ciso-as-a-service":   { label: "CISO as a Service",        href: "/tjanster/ciso-as-a-service/" },
+  "cybersakerhetslagen": { label: "NIS2 & cybersäkerhetslagen", href: "/tjanster/cybersakerhetslagen/" },
+  "riskworkshop":        { label: "Riskworkshop",             href: "/tjanster/riskworkshop/" },
+  "ledningsutbildning":  { label: "Ledningsutbildning",       href: "/tjanster/ledningsutbildning/" },
+};
+---
+
+{items.length > 0 && (
+  <section class="section" aria-label={title}>
+    <div class="section-surface">
+      <header class="section-head">
+        <h2 class="h2xl">{title}</h2>
+      </header>
+
+      <div class={items.length > 1 ? "grid2" : "single"}>
+        {items.map((t) => (
+          <figure class="t-card">
+            <blockquote class="t-quote">
+              "{t.quote}"
+            </blockquote>
+
+            <hr class="t-divider" />
+
+            <figcaption class="t-footer">
+              <div class="t-attribution">
+                <span class="t-role">{t.role}</span>
+                {t.company && <span class="t-company">{t.company}</span>}
+              </div>
+              {t.services && t.services.length > 0 && (
+                <div class="t-tags">
+                  {t.services.map((slug) => {
+                    const link = serviceLinks[slug];
+                    return link ? (
+                      <a class="t-tag" href={link.href}>{link.label} →</a>
+                    ) : null;
+                  })}
+                </div>
+              )}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+.single { display: block; }
+
+.t-card {
+  margin: 0;
+  padding: 1.6rem;
+  background: rgba(2, 6, 23, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.t-quote {
+  margin: 0;
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--text);
+  padding-left: 1rem;
+  border-left: 2px solid rgba(109, 77, 255, 0.6);
+  flex: 1;
+}
+
+.t-divider {
+  border: none;
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  margin: 0;
+}
+
+.t-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.t-attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.t-role {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.t-company {
+  font-style: italic;
+  font-size: 0.82rem;
+  color: rgba(229, 231, 235, 0.55);
+}
+
+.t-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.t-tag {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.15s;
+}
+
+.t-tag:hover {
+  color: var(--accent);
+}
+</style>
