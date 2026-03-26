@@ -117,26 +117,12 @@ const related = (post.data.tags ?? [])
 
               <p class="lead">{post.data.description}</p>
             </header>
-            {related.length > 0 && (
-              <div class="related">
-                <div class="related__k">Relaterade tjänster</div>
-                <div class="related__cards">
-                  {related.map((r) => (
-                    <a class="related__card" href={r.href}>
-                      <span class="related__card-label">{r.label} →</span>
-                      <span class="related__card-desc">{r.description}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}     
             <div class="content">
               <Content />
             </div>
-            
             {related.length > 0 && (
               <div class="related">
-                <div class="related__k">Relaterade tjänster</div>
+                <div class="related__k">Gå från insikt till handling</div>
                 <div class="related__cards">
                   {related.map((r) => (
                     <a class="related__card" href={r.href}>
@@ -256,38 +242,38 @@ const related = (post.data.tags ?? [])
 }
 .related__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
 }
 
 .related__card {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  background: rgba(2, 6, 23, 0.25);
+  gap: 0.2rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(2, 6, 23, 0.2);
   text-decoration: none;
   color: inherit;
   transition: border-color 0.15s, background 0.15s;
 }
 
 .related__card:hover {
-  border-color: rgba(231, 111, 81, 0.5);
-  background: rgba(2, 6, 23, 0.4);
+  border-color: rgba(231, 111, 81, 0.45);
+  background: rgba(2, 6, 23, 0.35);
 }
 
 .related__card-label {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--text);
 }
 
 .related__card-desc {
-  font-size: 0.8rem;
-  color: rgba(229, 231, 235, 0.55);
-  line-height: 1.5;
+  font-size: 0.75rem;
+  color: rgba(229, 231, 235, 0.45);
+  line-height: 1.45;
 }
 .meta { margin-top: 0.6rem; }
 .lead { margin-top: 0.8rem; }
