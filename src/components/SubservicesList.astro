@@ -16,18 +16,19 @@ const visible = (items ?? []).filter((i) => !i.soon);
 ---
 
 {visible.length > 0 && (
-  <section  aria-label={title ?? "Tjänster inom området"}>
-   
-      <header class="section-head">
-        <h2 class="h2x1">{title ?? "Tjänster inom området"}</h2>
-        {intro && <p class="muted prose">{intro}</p>}
-      </header>
+  <section aria-label={title ?? "Tjänster inom området"}>
+    <header class="section-head">
+      <h2 class="h2xl">{title ?? "Tjänster inom området"}</h2>
+      {intro && <p class="muted">{intro}</p>}
+    </header>
 
-        <div class="cta-row">
-            {visible.map((s) => (
-            <a class="btn-secondary" href={s.href}>{s.label}</a>
-        ))}
-        </div>
+    <div class="grid2">
+      {visible.map((s) => (
+        <a class="card link-card" href={s.href}>
+          <h3 class="h2">{s.label}</h3>
+          {s.description && <p class="p">{s.description}</p>}
+        </a>
+      ))}
     </div>
   </section>
 )}
