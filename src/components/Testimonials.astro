@@ -52,7 +52,7 @@ const serviceLinks: Record<string, { label: string; href: string }> = {
               </div>
               {t.services && t.services.length > 0 && (
                 <div class="t-tags">
-                  {t.services.map((slug) => {
+                  {t.services.filter((slug) => slug !== detectedService).map((slug) => {
                     const link = serviceLinks[slug];
                     return link ? (
                       <a class="t-tag" href={link.href}>{link.label} →</a>
