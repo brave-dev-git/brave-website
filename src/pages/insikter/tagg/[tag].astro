@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import { getCollection } from "astro:content";
+import { tagDescriptions } from "../../../config/tagDescriptions";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("insikter");
@@ -22,8 +23,9 @@ export async function getStaticPaths() {
 
 const { posts, tag } = Astro.props;
 
+const intro = tagDescriptions[tag] ?? `Artiklar taggade med ${tag} inom cybersäkerhet, riskhantering och informationssäkerhet.`;
 const title = `${tag} – Insikter – Brave Security`;
-const description = `Artiklar om ${tag} inom cybersäkerhet, riskhantering och AI.`;
+const description = intro.length > 150 ? intro.slice(0, 147) + "…" : intro;
 ---
 
 <Layout title={title} description={description} lang="sv">
@@ -37,7 +39,8 @@ const description = `Artiklar om ${tag} inom cybersäkerhet, riskhantering och A
             <span aria-hidden="true">←</span> Alla insikter
           </a>
           <h1 class="h1">{tag}</h1>
-          <p class="lead">{posts.length} artikel{posts.length !== 1 ? "ar" : ""} taggade med {tag}.</p>
+          <p class="lead">{intro}</p>
+          <p class="tag-count">{posts.length} {posts.length !== 1 ? "artiklar" : "artikel"}</p>
         </header>
 
         <section class="grid3" aria-label="Artiklar">
@@ -83,4 +86,9 @@ const description = `Artiklar om ${tag} inom cybersäkerhet, riskhantering och A
   }
   .back:hover { border-color: rgba(231,111,81,0.55); }
 
+  .tag-count {
+    font-size: 0.85rem;
+    color: rgba(229,231,235,0.5);
+    margin-top: 0.5rem;
+  }
 </style>
