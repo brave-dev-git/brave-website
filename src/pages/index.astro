@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-// import Testimonials from "../components/Testimonials.astro";
+import Testimonials from "../components/Testimonials.astro";
 import { site } from "../config/site";
 import { getCollection } from "astro:content";
 
@@ -182,7 +182,7 @@ const latestPosts = (await getCollection("insikter"))
       </div>
     </section>
 
-    {/* <Testimonials /> */}
+    <Testimonials />
 
     <!-- NIS2 -->
     <section class="section" aria-label="NIS2">

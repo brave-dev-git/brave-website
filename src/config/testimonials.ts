@@ -25,4 +25,13 @@ export const testimonials: Testimonial[] = [
       "Brave Security hjälpte oss att etablera en tydlig struktur för vårt cybersäkerhetsarbete – från mission och vision till konkreta mål och årliga planer. Arbetet har skapat en stabil grund för att systematiskt höja vår mognad och motståndskraft.",
     services: ["ciso-as-a-service"],
   },
+   {
+    quote:
+      "Vi fick en objektiv bild av vår säkerhetsmognad – och ett tydligt beslutsunderlag för vad vi skulle prioritera. Vi använder det löpande för att säkerställa att vi är på rätt väg.",
+    role: "CDIO",
+    company: "Internationell industrikoncern",
+    context:
+      "Brave Security hjälpte oss att etablera en tydlig struktur för vårt cybersäkerhetsarbete – från mission och vision till konkreta mål och årliga planer. Arbetet har skapat en stabil grund för att systematiskt höja vår mognad och motståndskraft.",
+    services: ["mognadsanalys"],
+  },
 ];
