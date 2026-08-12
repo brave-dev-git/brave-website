@@ -31,7 +31,7 @@ export const servicesMegaMenu: { label: string; overviewHref: string; groups: Me
     {
       title: "Säkerhetskultur",
       overviewHref: "/tjanster/sakerhetskultur-och-ovning/",
-      description: "Träna beslut, ansvar och kommunikation..",
+      description: "Träna beslut, ansvar och kommunikation",
       links: [
         { label: "Ledningsutbildning", href: "/tjanster/ledningsutbildning/", soon: false },
 
