@@ -16,7 +16,7 @@ export type RelatedBlock = {
   insightLimit?: number;    // hur många artiklar vi visar
 };
 
-export const relatedServicesByPath: Record<string, { intro?: string; items: RelatedItem[] }> = {
+export const relatedServicesByPath: Record<string, RelatedBlock> = {
   "/tjanster/mognadsanalys/": {
     intro: "Säkerhetsmognadsanalysen ger nuläge och prioritering. Ofta är nästa steg att verifiera i praktiken och sedan säkra uppföljning över tid.",
     items: [

@@ -1,5 +1,5 @@
 export type MegaLink = { label: string; href: string; soon?: boolean };
-export type MegaGroup = { title: string; description?: string; links: MegaLink[] };
+export type MegaGroup = { title: string; overviewHref?: string; description?: string; links: MegaLink[] };
 
 export const servicesMegaMenu: { label: string; overviewHref: string; groups: MegaGroup[] } = {
   label: "Tjänster",
